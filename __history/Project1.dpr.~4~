@@ -1,0 +1,18 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+
+function Reverse(var str1:string, var str2:string):Boolean;
+begin
+
+end;
+
+uses
+  System.SysUtils;
+
+begin
+
+end.

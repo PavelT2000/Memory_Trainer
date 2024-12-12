@@ -8,14 +8,11 @@ uses
 
 function ReverseCheck(var str1: string; var str2: string): Boolean;
 begin
-  Result := true;
-  if Length(str1) = Length(str2) then
+Result:=True;
+  for var i := 1 to Length(str1) do
   begin
-    for var i := 1 to Length(str1) do
-    begin
-      if str2[str1] then
 
-    end;
+
   end;
 
 end;
