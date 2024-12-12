@@ -5,10 +5,14 @@ program Project1;
 
 uses
   System.SysUtils,
-  Unit1 in 'Unit1.pas';
+  gener in 'gener.pas',
+  UnitGame1 in 'UnitGame1.pas';
 
 begin
-NextMove;
+UnitGame1.StartGame;
+while True do
+UnitGame1.nextStage;
+
 
 
 end.

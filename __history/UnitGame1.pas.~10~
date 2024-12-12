@@ -1,10 +1,12 @@
 ﻿unit UnitGame1;
 
 interface
-
 uses
-  System.SysUtils, Windows;
-  gener in 'gener.pas';
+  System.SysUtils, Windows, Gener;
+
+
+
+
 procedure nextStage();
 
 procedure StartGame();
@@ -12,7 +14,7 @@ procedure StartGame();
 implementation
 
 var
-  WinCount, CurrentStage: integer;
+  WinCount, CurrentStage,subStage: integer;
   inputS, exampleS: string;
 
 procedure ClearScreen;
@@ -42,9 +44,10 @@ end;
 
 procedure Stage1();
 begin
-  Writeln('СТУЛ');
+  exampleS:=gener.GetWord(subStage);
   Sleep(3000);
   ClearScreen;
+  Readln(inputS);
   if (True) then
     Inc(WinCount);
 end;
@@ -102,7 +105,12 @@ begin
   end;
   if WinCount = 3 then
   begin
-    WinCount := 0;
+    WinCount := 0z;
+    Inc(SubStage);
+  end;
+  if SubStage = 9 then
+  begin
+    SubStage := 5;
     Inc(CurrentStage);
   end;
 
@@ -111,6 +119,7 @@ end;
 procedure StartGame();
 begin
   CurrentStage := 1;
+  subStage:=5;
   WinCount := 0;
 end;
 
