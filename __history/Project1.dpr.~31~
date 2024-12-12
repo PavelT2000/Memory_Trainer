@@ -9,11 +9,7 @@ uses
   UnitGame1 in 'UnitGame1.pas',
   UnitBasic in 'UnitBasic.pas';
 
-var str:string;
 begin
-
-
-readln(str);
 
 UnitGame1.StartGame;
 while True do

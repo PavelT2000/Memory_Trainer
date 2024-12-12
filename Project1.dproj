@@ -92,6 +92,7 @@
         </DelphiCompile>
         <DCCReference Include="gener.pas"/>
         <DCCReference Include="UnitGame1.pas"/>
+        <DCCReference Include="UnitBasic.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

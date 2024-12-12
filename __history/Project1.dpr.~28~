@@ -4,18 +4,18 @@
 {$R *.res}
 
 uses
-  System.SysUtils, Windows,
+  System.SysUtils,
   gener in 'gener.pas',
   UnitGame1 in 'UnitGame1.pas',
   UnitBasic in 'UnitBasic.pas';
 
-var str:string;
 begin
-
-
-readln(str);
-
+SetConsoleCP(65001); //utf-8
+SetConsoleOutputCP(65001) ; //utf-8
 UnitGame1.StartGame;
 while True do
 UnitGame1.nextStage;
+
+
+
 end.

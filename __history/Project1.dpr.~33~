@@ -11,7 +11,8 @@ uses
 
 var str:string;
 begin
-
+SetConsoleCP(65001); //utf-8
+  SetConsoleOutputCP(65001) ; //utf-8
 
 readln(str);
 
