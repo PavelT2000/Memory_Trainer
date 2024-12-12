@@ -8,7 +8,8 @@ uses
   Unit1 in 'Unit1.pas';
 
 begin
-NextMove;
+Unit1.num:=5;
+writeln(Unit1.num);
 
 
 end.

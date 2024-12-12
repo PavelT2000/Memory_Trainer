@@ -1,0 +1,18 @@
+unit Unit1;
+
+interface
+var num:integer;
+
+procedure aboba;
+
+function biba();
+
+implementation
+procedure aboba();
+Begin
+
+End;
+
+function biba();
+
+end.
