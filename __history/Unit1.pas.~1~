@@ -1,0 +1,8 @@
+unit Unit1;
+
+interface
+var num:integer;
+
+
+implementation
+end.

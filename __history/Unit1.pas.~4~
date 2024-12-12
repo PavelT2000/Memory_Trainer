@@ -1,0 +1,16 @@
+unit Unit1;
+
+interface
+var num:integer;
+
+
+
+
+implementation
+
+procedure check()
+begin
+  Result:=true;
+end;
+
+end.

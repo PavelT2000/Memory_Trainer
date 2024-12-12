@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.715,C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj=C:\GitHub\Memory_Trainer\Project1.dproj</Transaction>
-    <Transaction>2024.12.12 15:38:27.539,=C:\GitHub\Memory_Trainer\Unit1.pas</Transaction>
-    <Transaction>2024.12.12 15:38:40.705,=C:\GitHub\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.705,=C:\GitHub\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.539,=C:\GitHub\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.715,C:\GitHub\Memory_Trainer\Project1.dproj=C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024.12.12 19:07:47.144,=C:\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>2024.12.12 19:08:10.957,C:\Memory_Trainer\Game.pas=C:\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>2024.12.12 19:14:28.886,C:\Memory_Trainer\Game.pas=</Transaction>
+    <Transaction>2024.12.12 19:19:00.706,=C:\Memory_Trainer\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
