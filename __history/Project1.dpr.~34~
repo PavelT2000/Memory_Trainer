@@ -12,6 +12,9 @@ uses
 var str:string;
 begin
 
+
+readln(str);
+
 UnitGame1.StartGame;
 while True do
 UnitGame1.nextStage;

@@ -8,8 +8,6 @@ procedure LowerRus(var s1: String);
 function G1check(s1, s2: String):Boolean;
 function G2check(s1, s2_c: String):Boolean;
 function G3check(s1, s2_c: String):Boolean;
-function G4check(s1, s2_c: String):Boolean;
-function G5check(s1, s2_c: String):Boolean;
 
 
 implementation
@@ -21,7 +19,7 @@ begin
   len := Length(s1);
   for i := 1 to len do
     begin
-      if (s1[i] >= 'пїЅ') and (s1[i] <= 'пїЅ') then
+      if (s1[i] >= 'А') and (s1[i] <= 'Я') then
         s1[i] := Chr(Ord(s1[i])+32)
     end;
 end;
@@ -35,7 +33,7 @@ begin
   len := Length(s1);
   if len = Length(s2) then
 
-    for i := 1 to len do
+    for i := 1 to len div 2 do
     begin
       if s1[i] <> s2[len - i + 1] then
         Result := False
@@ -54,7 +52,7 @@ var
 begin
   Result := True;
 
-  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+  // Удаление лишних пробелов между слов
   s2 := '';
   len := Length(s2_c);
   j := 0;
@@ -87,8 +85,8 @@ begin
       sameString := False;
 
       for j := 0 to len_as - 1 do
-        // sameString пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 2 пїЅпїЅпїЅ > пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ,
-        // пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        // sameString для того, чтоб если было 2 или > одиннаковых слов,
+        // то его повтор не был засчитан
         if (as1[i] = as2[j]) and (not sameString) then
         begin
           Inc(tempResult);
@@ -115,7 +113,7 @@ var
 begin
   Result := True;
 
-  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+  // Удаление лишних пробелов между слов
   s2 := '';
   len := Length(s2_c);
   j := 0;
@@ -146,7 +144,7 @@ var
 begin
   Result := True;
 
-  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+  // Удаление лишних пробелов между слов
   s2 := '';
   len := Length(s2_c);
   j := 0;
@@ -178,8 +176,8 @@ begin
       sameString := False;
 
       for j := 0 to len_as - 1 do
-        // sameString пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 2 пїЅпїЅпїЅ > пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ,
-        // пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        // sameString для того, чтоб если было 2 или > одиннаковых слов,
+        // то его повтор не был засчитан
         if (G1check(as1[i], as2[j])) and (not sameString) then
         begin
           Inc(tempResult);
@@ -205,7 +203,7 @@ var
 begin
   Result := True;
 
-  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+  // Удаление лишних пробелов между слов
   s2 := '';
   len := Length(s2_c);
   j := 0;

@@ -2,7 +2,7 @@
 
 interface
 uses
-  System.SysUtils, Windows, Gener;
+  System.SysUtils, Windows, Gener,UnitBasic;
 
 
 
@@ -45,11 +45,25 @@ end;
 procedure Stage1();
 begin
   exampleS:=gener.GetWord(subStage);
+  Writeln(exampleS);
   Sleep(3000);
   ClearScreen;
   Readln(inputS);
-  if (True) then
+  if G1Check(exampleS,InputS) then
+  begin
+
+
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
+
+
+
 end;
 
 procedure Stage2();
@@ -105,10 +119,10 @@ begin
   end;
   if WinCount = 3 then
   begin
-    WinCount := 0z;
+    WinCount := 0;
     Inc(SubStage);
   end;
-  if SubStage = 9 then
+  if SubStage = 8 then
   begin
     SubStage := 5;
     Inc(CurrentStage);
@@ -118,6 +132,7 @@ end;
 
 procedure StartGame();
 begin
+  gener.GetAllSArr(gener.arr5,gener.arr6,gener.arr7,gener.arr8);
   CurrentStage := 1;
   subStage:=5;
   WinCount := 0;

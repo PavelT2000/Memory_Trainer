@@ -51,8 +51,6 @@ begin
   Readln(inputS);
   if G1Check(exampleS,InputS) then
   begin
-
-
     Inc(WinCount);
     Writeln('Верно');
   end
@@ -61,45 +59,82 @@ begin
     WinCount:=0;
     Writeln('Не верно');
   end;
-
-
-
 end;
 
 procedure Stage2();
 begin
-  Writeln('СТУЛ');
-  Sleep(3000);
+  exampleS:=gener.Get5word(subStage);
+  Writeln(exampleS);
+  Sleep(5000);
   ClearScreen;
-  if (True) then
+  Readln(inputS);
+  if G2Check(exampleS,InputS) then
+  begin
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
 end;
 
 procedure Stage3();
 begin
-  Writeln('СТУЛ');
-  Sleep(3000);
+  exampleS:=gener.Get5word(subStage);
+  Writeln(exampleS);
+  Sleep(5000);
   ClearScreen;
-  if (True) then
+  Readln(inputS);
+  if G3Check(exampleS,InputS) then
+  begin
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
 end;
 
 procedure Stage4();
 begin
-  Writeln('СТУЛ');
-  Sleep(3000);
+  exampleS:=gener.Get5word(subStage);
+  Writeln(exampleS);
+  Sleep(5000);
   ClearScreen;
-  if (True) then
+  Readln(inputS);
+  if G4Check(exampleS,InputS) then
+  begin
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
 end;
 
 procedure Stage5();
 begin
-  Writeln('СТУЛ');
-  Sleep(3000);
+  exampleS:=gener.Get5word(subStage);
+  Writeln(exampleS);
+  Sleep(5000);
   ClearScreen;
-  if (True) then
+  Readln(inputS);
+  if G5Check(exampleS,InputS) then
+  begin
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
 end;
 
 procedure nextStage();
