@@ -44,10 +44,9 @@ end;
 
 procedure Stage1();
 begin
-  exampleS:=gener.GetWord(subStage);
+  exampleS:=gener.GetWord()
   Sleep(3000);
   ClearScreen;
-  Readln(inputS);
   if (True) then
     Inc(WinCount);
 end;
@@ -105,7 +104,7 @@ begin
   end;
   if WinCount = 3 then
   begin
-    WinCount := 0z;
+    WinCount := 0;
     Inc(SubStage);
   end;
   if SubStage = 9 then

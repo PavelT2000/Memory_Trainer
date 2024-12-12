@@ -47,7 +47,6 @@ begin
   exampleS:=gener.GetWord(subStage);
   Sleep(3000);
   ClearScreen;
-  Readln(inputS);
   if (True) then
     Inc(WinCount);
 end;

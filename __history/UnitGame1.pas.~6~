@@ -2,8 +2,8 @@
 
 interface
 uses
-  System.SysUtils, Windows, Gener;
-
+  System.SysUtils, Windows,
+  gener in 'gener.pas';
 
 
 
@@ -14,7 +14,7 @@ procedure StartGame();
 implementation
 
 var
-  WinCount, CurrentStage,subStage: integer;
+  WinCount, CurrentStage: integer;
   inputS, exampleS: string;
 
 procedure ClearScreen;
@@ -44,10 +44,9 @@ end;
 
 procedure Stage1();
 begin
-  exampleS:=gener.GetWord(subStage);
+  Writeln('СТУЛ');
   Sleep(3000);
   ClearScreen;
-  Readln(inputS);
   if (True) then
     Inc(WinCount);
 end;
@@ -105,12 +104,7 @@ begin
   end;
   if WinCount = 3 then
   begin
-    WinCount := 0z;
-    Inc(SubStage);
-  end;
-  if SubStage = 9 then
-  begin
-    SubStage := 5;
+    WinCount := 0;
     Inc(CurrentStage);
   end;
 
@@ -119,7 +113,6 @@ end;
 procedure StartGame();
 begin
   CurrentStage := 1;
-  subStage:=5;
   WinCount := 0;
 end;
 
