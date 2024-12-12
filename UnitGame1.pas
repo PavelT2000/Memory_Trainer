@@ -17,6 +17,18 @@ var
   WinCount, CurrentStage,subStage: integer;
   inputS, exampleS: string;
 
+procedure LowerRus(var s1: String);
+var
+  len, i: Integer;
+begin
+  len := Length(s1);
+  for i := 1 to len do
+    begin
+      if (s1[i] >= 'А') and (s1[i] <= 'Я') then
+        s1[i] := Chr(Ord(s1[i])+32)
+    end;
+end;
+
 procedure ClearScreen;
 var
   hStdOut: THandle;
@@ -49,6 +61,7 @@ begin
   Sleep(3000);
   ClearScreen;
   Readln(inputS);
+  LowerRus(inputS);
   if G1Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -68,6 +81,7 @@ begin
   Sleep(5000);
   ClearScreen;
   Readln(inputS);
+  LowerRus(inputS);
   if G2Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -87,6 +101,7 @@ begin
   Sleep(5000);
   ClearScreen;
   Readln(inputS);
+  LowerRus(inputS);
   if G3Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -106,6 +121,7 @@ begin
   Sleep(5000);
   ClearScreen;
   Readln(inputS);
+  LowerRus(inputS);
   if G4Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -125,6 +141,7 @@ begin
   Sleep(5000);
   ClearScreen;
   Readln(inputS);
+  LowerRus(inputS);
   if G5Check(exampleS,InputS) then
   begin
     Inc(WinCount);

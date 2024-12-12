@@ -11,10 +11,10 @@
     <Transaction>1899.12.30 00:00:00.000.523,=C:\Memory_Trainer\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.705,=C:\GitHub\Memory_Trainer\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.778,=C:\Memory_Trainer\UnitBasic.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.724,=C:\Memory_Trainer\Game.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.715,C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj=C:\GitHub\Memory_Trainer\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.937,C:\Memory_Trainer\Game.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.715,C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj=C:\GitHub\Memory_Trainer\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.886,C:\Memory_Trainer\Game.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.724,=C:\Memory_Trainer\Game.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="gener.pas"/>
