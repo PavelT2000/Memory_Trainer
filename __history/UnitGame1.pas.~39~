@@ -174,7 +174,7 @@ begin
     5:
       Stage5;
   end;         //3
-  if WinCount = 1 then
+  if WinCount = 3 then
   begin
     WinCount := 0;
     Inc(SubStage);
@@ -190,7 +190,7 @@ end;
 procedure StartGame();
 begin
   gener.GetAllSArr(gener.arr5,gener.arr6,gener.arr7,gener.arr8);
-  CurrentStage := 1;
+  CurrentStage := 1;  //1
   subStage:=5;
   WinCount := 0;
 end;
