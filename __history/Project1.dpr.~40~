@@ -21,8 +21,8 @@ begin
     UnitGame1.nextStage;
     if (UnitGame1.CurrentStage > 5) then
     begin
-      writeln('Вы прошли тренажер-памяти! Поздравляем! Вы зря потратили ',
-        'свое время! Нажмите Enter для выхода из программы.');
+      writeln('Вы прошли тренажер-памяти! Поздравляем! Вы зря потратили',
+        'свое время! Нажмите Enter для выхода из программы');
       readln;
       endGame := False;
     end;

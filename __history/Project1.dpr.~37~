@@ -4,18 +4,22 @@
 {$R *.res}
 
 uses
-  System.SysUtils;
+  System.SysUtils, Windows,
   gener in 'gener.pas',
   UnitGame1 in 'UnitGame1.pas',
   UnitBasic in 'UnitBasic.pas';
 
+var endGame: boolean;
 begin
-SetConsoleCP(65001); //utf-8
-SetConsoleOutputCP(65001) ; //utf-8
+
 UnitGame1.StartGame;
-while True do
+endGame:= True;
+while endGame do
 UnitGame1.nextStage;
-
-
+if (UnitGame1.CurrentStage > 5) then begin
+  writeln('');
+  readln;
+  endGame:= False;
+end;
 
 end.

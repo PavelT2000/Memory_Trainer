@@ -1,11 +1,11 @@
 ﻿unit UnitGame1;
 
 interface
+
 uses
   System.SysUtils, Windows, Gener,UnitBasic;
 
-
-
+var CurrentStage: integer;
 
 procedure nextStage();
 
@@ -14,7 +14,7 @@ procedure StartGame();
 implementation
 
 var
-  WinCount, CurrentStage,subStage: integer;
+  WinCount,subStage: integer;
   inputS, exampleS: string;
 
 procedure LowerRus(var s1: String);
