@@ -1,4 +1,4 @@
-unit UnitBasic;
+﻿unit UnitBasic;
 
 interface
 uses
@@ -13,6 +13,57 @@ function G5check(s1, s2_c: String):Boolean;
 
 
 implementation
+
+type SArr = array of string;
+
+function NumOfWords(str: string): integer;
+begin
+  insert(' ', str, 1);
+  str := str + ' ';
+  result := 0;
+  for var i := 1 to length(str) - 1 do
+  begin
+    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
+      result := result + 1;
+  end;
+end;
+
+function ListOfWords(str: string): SArr;
+var
+  startPos, endPos, wordNow, CountWords: integer;
+  startFlag, endFlag: boolean;
+  word: string;
+begin
+  insert(' ', str, 1);
+  str := str + ' ';
+  CountWords:= NumOfWords(str);
+  setLength(result, CountWords);
+  startFlag := False;
+  endFlag := False;
+  wordNow := 0;
+  for var i := 1 to length(str) - 1 do
+  begin
+    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
+    begin
+      startPos := i + 1;
+      startFlag := True;
+    end;
+    if ((str[i] <> ' ') and (str[i + 1] = ' ')) then
+    begin
+      endPos := i;
+      endFlag := True;
+    end;
+    if (startFlag and endFlag) then
+    begin
+      word:= copy(str, startPos, endPos - startPos + 1);
+      result[wordNow] := word;
+      wordNow := wordNow + 1;
+      startFlag := False;
+      endFlag := False;
+    end;
+  end;
+end;
+
 
 procedure LowerRus(var s1: String);
 var
@@ -35,7 +86,7 @@ begin
   len := Length(s1);
   if len = Length(s2) then
 
-    for i := 1 to len div 2 do
+    for i := 1 to len do
     begin
       if s1[i] <> s2[len - i + 1] then
         Result := False
@@ -49,7 +100,7 @@ function G2check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
@@ -72,8 +123,8 @@ begin
     end;
 
 
-  as1 := s1.Split([' ']);
-  as2 := s2.Split([' ']);
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -91,13 +142,14 @@ begin
         // �� ��� ������ �� ��� ��������
         if (as1[i] = as2[j]) and (not sameString) then
         begin
+          as2[j] := '';
           Inc(tempResult);
           sameString := True;
         end;
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end
@@ -110,7 +162,7 @@ function G3check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
@@ -141,7 +193,7 @@ function G4check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
@@ -163,8 +215,8 @@ begin
       j := 0;
     end;
 
-  as1 := s1.Split([' ']);
-  as2 := s2.Split([' ']);
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -182,13 +234,14 @@ begin
         // �� ��� ������ �� ��� ��������
         if (G1check(as1[i], as2[j])) and (not sameString) then
         begin
+          as2[j] := '';
           Inc(tempResult);
           sameString := True;
         end;
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end
@@ -200,7 +253,7 @@ end;
 function G5check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
@@ -222,8 +275,8 @@ begin
       j := 0;
     end;
 
-  as1 := s1.Split([' ']);
-  as2 := s2.Split([' ']);
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -236,12 +289,13 @@ begin
     begin
       if G1check(as1[i], as2[i]) then
       begin
+        as2[j] := '';
         Inc(tempResult);
       end;
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end

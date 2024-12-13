@@ -2,12 +2,18 @@ unit saveGame;
 
 interface
 
+uses SplitGo;
+
 implementation
 
-procedure loadGame();
+procedure loadG();
 begin
 
 end;
 
-procedure
+procedure SaveG();
+begin
+
+end;
+
 end.

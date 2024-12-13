@@ -3,7 +3,7 @@
 interface
 
 uses
-  System.SysUtils, Windows, Gener,UnitBasic;
+  System.SysUtils, Windows, Gener, UnitBasic, SplitGo;
 
 var CurrentStage: integer;
 
@@ -16,18 +16,6 @@ implementation
 var
   WinCount,subStage: integer;
   inputS, exampleS: string;
-
-procedure LowerRus(var s1: String);
-var
-  len, i: Integer;
-begin
-  len := Length(s1);
-  for i := 1 to len do
-    begin
-      if (s1[i] >= 'А') and (s1[i] <= 'Я') then
-        s1[i] := Chr(Ord(s1[i])+32)
-    end;
-end;
 
 procedure ClearScreen;
 var
@@ -65,7 +53,7 @@ begin
   writeln('Стадия игры ', CurrentStage, '. Количество букв ', SubStage);
   writeln('Введите слово перевёрнутым');
   Readln(inputS);
-  LowerRus(inputS);
+  SplitGo.LowerRus(inputS);
   inputS := Trim(inputS);
   if G1Check(exampleS,InputS) then
   begin
@@ -90,7 +78,7 @@ begin
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в любом порядке');
   Readln(inputS);
-  LowerRus(inputS);
+  SplitGo.LowerRus(inputS);
   inputS := Trim(inputS);
   if G2Check(exampleS,InputS) then
   begin
@@ -115,7 +103,7 @@ begin
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в том же порядке');
   Readln(inputS);
-  LowerRus(inputS);
+  SplitGo.LowerRus(inputS);
   inputS := Trim(inputS);
   if G3Check(exampleS,InputS) then
   begin
@@ -140,7 +128,7 @@ begin
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
   Readln(inputS);
-  LowerRus(inputS);
+  SplitGo.LowerRus(inputS);
   inputS := Trim(inputS);
   if G4Check(exampleS,InputS) then
   begin
@@ -165,7 +153,7 @@ begin
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
   Readln(inputS);
-  LowerRus(inputS);
+  SplitGo.LowerRus(inputS);
   inputS := Trim(inputS);
   if G5Check(exampleS,InputS) then
   begin
