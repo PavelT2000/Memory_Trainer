@@ -1,11 +1,11 @@
 ﻿unit UnitGame1;
 
 interface
+
 uses
   System.SysUtils, Windows, Gener,UnitBasic;
 
-
-
+var CurrentStage: integer;
 
 procedure nextStage();
 
@@ -14,7 +14,7 @@ procedure StartGame();
 implementation
 
 var
-  WinCount, CurrentStage,subStage: integer;
+  WinCount,subStage: integer;
   inputS, exampleS: string;
 
 procedure LowerRus(var s1: String);
@@ -57,11 +57,12 @@ end;
 procedure Stage1();
 begin
   exampleS:=gener.GetWord(subStage);
+  Writeln('Запомните слово:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(3000);
   ClearScreen;
-  writeln('Стадия игры ', CurrentStage, ' Количество букв ', SubStage);
+  writeln('Стадия игры ', CurrentStage, '. Количество букв ', SubStage);
   writeln('Введите слово перевёрнутым');
   Readln(inputS);
   LowerRus(inputS);
@@ -81,11 +82,12 @@ end;
 procedure Stage2();
 begin
   exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
-  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в любом порядке');
   Readln(inputS);
   LowerRus(inputS);
@@ -105,11 +107,12 @@ end;
 procedure Stage3();
 begin
   exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
-  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в том же порядке');
   Readln(inputS);
   LowerRus(inputS);
@@ -129,11 +132,12 @@ end;
 procedure Stage4();
 begin
   exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
-  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
   Readln(inputS);
   LowerRus(inputS);
@@ -153,11 +157,12 @@ end;
 procedure Stage5();
 begin
   exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
-  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
   Readln(inputS);
   LowerRus(inputS);
@@ -199,7 +204,8 @@ begin
     SubStage := 5;
     Inc(CurrentStage);
   end;
-
+  Sleep(1500);
+  ClearScreen;
 end;
 
 procedure StartGame();

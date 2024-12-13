@@ -1,11 +1,11 @@
 ﻿unit UnitGame1;
 
 interface
+
 uses
   System.SysUtils, Windows, Gener,UnitBasic;
 
-
-
+var CurrentStage: integer;
 
 procedure nextStage();
 
@@ -14,7 +14,7 @@ procedure StartGame();
 implementation
 
 var
-  WinCount, CurrentStage,subStage: integer;
+  WinCount,subStage: integer;
   inputS, exampleS: string;
 
 procedure LowerRus(var s1: String);
@@ -60,7 +60,7 @@ begin
   Writeln('Запомните слово:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(3000);
+  Sleep(3000 + (subStage-5)*200);
   ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество букв ', SubStage);
   writeln('Введите слово перевёрнутым');
@@ -85,7 +85,7 @@ begin
   Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(5000);
+  Sleep(8000 + (subStage-5)*2000);
   ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в любом порядке');
@@ -132,6 +132,7 @@ end;
 procedure Stage4();
 begin
   exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(5000);
@@ -156,6 +157,7 @@ end;
 procedure Stage5();
 begin
   exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(5000);
@@ -202,7 +204,8 @@ begin
     SubStage := 5;
     Inc(CurrentStage);
   end;
-
+  Sleep(1500);
+  ClearScreen;
 end;
 
 procedure StartGame();

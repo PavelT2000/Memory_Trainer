@@ -60,7 +60,7 @@ begin
   Writeln('Запомните слово:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(3000);
+  Sleep(3000 + (subStage-5)*200);
   ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество букв ', SubStage);
   writeln('Введите слово перевёрнутым');
@@ -85,7 +85,7 @@ begin
   Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(5000);
+  Sleep(8000 + (subStage-5)*2000);
   ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в любом порядке');
@@ -110,7 +110,7 @@ begin
   Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(5000);
+  Sleep(8000 + (subStage-5)*2000);
   ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в том же порядке');
@@ -135,7 +135,7 @@ begin
   Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(5000);
+  Sleep(8000 + (subStage-5)*2000);
   ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
@@ -160,7 +160,7 @@ begin
   Writeln('Запомните слова:');
   Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(5000);
+  Sleep(8000 + (subStage-5)*2000);
   ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
