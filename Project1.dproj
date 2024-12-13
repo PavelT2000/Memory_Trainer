@@ -93,6 +93,8 @@
         <DCCReference Include="gener.pas"/>
         <DCCReference Include="UnitGame1.pas"/>
         <DCCReference Include="UnitBasic.pas"/>
+        <DCCReference Include="saveGame.pas"/>
+        <DCCReference Include="SplitGo.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

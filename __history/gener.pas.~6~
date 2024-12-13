@@ -38,7 +38,7 @@ begin
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
     SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
+    wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
   arr5:= copy(wordsArrAns, 0, length(wordsArrAns));
@@ -50,7 +50,7 @@ begin
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
     SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
+    wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
   arr6:= copy(wordsArrAns, 0, length(wordsArrAns));
@@ -62,7 +62,7 @@ begin
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
     SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
+    wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
   arr7:= copy(wordsArrAns, 0, length(wordsArrAns));
@@ -74,7 +74,7 @@ begin
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
     SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
+    wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
   arr8:= copy(wordsArrAns, 0, length(wordsArrAns));
