@@ -8,8 +8,6 @@ var arr5, arr6, arr7, arr8: SArr;
 procedure GetAllSArr(var arr5, arr6, arr7, arr8: SArr);
 function GetWord(num: integer): string;
 function Get5Word(num: integer):string;
-function NumOfWords(str: string): integer;
-function ListOfWords(str: string): SArr;
 
 implementation
 
