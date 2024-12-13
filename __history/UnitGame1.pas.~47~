@@ -58,8 +58,11 @@ procedure Stage1();
 begin
   exampleS:=gener.GetWord(subStage);
   Writeln(exampleS);
+  exampleS := Trim(exampleS);
   Sleep(3000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, ' Количество букв ', SubStage);
+  writeln('Введите слово перевёрнутым');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -79,8 +82,11 @@ procedure Stage2();
 begin
   exampleS:=gener.Get5word(subStage);
   Writeln(exampleS);
+  exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Введите все слова через пробел в любом порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -100,8 +106,11 @@ procedure Stage3();
 begin
   exampleS:=gener.Get5word(subStage);
   Writeln(exampleS);
+  exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Введите все слова через пробел в том же порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -121,8 +130,11 @@ procedure Stage4();
 begin
   exampleS:=gener.Get5word(subStage);
   Writeln(exampleS);
+  exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -142,8 +154,11 @@ procedure Stage5();
 begin
   exampleS:=gener.Get5word(subStage);
   Writeln(exampleS);
+  exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, ' Количество слов ', SubStage);
+  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -174,7 +189,7 @@ begin
     5:
       Stage5;
   end;         //3
-  if WinCount = 1 then
+  if WinCount = 3 then
   begin
     WinCount := 0;
     Inc(SubStage);
@@ -190,7 +205,7 @@ end;
 procedure StartGame();
 begin
   gener.GetAllSArr(gener.arr5,gener.arr6,gener.arr7,gener.arr8);
-  CurrentStage := 2;  //1
+  CurrentStage := 1;  //1
   subStage:=5;
   WinCount := 0;
 end;

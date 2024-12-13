@@ -1,4 +1,4 @@
-unit UnitBasic;
+п»їunit UnitBasic;
 
 interface
 uses
@@ -8,9 +8,62 @@ procedure LowerRus(var s1: String);
 function G1check(s1, s2: String):Boolean;
 function G2check(s1, s2_c: String):Boolean;
 function G3check(s1, s2_c: String):Boolean;
+function G4check(s1, s2_c: String):Boolean;
+function G5check(s1, s2_c: String):Boolean;
 
 
 implementation
+
+type SArr = array of string;
+
+function NumOfWords(str: string): integer;
+begin
+  insert(' ', str, 1);
+  str := str + ' ';
+  result := 0;
+  for var i := 1 to length(str) - 1 do
+  begin
+    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
+      result := result + 1;
+  end;
+end;
+
+function ListOfWords(str: string): SArr;
+var
+  startPos, endPos, wordNow, CountWords: integer;
+  startFlag, endFlag: boolean;
+  word: string;
+begin
+  insert(' ', str, 1);
+  str := str + ' ';
+  CountWords:= NumOfWords(str);
+  setLength(result, CountWords);
+  startFlag := False;
+  endFlag := False;
+  wordNow := 0;
+  for var i := 1 to length(str) - 1 do
+  begin
+    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
+    begin
+      startPos := i + 1;
+      startFlag := True;
+    end;
+    if ((str[i] <> ' ') and (str[i + 1] = ' ')) then
+    begin
+      endPos := i;
+      endFlag := True;
+    end;
+    if (startFlag and endFlag) then
+    begin
+      word:= copy(str, startPos, endPos - startPos + 1);
+      result[wordNow] := word;
+      wordNow := wordNow + 1;
+      startFlag := False;
+      endFlag := False;
+    end;
+  end;
+end;
+
 
 procedure LowerRus(var s1: String);
 var
@@ -19,7 +72,7 @@ begin
   len := Length(s1);
   for i := 1 to len do
     begin
-      if (s1[i] >= 'А') and (s1[i] <= 'Я') then
+      if (s1[i] >= 'пїЅ') and (s1[i] <= 'пїЅ') then
         s1[i] := Chr(Ord(s1[i])+32)
     end;
 end;
@@ -33,7 +86,7 @@ begin
   len := Length(s1);
   if len = Length(s2) then
 
-    for i := 1 to len div 2 do
+    for i := 1 to len do
     begin
       if s1[i] <> s2[len - i + 1] then
         Result := False
@@ -47,12 +100,12 @@ function G2check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
 
-  // Удаление лишних пробелов между слов
+  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
   s2 := '';
   len := Length(s2_c);
   j := 0;
@@ -70,8 +123,8 @@ begin
     end;
 
 
-  as1 := s1.Split([' ']);
-  as2 := s2.Split([' ']);
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -85,8 +138,8 @@ begin
       sameString := False;
 
       for j := 0 to len_as - 1 do
-        // sameString для того, чтоб если было 2 или > одиннаковых слов,
-        // то его повтор не был засчитан
+        // sameString пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 2 пїЅпїЅпїЅ > пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ,
+        // пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (as1[i] = as2[j]) and (not sameString) then
         begin
           Inc(tempResult);
@@ -95,7 +148,7 @@ begin
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end
@@ -108,12 +161,12 @@ function G3check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
 
-  // Удаление лишних пробелов между слов
+  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
   s2 := '';
   len := Length(s2_c);
   j := 0;
@@ -139,12 +192,12 @@ function G4check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
 
-  // Удаление лишних пробелов между слов
+  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
   s2 := '';
   len := Length(s2_c);
   j := 0;
@@ -161,8 +214,8 @@ begin
       j := 0;
     end;
 
-  as1 := s1.Split([' ']);
-  as2 := s2.Split([' ']);
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -176,8 +229,8 @@ begin
       sameString := False;
 
       for j := 0 to len_as - 1 do
-        // sameString для того, чтоб если было 2 или > одиннаковых слов,
-        // то его повтор не был засчитан
+        // sameString пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 2 пїЅпїЅпїЅ > пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ,
+        // пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (G1check(as1[i], as2[j])) and (not sameString) then
         begin
           Inc(tempResult);
@@ -186,7 +239,7 @@ begin
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end
@@ -198,12 +251,12 @@ end;
 function G5check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
-  as1, as2: TArray<string>;
+  as1, as2: SArr;
   s2: String;
 begin
   Result := True;
 
-  // Удаление лишних пробелов между слов
+  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
   s2 := '';
   len := Length(s2_c);
   j := 0;
@@ -220,8 +273,8 @@ begin
       j := 0;
     end;
 
-  as1 := s1.Split([' ']);
-  as2 := s2.Split([' ']);
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -239,7 +292,7 @@ begin
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end

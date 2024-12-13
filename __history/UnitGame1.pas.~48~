@@ -61,6 +61,8 @@ begin
   exampleS := Trim(exampleS);
   Sleep(3000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество букв ', SubStage);
+  writeln('Введите слово перевёрнутым');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -83,6 +85,8 @@ begin
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел в любом порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -105,6 +109,8 @@ begin
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел в том же порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -127,6 +133,8 @@ begin
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
@@ -149,7 +157,8 @@ begin
   exampleS := Trim(exampleS);
   Sleep(5000);
   ClearScreen;
-  writeln('Введите все слова через пробел причём каждое слово это перевёртыш');
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
   Readln(inputS);
   LowerRus(inputS);
   inputS := Trim(inputS);
