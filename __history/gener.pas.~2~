@@ -175,25 +175,19 @@ result:= '';
   end
   else if (num = 6) then begin
     for var i:= 1 to 6 do begin
-      Randomize;    //from 0 to 3
-      randomNum:= Random(4)+5;  //from 5 to 8
-      word:= GetWord(randomNum);
+      word:= GetWord(6);
       result:= result + word + ' ';
     end;
   end
   else if (num = 7) then begin
-    for var i:= 1 to 7 do begin
-      Randomize;    //from 0 to 3
-      randomNum:= Random(4)+5;  //from 5 to 8
-      word:= GetWord(randomNum);
+    for var i:= 1 to 5 do begin
+      word:= GetWord(7);
       result:= result + word + ' ';
     end;
   end
   else if (num = 8) then begin
-    for var i:= 1 to 8 do begin
-      Randomize;    //from 0 to 3
-      randomNum:= Random(4)+5;  //from 5 to 8
-      word:= GetWord(randomNum);
+    for var i:= 1 to 5 do begin
+      word:= GetWord(8);
       result:= result + word + ' ';
     end;
   end;

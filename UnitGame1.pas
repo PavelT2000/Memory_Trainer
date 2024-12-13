@@ -173,13 +173,13 @@ begin
       Stage4;
     5:
       Stage5;
-  end;
-  if WinCount = 3 then
+  end;         //3
+  if WinCount = 1 then
   begin
     WinCount := 0;
     Inc(SubStage);
-  end;
-  if SubStage = 8 then
+  end;        //9
+  if SubStage = 9 then
   begin
     SubStage := 5;
     Inc(CurrentStage);
