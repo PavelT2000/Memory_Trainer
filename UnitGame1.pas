@@ -190,7 +190,7 @@ end;
 procedure StartGame();
 begin
   gener.GetAllSArr(gener.arr5,gener.arr6,gener.arr7,gener.arr8);
-  CurrentStage := 1;
+  CurrentStage := 2;  //1
   subStage:=5;
   WinCount := 0;
 end;
