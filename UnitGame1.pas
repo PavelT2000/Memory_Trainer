@@ -62,6 +62,7 @@ begin
   ClearScreen;
   Readln(inputS);
   LowerRus(inputS);
+  inputS := Trim(inputS);
   if G1Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -82,6 +83,7 @@ begin
   ClearScreen;
   Readln(inputS);
   LowerRus(inputS);
+  inputS := Trim(inputS);
   if G2Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -102,6 +104,7 @@ begin
   ClearScreen;
   Readln(inputS);
   LowerRus(inputS);
+  inputS := Trim(inputS);
   if G3Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -122,6 +125,7 @@ begin
   ClearScreen;
   Readln(inputS);
   LowerRus(inputS);
+  inputS := Trim(inputS);
   if G4Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -142,6 +146,7 @@ begin
   ClearScreen;
   Readln(inputS);
   LowerRus(inputS);
+  inputS := Trim(inputS);
   if G5Check(exampleS,InputS) then
   begin
     Inc(WinCount);

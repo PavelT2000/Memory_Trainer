@@ -17,6 +17,18 @@ var
   WinCount, CurrentStage,subStage: integer;
   inputS, exampleS: string;
 
+procedure LowerRus(var s1: String);
+var
+  len, i: Integer;
+begin
+  len := Length(s1);
+  for i := 1 to len do
+    begin
+      if (s1[i] >= 'А') and (s1[i] <= 'Я') then
+        s1[i] := Chr(Ord(s1[i])+32)
+    end;
+end;
+
 procedure ClearScreen;
 var
   hStdOut: THandle;
@@ -49,6 +61,8 @@ begin
   Sleep(3000);
   ClearScreen;
   Readln(inputS);
+  LowerRus(inputS);
+  inputS := Trim(inputS);
   if G1Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -65,9 +79,10 @@ procedure Stage2();
 begin
   exampleS:=gener.Get5word(subStage);
   Writeln(exampleS);
-  Sleep(3000);
+  Sleep(5000);
   ClearScreen;
   Readln(inputS);
+  LowerRus(inputS);
   if G2Check(exampleS,InputS) then
   begin
     Inc(WinCount);
@@ -82,29 +97,62 @@ end;
 
 procedure Stage3();
 begin
-  Writeln('СТУЛ');
-  Sleep(3000);
+  exampleS:=gener.Get5word(subStage);
+  Writeln(exampleS);
+  Sleep(5000);
   ClearScreen;
-  if (True) then
+  Readln(inputS);
+  LowerRus(inputS);
+  if G3Check(exampleS,InputS) then
+  begin
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
 end;
 
 procedure Stage4();
 begin
-  Writeln('СТУЛ');
-  Sleep(3000);
+  exampleS:=gener.Get5word(subStage);
+  Writeln(exampleS);
+  Sleep(5000);
   ClearScreen;
-  if (True) then
+  Readln(inputS);
+  LowerRus(inputS);
+  if G4Check(exampleS,InputS) then
+  begin
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
 end;
 
 procedure Stage5();
 begin
-  Writeln('СТУЛ');
-  Sleep(3000);
+  exampleS:=gener.Get5word(subStage);
+  Writeln(exampleS);
+  Sleep(5000);
   ClearScreen;
-  if (True) then
+  Readln(inputS);
+  LowerRus(inputS);
+  if G5Check(exampleS,InputS) then
+  begin
     Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
 end;
 
 procedure nextStage();
