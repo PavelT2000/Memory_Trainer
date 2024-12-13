@@ -161,7 +161,7 @@ function G3check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: SArr;
+  as1, as2: TArray<string>;
   s2: String;
 begin
   Result := True;
@@ -192,7 +192,7 @@ function G4check(s1, s2_c: String):Boolean;
 var
   len, len_as, i, j, tempResult: Integer;
   sameString: Boolean;
-  as1, as2: SArr;
+  as1, as2: TArray<string>;
   s2: String;
 begin
   Result := True;
@@ -214,8 +214,8 @@ begin
       j := 0;
     end;
 
-  as1 := ListOfWords(s1);
-  as2 := ListOfWords(s2);
+  as1 := s1.Split([' ']);
+  as2 := s2.Split([' ']);
   len_as := Length(as1);
 
 
