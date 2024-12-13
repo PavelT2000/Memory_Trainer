@@ -98,6 +98,7 @@ begin
   Reset(myFile);
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
+    SIn := UTF8ToString(SIn);
     wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
@@ -109,6 +110,7 @@ begin
   setLength(wordsArrAns, 0);
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
+    SIn := UTF8ToString(SIn);
     wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
@@ -120,6 +122,7 @@ begin
   setLength(wordsArrAns, 0);
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
+    SIn := UTF8ToString(SIn);
     wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
@@ -131,6 +134,7 @@ begin
   setLength(wordsArrAns, 0);
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
+    SIn := UTF8ToString(SIn);
     wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;

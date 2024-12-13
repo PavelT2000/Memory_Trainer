@@ -98,6 +98,10 @@ begin
   Reset(myFile);
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
+<<<<<<< HEAD
+=======
+    SIn := UTF8ToString(SIn);
+>>>>>>> bc700862c9f4bb5ae62170f3053f17a797294ddf
     wordsArrNow:= ListOfWords(SIn);
     wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
   end;
@@ -162,19 +166,30 @@ end;
 
 function Get5Word(num: integer):string;
 var word: string;
+<<<<<<< HEAD
     randomNum: integer;
+=======
+>>>>>>> bc700862c9f4bb5ae62170f3053f17a797294ddf
 begin
 result:= '';
   if (num = 5) then begin
     for var i:= 1 to 5 do begin
+<<<<<<< HEAD
       Randomize;    //from 0 to 3
       randomNum:= Random(4)+5;  //from 5 to 8
       word:= GetWord(randomNum);
+=======
+      word:= GetWord(5);
+>>>>>>> bc700862c9f4bb5ae62170f3053f17a797294ddf
       result:= result + word + ' ';
     end;
   end
   else if (num = 6) then begin
+<<<<<<< HEAD
     for var i:= 1 to 6 do begin
+=======
+    for var i:= 1 to 5 do begin
+>>>>>>> bc700862c9f4bb5ae62170f3053f17a797294ddf
       word:= GetWord(6);
       result:= result + word + ' ';
     end;
