@@ -147,7 +147,7 @@ begin
         end;
 
     end;
-
+    writeln('DEBUG: len_as = ', len_as);
     if tempResult < len_as then
       Result := False
 
@@ -239,7 +239,7 @@ begin
 
     end;
 
-    if tempResult < len_as then
+    if tempResult < 5 then
       Result := False
 
   end
@@ -292,7 +292,7 @@ begin
 
     end;
 
-    if tempResult < len_as then
+    if tempResult < 5 then
       Result := False
 
   end

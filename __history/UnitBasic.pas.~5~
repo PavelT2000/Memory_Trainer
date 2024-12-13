@@ -148,7 +148,7 @@ begin
 
     end;
 
-    if tempResult < len_as then
+    if tempResult < 5 then
       Result := False
 
   end
@@ -239,7 +239,7 @@ begin
 
     end;
 
-    if tempResult < len_as then
+    if tempResult < 5 then
       Result := False
 
   end
@@ -292,7 +292,7 @@ begin
 
     end;
 
-    if tempResult < len_as then
+    if tempResult < 5 then
       Result := False
 
   end
