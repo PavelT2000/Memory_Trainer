@@ -2,23 +2,23 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.701,C:\Memory_Trainer\Unit1.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.706,=C:\Memory_Trainer\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.989,=C:\Memory_Trainer\UnitGame1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.715,C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj=C:\GitHub\Memory_Trainer\Project1.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.144,=C:\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.724,=C:\Memory_Trainer\Game.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.886,C:\Memory_Trainer\Game.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.706,=C:\Memory_Trainer\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.029,=C:\Memory_Trainer\gener.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.539,=C:\GitHub\Memory_Trainer\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.756,C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\saveGame.pas=C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.957,C:\Memory_Trainer\Unit1.pas=C:\Memory_Trainer\Game.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.705,=C:\GitHub\Memory_Trainer\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.908,=C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.715,C:\GitHub\Memory_Trainer\Project1.dproj=C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.144,=C:\Memory_Trainer\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.626,=C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.908,=C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.756,C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\Unit2.pas=C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\saveGame.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.778,=C:\Memory_Trainer\UnitBasic.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.563,C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\SplitGo.pas=C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.523,=C:\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.563,C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\Unit2.pas=C:\Users\alexb\OneDrive\Desktop\now\Memory_Trainer\SplitGo.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.937,C:\Memory_Trainer\Game.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.886,C:\Memory_Trainer\Game.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.724,=C:\Memory_Trainer\Game.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.957,C:\Memory_Trainer\Game.pas=C:\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.523,=C:\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.705,=C:\GitHub\Memory_Trainer\Unit2.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="gener.pas"/>

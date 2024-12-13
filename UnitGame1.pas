@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, Windows, Gener, UnitBasic, SplitGo;
 
-var CurrentStage: integer;
+var CurrentStage, subStage: integer;
 
 procedure nextStage();
 
@@ -14,7 +14,7 @@ procedure StartGame();
 implementation
 
 var
-  WinCount,subStage: integer;
+  WinCount: integer;
   inputS, exampleS: string;
 
 procedure ClearScreen;

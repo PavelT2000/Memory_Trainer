@@ -18,12 +18,11 @@ var
 begin
 
   UnitGame1.StartGame;
-  //saveGame.loadG(CurrentStage, subStage);
   endGame := True;
   while endGame do
   begin
     UnitGame1.nextStage;
-    //saveGame.SaveG(CurrentStage, subStage);
+    saveGame.SaveG(CurrentStage, subStage);
     if (UnitGame1.CurrentStage > 5) then
     begin
       writeln('Вы прошли тренажер-памяти! Поздравляем! Вы зря потратили ',
