@@ -11,8 +11,7 @@ uses
   UnitBasic in 'UnitBasic.pas',
   saveGame in 'saveGame.pas',
   SplitGo in 'SplitGo.pas',
-  GameSound in 'GameSound.pas',
-  Unit2 in 'Unit2.pas' {Form2};
+  GameSound in 'GameSound.pas';
 
 var
   endGame: boolean;

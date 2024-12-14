@@ -2,7 +2,7 @@
     <PropertyGroup>
         <ProjectGuid>{DFFC4ACC-51F1-4C3D-9C48-F432D24555C7}</ProjectGuid>
         <ProjectVersion>20.2</ProjectVersion>
-        <FrameworkType>None</FrameworkType>
+        <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -48,7 +48,7 @@
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>memory_trainer</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -95,6 +95,11 @@
         <DCCReference Include="UnitBasic.pas"/>
         <DCCReference Include="saveGame.pas"/>
         <DCCReference Include="SplitGo.pas"/>
+        <DCCReference Include="GameSound.pas"/>
+        <DCCReference Include="Unit2.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
