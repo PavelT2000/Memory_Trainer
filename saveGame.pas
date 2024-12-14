@@ -15,19 +15,18 @@ var myFile: TextFile;
     i: integer;
 begin
   if (SaveNum = 1) then begin
-    AssignFile(myFile, 'SaveData1.txt');
+    AssignFile(myFile, 'saves\SaveData1.txt');
   end
   else if (SaveNum = 2) then begin
-    AssignFile(myFile, 'SaveData2.txt');
+    AssignFile(myFile, 'saves\SaveData2.txt');
   end
   else if (SaveNum = 3) then begin
-    AssignFile(myFile, 'SaveData3.txt');
+    AssignFile(myFile, 'saves\SaveData3.txt');
   end
   else if (SaveNum = 4) then begin
-    AssignFile(myFile, 'SaveData4.txt');
+    AssignFile(myFile, 'saves\SaveData4.txt');
   end;
 
-  AssignFile(myFile, 'SaveData.txt');
   ReSet(MyFile);
   readln(myFile, strIn);
 
@@ -78,16 +77,16 @@ var myFile: TextFile;
     str: string;
 begin
   if (SaveNum = 1) then begin
-    AssignFile(myFile, 'SaveData1.txt');
+    AssignFile(myFile, 'saves\SaveData1.txt');
   end
   else if (SaveNum = 2) then begin
-    AssignFile(myFile, 'SaveData2.txt');
+    AssignFile(myFile, 'saves\SaveData2.txt');
   end
   else if (SaveNum = 3) then begin
-    AssignFile(myFile, 'SaveData3.txt');
+    AssignFile(myFile, 'saves\SaveData3.txt');
   end
   else if (SaveNum = 4) then begin
-    AssignFile(myFile, 'SaveData4.txt');
+    AssignFile(myFile, 'saves\SaveData4.txt');
   end;
   ReWrite(myFile);
   str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';

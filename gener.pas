@@ -33,7 +33,7 @@ var myFile: Textfile;
     SIn: string;
     wordsArrNow, wordsArrAns: SArr;
 begin
-  AssignFile(myFile, 'dictionary5.txt');
+  AssignFile(myFile, 'words\dictionary5.txt');
   Reset(myFile);
   while (not EOF(myFile)) do begin
     Readln(myFile, SIn);
@@ -44,7 +44,7 @@ begin
   arr5:= copy(wordsArrAns, 0, length(wordsArrAns));
   closeFile(myFile);
 
-  AssignFile(myFile, 'dictionary6.txt');
+  AssignFile(myFile, 'words\dictionary6.txt');
   Reset(myFile);
   setLength(wordsArrAns, 0);
   while (not EOF(myFile)) do begin
@@ -56,7 +56,7 @@ begin
   arr6:= copy(wordsArrAns, 0, length(wordsArrAns));
   closeFile(myFile);
 
-  AssignFile(myFile, 'dictionary7.txt');
+  AssignFile(myFile, 'words\dictionary7.txt');
   Reset(myFile);
   setLength(wordsArrAns, 0);
   while (not EOF(myFile)) do begin
@@ -68,7 +68,7 @@ begin
   arr7:= copy(wordsArrAns, 0, length(wordsArrAns));
   closeFile(myFile);
 
-  AssignFile(myFile, 'dictionary8.txt');
+  AssignFile(myFile, 'words\dictionary8.txt');
   Reset(myFile);
   setLength(wordsArrAns, 0);
   while (not EOF(myFile)) do begin

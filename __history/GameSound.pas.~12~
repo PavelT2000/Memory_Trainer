@@ -1,0 +1,28 @@
+unit GameSound;
+
+interface
+
+type TMusic = (calmMind, doomFear, doomTear, elevator);
+procedure TurnOnMusuc(music: TMusic);
+
+implementation
+
+uses FMainCode;
+
+procedure TurnOnMusuc(music: TMusic);
+//var SFileName: string;
+begin
+  //form1.MediaPlayer1.Stop;
+  //form1.MediaPlayer1.Close;
+  case music of
+    calmMind: form1.MediaPlayer1.FileName:= 'music\calmMind.mp3';
+    doomFear: form1.MediaPlayer1.FileName:= 'music\doomFear.mp3';
+    doomTear: form1.MediaPlayer1.FileName:= 'music\doomTear.mp3';
+    elevator: form1.MediaPlayer1.FileName:= 'music\elevator.mp3';
+  end;
+  form1.MediaPlayer1.Open;
+  form1.MediaPlayer1.Play;
+end;
+
+
+end.
