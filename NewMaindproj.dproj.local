@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.601,=D:\programs\delfi\Unit1.pas</Transaction>
+    <Transaction>2024.12.14 11:55:23.336,=D:\programs\delfi\Unit1.pas</Transaction>
+    <Transaction>2024.12.14 11:56:09.003,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.dfm=D:\programs\delfi\Unit1.dfm</Transaction>
+    <Transaction>2024.12.14 11:56:09.003,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.pas=D:\programs\delfi\Unit1.pas</Transaction>
+    <Transaction>2024.12.14 11:56:51.502,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMaindproj.dproj=D:\programs\delfi\Project1.dproj</Transaction>
+    <Transaction>2024.12.14 11:57:18.946,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\GameSound.pas</Transaction>
+    <Transaction>2024.12.14 11:57:19.005,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\SplitGo.pas</Transaction>
+    <Transaction>2024.12.14 11:57:19.042,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\saveGame.pas</Transaction>
+    <Transaction>2024.12.14 11:57:19.069,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\UnitBasic.pas</Transaction>
+    <Transaction>2024.12.14 11:57:19.126,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\UnitGame1.pas</Transaction>
+    <Transaction>2024.12.14 11:57:19.155,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\gener.pas</Transaction>
+  </Transactions>
+</BorlandProject>

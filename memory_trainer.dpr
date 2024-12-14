@@ -5,14 +5,7 @@
 
 uses
   System.SysUtils,
-  Windows,
-  gener in 'gener.pas',
-  UnitGame1 in 'UnitGame1.pas',
-  UnitBasic in 'UnitBasic.pas',
-  saveGame in 'saveGame.pas',
-  SplitGo in 'SplitGo.pas',
-  GameSound in 'GameSound.pas',
-  Unit2 in 'Unit2.pas' {Form2};
+  Windows;
 
 var
   endGame: boolean;
