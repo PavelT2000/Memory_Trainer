@@ -3,30 +3,17 @@ unit saveGame;
 interface
 
 uses SplitGo, System.SysUtils;
-procedure loadG(SaveNum: integer; var CurrentStage, subStage: integer);
-procedure SaveG(SaveNum, CurrentStage, subStage: integer);
+procedure loadG(var CurrentStage, subStage: integer);
+procedure SaveG(CurrentStage, subStage: integer);
 
 implementation
 
-procedure loadG(saveNum: integer; var CurrentStage, subStage: integer);
+procedure loadG(var CurrentStage, subStage: integer);
 var myFile: TextFile;
     strIn, resultStr: string;
     wordArr: SArr;
     i: integer;
 begin
-  if (SaveNum = 1) then begin
-    AssignFile(myFile, 'SaveData1.txt');
-  end
-  else if (SaveNum = 2) then begin
-    AssignFile(myFile, 'SaveData2.txt');
-  end
-  else if (SaveNum = 3) then begin
-    AssignFile(myFile, 'SaveData3.txt');
-  end
-  else if (SaveNum = 4) then begin
-    AssignFile(myFile, 'SaveData4.txt');
-  end;
-
   AssignFile(myFile, 'SaveData.txt');
   ReSet(MyFile);
   readln(myFile, strIn);
@@ -78,22 +65,39 @@ var myFile: TextFile;
     str: string;
 begin
   if (SaveNum = 1) then begin
-    AssignFile(myFile, 'SaveData1.txt');
+    AssignFile(myFile, 'SaveData.txt');
+    ReWrite(myFile);
+    str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';
+    writeln(myFile, str);
+    str:= 'subStage ' + IntToStr(subStage) + ' ';
+    writeln(myFile, str);
   end
   else if (SaveNum = 2) then begin
-    AssignFile(myFile, 'SaveData2.txt');
+    AssignFile(myFile, 'SaveData.txt');
+    ReWrite(myFile);
+    str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';
+    writeln(myFile, str);
+    str:= 'subStage ' + IntToStr(subStage) + ' ';
+    writeln(myFile, str);
   end
   else if (SaveNum = 3) then begin
-    AssignFile(myFile, 'SaveData3.txt');
+    AssignFile(myFile, 'SaveData.txt');
+    ReWrite(myFile);
+    str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';
+    writeln(myFile, str);
+    str:= 'subStage ' + IntToStr(subStage) + ' ';
+    writeln(myFile, str);
   end
   else if (SaveNum = 4) then begin
-    AssignFile(myFile, 'SaveData4.txt');
-  end;
-  ReWrite(myFile);
-  str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';
-  writeln(myFile, str);
-  str:= 'subStage ' + IntToStr(subStage) + ' ';
-  writeln(myFile, str);
+    AssignFile(myFile, 'SaveData.txt');
+    ReWrite(myFile);
+    str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';
+    writeln(myFile, str);
+    str:= 'subStage ' + IntToStr(subStage) + ' ';
+    writeln(myFile, str);
+  end
+
+
 
   closeFile(myFile);
 end;

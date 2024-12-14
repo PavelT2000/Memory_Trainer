@@ -107,12 +107,38 @@ function Get5Word(num: integer):string;
 var word: string;
     randomNum: integer;
 begin
-  result:= '';
-  for var i:= 1 to num do begin
-    Randomize;    //from 0 to 3
-    randomNum:= Random(4)+5;  //from 5 to 8
-    word:= GetWord(randomNum);
-    result:= result + word + ' ';
+result:= '';
+  if (num = 5) then begin
+    for var i:= 1 to 5 do begin
+      Randomize;    //from 0 to 3
+      randomNum:= Random(4)+5;  //from 5 to 8
+      word:= GetWord(randomNum);
+      result:= result + word + ' ';
+    end;
+  end
+  else if (num = 6) then begin
+    for var i:= 1 to 6 do begin
+      Randomize;    //from 0 to 3
+      randomNum:= Random(4)+5;  //from 5 to 8
+      word:= GetWord(randomNum);
+      result:= result + word + ' ';
+    end;
+  end
+  else if (num = 7) then begin
+    for var i:= 1 to 7 do begin
+      Randomize;    //from 0 to 3
+      randomNum:= Random(4)+5;  //from 5 to 8
+      word:= GetWord(randomNum);
+      result:= result + word + ' ';
+    end;
+  end
+  else if (num = 8) then begin
+    for var i:= 1 to 8 do begin
+      Randomize;    //from 0 to 3
+      randomNum:= Random(4)+5;  //from 5 to 8
+      word:= GetWord(randomNum);
+      result:= result + word + ' ';
+    end;
   end;
 end;
 
