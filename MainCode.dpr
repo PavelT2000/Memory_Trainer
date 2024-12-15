@@ -8,7 +8,8 @@ uses
   saveGame in 'saveGame.pas',
   UnitBasic in 'UnitBasic.pas',
   UnitGame1 in 'UnitGame1.pas',
-  gener in 'gener.pas';
+  gener in 'gener.pas',
+  Menu in 'Menu.pas' {Frame1: TFrame};
 
 {$R *.res}
 

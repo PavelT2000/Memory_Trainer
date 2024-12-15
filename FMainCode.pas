@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, Menu;
 
 type
   TForm1 = class(TForm)
@@ -28,7 +28,7 @@ implementation
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   //TurnOnMusuc(doomFear);
-  TurnOffMusic();
+  //TurnOffMusic();
 end;
 
 end.
