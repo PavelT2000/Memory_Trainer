@@ -12,6 +12,7 @@ type
     ProgressBar1: TProgressBar;
     Button1: TButton;
     Timer1: TTimer;
+    Panel1: TPanel;
     procedure ButtonProgressBarTest1(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
@@ -38,6 +39,10 @@ end;
 procedure TFrame2.Timer1Timer(Sender: TObject);
 begin
   ProgressBar1.Position := ProgressBar1.Position+1;
+
+  // Вывод процента прогресс бара
+  Panel1.Caption := IntToStr(ProgressBar1.Position) + ' %';
+
   if ProgressBar1.Position >= ProgressBar1.Max then
   begin
     // Код после выполнения бара

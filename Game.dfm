@@ -20,6 +20,20 @@ object Frame2: TFrame2
     TabOrder = 1
     OnClick = ButtonProgressBarTest1
   end
+  object Panel1: TPanel
+    Left = 432
+    Top = 185
+    Width = 49
+    Height = 41
+    Caption = '0 %'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Impact'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
   object Timer1: TTimer
     Enabled = False
     Interval = 100

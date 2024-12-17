@@ -29,8 +29,8 @@ procedure TFrame2.ButtonProgressBarTest1(Sender: TObject);
 var
   pbTime: Integer;
 begin
-  ProgressBar1.Max := 100; // Качество и плавность
-  timer1.Interval :=
+  pbTime := 5000; // Время в миллисекундах продвижения бара
+  timer1.Interval := pbTime div 100;
   timer1.Enabled := True;
 end;
 
@@ -41,6 +41,7 @@ begin
   if ProgressBar1.Position >= ProgressBar1.Max then
   begin
     // Код после выполнения бара
+    timer1.Enabled := False;
     Button1.Caption := 'Конец';
   end;
 end;
