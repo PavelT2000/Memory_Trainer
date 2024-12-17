@@ -9,7 +9,8 @@ uses
   UnitBasic in 'UnitBasic.pas',
   UnitGame1 in 'UnitGame1.pas',
   gener in 'gener.pas',
-  Menu in 'Menu.pas' {Frame1: TFrame};
+  MenuGame in 'MenuGame.pas' {Frame1: TFrame},
+  Game in 'Game.pas' {Frame2: TFrame};
 
 {$R *.res}
 

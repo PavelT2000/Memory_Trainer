@@ -133,8 +133,13 @@
         <DCCReference Include="UnitBasic.pas"/>
         <DCCReference Include="UnitGame1.pas"/>
         <DCCReference Include="gener.pas"/>
-        <DCCReference Include="Menu.pas">
+        <DCCReference Include="MenuGame.pas">
             <Form>Frame1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Game.pas">
+            <Form>Frame2</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

@@ -1,26 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.897,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.897,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.155,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\gener.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.946,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\GameSound.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.897,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.447,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\FMainCode.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.126,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\UnitGame1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.042,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\saveGame.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.005,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\SplitGo.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.447,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\FMainCode.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.946,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\GameSound.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.447,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\FMainCode.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.502,D:\programs\delfi\Project1.dproj=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMaindproj.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.404,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit1.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Menu.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.772,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MaindCode.dproj=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.003,D:\programs\delfi\Unit1.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.336,=D:\programs\delfi\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.601,=D:\programs\delfi\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.003,D:\programs\delfi\Unit1.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.378,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.003,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.pas=D:\programs\delfi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.003,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.dfm=D:\programs\delfi\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.155,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\gener.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.897,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMainCode.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.447,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\FMainCode.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.826,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.843,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMaindproj.dproj=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MaindCode.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.404,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit1.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Menu.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.404,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Menu.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.772,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MainCode.dproj=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MaindCode.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.005,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\SplitGo.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.601,=D:\programs\delfi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.336,=D:\programs\delfi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.378,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMaindproj.dproj=D:\programs\delfi\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.069,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\UnitBasic.pas</Transaction>
-  </Transactions>
+    <Transaction>1899.12.30 00:00:00.000.404,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Menu.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.843,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MaindCode.dproj=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\NewMaindproj.dproj</Transaction>
+    <Transaction>2024.12.17 12:46:53.225,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MenuGame.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Menu.pas</Transaction>
+    <Transaction>2024.12.17 12:46:53.225,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\MenuGame.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Menu.dfm</Transaction>
+    <Transaction>2024.12.17 13:06:18.856,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>2024.12.17 13:06:27.288,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Game.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>2024.12.17 13:06:27.288,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Game.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit2.dfm</Transaction>
+    <Transaction>2024.12.17 13:07:33.088,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit3.pas</Transaction>
+    <Transaction>2024.12.17 13:09:43.779,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Game.pas=</Transaction>
+    <Transaction>2024.12.17 13:09:49.274,=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>2024.12.17 13:09:57.498,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Game.pas=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit2.pas</Transaction>
+    <Transaction>2024.12.17 13:09:57.498,C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Game.dfm=C:\Users\alexb\OneDrive\Desktop\Memory_Trainer\Unit2.dfm</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="FMainCode.pas"/>
+    <File Path="FMainCode.dfm"/>
+    <File Path="GameSound.pas"/>
+    <File Path="gener.pas"/>
+    <File Path="MenuGame.pas"/>
+    <File Path="MenuGame.dfm"/>
+    <File Path="saveGame.pas"/>
+    <File Path="SplitGo.pas"/>
+    <File Path="UnitBasic.pas"/>
+    <File Path="UnitGame1.pas"/>
+    <File Path="Game.pas"/>
+    <File Path="Game.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>
