@@ -1,7 +1,11 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+<<<<<<<< HEAD:__history/FMainCode.dfm.~32~
   Caption = 'MainForm'
+========
+  Caption = 'Form1'
+>>>>>>>> f4365e0796dbf9b1d1e822f28cb3839186d6ef54:__history/FMainCode.dfm.~29~
   ClientHeight = 430
   ClientWidth = 995
   Color = clBtnFace
@@ -24,13 +28,18 @@ object Form1: TForm1
     ParentDoubleBuffered = False
     TabOrder = 0
   end
+<<<<<<<< HEAD:__history/FMainCode.dfm.~32~
   inline Menu: TMenuFrame
+========
+  inline Menu: TFrame1
+>>>>>>>> f4365e0796dbf9b1d1e822f28cb3839186d6ef54:__history/FMainCode.dfm.~29~
     Left = 0
     Top = 0
     Width = 995
     Height = 430
     Align = alClient
     TabOrder = 1
+<<<<<<<< HEAD:__history/FMainCode.dfm.~32~
     ExplicitWidth = 993
     ExplicitHeight = 422
     inherited Image1: TImage
@@ -43,13 +52,31 @@ object Form1: TForm1
     end
   end
   inline Game: TGameFrame
+========
+    ExplicitLeft = -110
+    ExplicitTop = -193
+    inherited Image1: TImage
+      Width = 995
+      Height = 430
+      ExplicitLeft = 3
+      ExplicitWidth = 995
+      ExplicitHeight = 430
+    end
+  end
+  inline Game: TFrame2
+>>>>>>>> f4365e0796dbf9b1d1e822f28cb3839186d6ef54:__history/FMainCode.dfm.~29~
     Left = 0
     Top = 0
     Width = 995
     Height = 430
     Align = alClient
     TabOrder = 2
+<<<<<<<< HEAD:__history/FMainCode.dfm.~32~
     ExplicitWidth = 993
     ExplicitHeight = 422
+========
+    ExplicitLeft = 371
+    ExplicitTop = -34
+>>>>>>>> f4365e0796dbf9b1d1e822f28cb3839186d6ef54:__history/FMainCode.dfm.~29~
   end
 end
