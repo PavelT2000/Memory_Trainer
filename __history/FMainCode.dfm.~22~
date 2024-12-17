@@ -24,16 +24,4 @@ object Form1: TForm1
     ParentDoubleBuffered = False
     TabOrder = 0
   end
-<<<<<<<< HEAD:__history/FMainCode.dfm.~22~
-========
-  object Button1: TButton
-    Left = 296
-    Top = 304
-    Width = 75
-    Height = 25
-    Caption = 'Start'
-    TabOrder = 1
-    OnClick = Button1Click
-  end
->>>>>>>> 126a183afc215a2b4b98047d4e75369bbcabbd91:__history/FMainCode.dfm.~6~
 end
