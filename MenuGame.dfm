@@ -4276,8 +4276,8 @@ object MenuFrame: TMenuFrame
       02800A002800A002800A002800A002801B400500140050014005001400500140
       0500140050014005001400500140050014005007FFD9}
     Stretch = True
-    ExplicitLeft = 208
-    ExplicitTop = 208
+    ExplicitWidth = 1920
+    ExplicitHeight = 1080
   end
   object NewGameButton: TButton
     Left = 360

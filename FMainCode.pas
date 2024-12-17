@@ -8,10 +8,10 @@ uses
   Game;
 
 type
-  TMainForm = class(TForm)
+  TMainFormGame = class(TForm)
     MediaPlayer1: TMediaPlayer;
-    Menu: TMenuFrame;
-    Game: TGameFrame;
+    GameFrame: TGameFrame;
+    MenuFrame: TMenuFrame;
     procedure FormCreate(Sender: TObject);
 
   private
@@ -21,16 +21,18 @@ type
   end;
 
 var
-  MainForm: TMainForm;
+  MainFormGame: TMainFormGame;
 
 implementation
 
 {$R *.dfm}
 
-procedure TMainForm.FormCreate(Sender: TObject);
+procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
-  Game.Visible:= False;
-  Menu.Visible:= True;
+  GameFrame.Visible:= False;
+  MenuFrame.Visible:= True;
+  {MenuFrame.Visible:= False;
+  GameFrame.Visible:= True;}
 end;
 
 {procedure TForm1.Frame11Image1Click(Sender: TObject);

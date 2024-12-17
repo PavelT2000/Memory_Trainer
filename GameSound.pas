@@ -19,21 +19,21 @@ procedure TurnOnMusuc(music: TMusic);
 begin
   if playerMute = false then begin
     case music of
-      calmMind: form1.MediaPlayer1.FileName:= 'music\calmMind.mp3';
-      doomFear: form1.MediaPlayer1.FileName:= 'music\doomFear.mp3';
-      doomTear: form1.MediaPlayer1.FileName:= 'music\doomTear.mp3';
-      elevator: form1.MediaPlayer1.FileName:= 'music\elevator.mp3';
+      calmMind: MainFormGame.MediaPlayer1.FileName:= 'music\calmMind.mp3';
+      doomFear: MainFormGame.MediaPlayer1.FileName:= 'music\doomFear.mp3';
+      doomTear: MainFormGame.MediaPlayer1.FileName:= 'music\doomTear.mp3';
+      elevator: MainFormGame.MediaPlayer1.FileName:= 'music\elevator.mp3';
     end;
-    form1.MediaPlayer1.Open;
-    form1.MediaPlayer1.Play;
+    MainFormGame.MediaPlayer1.Open;
+    MainFormGame.MediaPlayer1.Play;
   end;
 end;
 
 procedure TurnOffMusic;
 begin
   if (playerOn = True) then begin
-    Form1.MediaPlayer1.Stop;
-    Form1.MediaPlayer1.Close;
+    MainFormGame.MediaPlayer1.Stop;
+    MainFormGame.MediaPlayer1.Close;
     playerOn:= False;
   end;
 end;

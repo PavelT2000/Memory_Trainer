@@ -8,50 +8,34 @@ uses
 var CurrentStage, subStage: integer;
 
 procedure nextStage();
-
 procedure StartGame();
+procedure CheckAllStage(wordIn: string);
 
 implementation
 
+uses Game;
+
 var
   WinCount: integer;
-  inputS, exampleS: string;
-
-procedure ClearScreen;
-var
-  hStdOut: THandle;
-  csbi: _CONSOLE_SCREEN_BUFFER_INFO;
-  conSize: DWORD;
-  coord: TCoord;
-  charsWritten: DWORD;
-begin
-  hStdOut := GetStdHandle(STD_OUTPUT_HANDLE);
-  if hStdOut = INVALID_HANDLE_VALUE then
-    Exit;
-  if not GetConsoleScreenBufferInfo(hStdOut, csbi) then
-    Exit;
-  conSize := csbi.dwSize.X * csbi.dwSize.Y;
-  coord.X := 0;
-  coord.Y := 0;
-  if not FillConsoleOutputCharacter(hStdOut, ' ', conSize, coord, charsWritten)
-  then
-    Exit;
-  if not FillConsoleOutputAttribute(hStdOut, csbi.wAttributes, conSize, coord,
-    charsWritten) then
-    Exit;
-  SetConsoleCursorPosition(hStdOut, coord);
-end;
+  inputS, exampleS, slovoOut, StatistikOut: string;
 
 procedure Stage1();
 begin
   exampleS:=gener.GetWord(subStage);
-  Writeln('Запомните слово:');
-  Writeln(exampleS);
   exampleS := Trim(exampleS);
-  Sleep(3000 + (subStage-5)*200);
-  ClearScreen;
-  writeln('Стадия игры ', CurrentStage, '. Количество букв ', SubStage);
-  writeln('Введите слово перевёрнутым');
+
+  slovoOut:= 'Запомните слово:';
+  slovoOut:= slovoOut + exampleS;
+  GameFrame.SlovoRememberLabel.Caption:= slovoOut;
+  GameFrame.SlovoPanel.Visible:= True;
+  GameFrame.SlovoRememberLabel.Visible:= True;
+
+  //game (time) bar
+
+  {GameFrame.SlovoPanel.Visible:= False;
+  GameFrame.SlovoRememberLabel.Visible:= False;}
+
+  //after we wait and next part of program will go after press the button
   Readln(inputS);
   SplitGo.LowerRus(inputS);
   inputS := Trim(inputS);
@@ -74,7 +58,6 @@ begin
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(8000 + (subStage-5)*2000);
-  ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в любом порядке');
   Readln(inputS);
@@ -99,7 +82,6 @@ begin
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(8000 + (subStage-5)*2000);
-  ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел в том же порядке');
   Readln(inputS);
@@ -124,7 +106,6 @@ begin
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(8000 + (subStage-5)*2000);
-  ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
   Readln(inputS);
@@ -149,7 +130,6 @@ begin
   Writeln(exampleS);
   exampleS := Trim(exampleS);
   Sleep(8000 + (subStage-5)*2000);
-  ClearScreen;
   writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
   writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
   Readln(inputS);
@@ -169,6 +149,13 @@ end;
 
 procedure nextStage();
 begin
+  //statistik Out
+  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage) + '.';
+  GameFrame.StatistikStageLable.Caption:= StatistikOut;
+  StatistikOut:= 'Количество букв ' + IntToStr(SubStage) + '.';
+  GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+  StatistikOut:= 'Введите слово перевёрнутым.';
+  GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
 
   case CurrentStage of
     1:
@@ -181,7 +168,35 @@ begin
       Stage4;
     5:
       Stage5;
-  end;         //3
+  end;
+end;
+
+procedure CheckAllStage(wordIn: string);
+var ansCheck: boolean;
+begin
+  case CurrentStage of
+    1:
+      ansCheck:= G1Check(exampleS,wordIn);
+    2:
+      ansCheck:= G2Check(exampleS,wordIn);
+    3:
+      ansCheck:= G3Check(exampleS,wordIn);
+    4:
+      ansCheck:= G4Check(exampleS,wordIn);
+    5:
+      ansCheck:= G5Check(exampleS,wordIn);
+  end;
+  if ansCheck then
+  begin
+    Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
+                //3
   if WinCount = 3 then
   begin
     WinCount := 0;
@@ -192,8 +207,7 @@ begin
     SubStage := 5;
     Inc(CurrentStage);
   end;
-  Sleep(1500);
-  ClearScreen;
+  //Sleep(1500);
 end;
 
 procedure StartGame();

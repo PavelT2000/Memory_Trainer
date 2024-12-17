@@ -124,7 +124,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="FMainCode.pas">
-            <Form>MainForm</Form>
+            <Form>MainFormGame</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GameSound.pas"/>

@@ -2,7 +2,7 @@ program MainCode;
 
 uses
   Vcl.Forms,
-  FMainCode in 'FMainCode.pas' {MainForm},
+  FMainCode in 'FMainCode.pas' {MainFormGame},
   GameSound in 'GameSound.pas',
   SplitGo in 'SplitGo.pas',
   saveGame in 'saveGame.pas',
@@ -17,6 +17,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TMainFormGame, MainFormGame);
   Application.Run;
 end.
