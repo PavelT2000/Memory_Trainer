@@ -3,13 +3,15 @@ unit FMainCode;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, Menu;
+  Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, Menu,
+  Vcl.ComCtrls;
 
 type
   TForm1 = class(TForm)
     MediaPlayer1: TMediaPlayer;
     Button1: TButton;
+    ProgressBar1: TProgressBar;
     procedure Button1Click(Sender: TObject);
 
   private
@@ -25,10 +27,37 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure UpdateProgressBar(var PB: TProgressBar; pbTime: Integer; pbQuality: Integer = 100);
+var
+  i: Integer;
+  pbTimeStep: Integer;
 begin
-  //TurnOnMusuc(doomFear);
-  //TurnOffMusic();
+  PB.Max := pbQuality; // Правый край прогресбара
+  pbTimeStep := pbTime div pbQuality; // Слип шаг прогресбара
+  for i := 0 to pbQuality do
+  begin
+    Sleep(pbTimeStep);
+    PB.Position := i;
+  end;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  i: Integer;
+begin
+  TurnOnMusic(doomFear);
+  TurnOffMusic();
+
+  // Test потоки работают с анонимными функциями (функции без названия)
+  // Баг - время на 1.5-2 секунды больше чем вписанное
+  // Как я узнал, дело в Sleep, работает не точно
+  TThread.CreateAnonymousThread(procedure
+  begin
+    UpdateProgressBar(Form1.ProgressBar1, 5000, 100)
+  end
+  ).Start;
+
+
 end;
 
 end.

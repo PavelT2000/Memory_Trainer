@@ -3,7 +3,7 @@ unit GameSound;
 interface
 
 type TMusic = (calmMind, doomFear, doomTear, elevator);
-procedure TurnOnMusuc(music: TMusic);
+procedure TurnOnMusic(music: TMusic);
 procedure TurnOffMusic;
 procedure MuteMusic;
 
@@ -14,7 +14,7 @@ uses FMainCode;
 var playerOn: boolean = False;
     playerMute: boolean = False;
 
-procedure TurnOnMusuc(music: TMusic);
+procedure TurnOnMusic(music: TMusic);
 //var SFileName: string;
 begin
   if playerMute = false then begin
