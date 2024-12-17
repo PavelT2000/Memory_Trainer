@@ -6,13 +6,15 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls,
-  Vcl.Imaging.jpeg, Vcl.StdCtrls;
+  Vcl.Imaging.jpeg, Vcl.StdCtrls, Game;
 
 type
-  TFrame1 = class(TFrame)
+  TMenuFrame = class(TFrame)
     Image1: TImage;
     NewGameButton: TButton;
     ContinueButton: TButton;
+    RulesButtom: TButton;
+    procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -21,11 +23,17 @@ type
   end;
 
 var
-  Frame1: TFrame1;
+  MenuFrame: TMenuFrame;
 
 
 implementation
 
 {$R *.dfm}
+
+procedure TMenuFrame.NewGameButtonClick(Sender: TObject);
+begin
+  GameFrame.Visible:= True;
+  MenuFrame.Visible:= False;
+end;
 
 end.

@@ -1,4 +1,4 @@
-object Frame2: TFrame2
+object GameFrame: TGameFrame
   Left = 0
   Top = 0
   Width = 640

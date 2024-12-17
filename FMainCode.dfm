@@ -1,7 +1,7 @@
-object Form1: TForm1
+object MainForm: TMainForm
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'MainForm'
   ClientHeight = 430
   ClientWidth = 995
   Color = clBtnFace
@@ -16,7 +16,7 @@ object Form1: TForm1
   object MediaPlayer1: TMediaPlayer
     Left = -8
     Top = 0
-    Width = 85
+    Width = -2
     Height = 30
     VisibleButtons = [btPlay, btPause, btStop]
     DoubleBuffered = True
@@ -24,31 +24,14 @@ object Form1: TForm1
     ParentDoubleBuffered = False
     TabOrder = 0
   end
-  inline Menu: TFrame1
+  inline Game: TGameFrame
     Left = 0
     Top = 0
     Width = 995
     Height = 430
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = -110
-    ExplicitTop = -193
-    inherited Image1: TImage
-      Width = 995
-      Height = 430
-      ExplicitLeft = 3
-      ExplicitWidth = 995
-      ExplicitHeight = 430
-    end
-  end
-  inline Game: TFrame2
-    Left = 0
-    Top = 0
-    Width = 995
-    Height = 430
-    Align = alClient
-    TabOrder = 2
-    ExplicitLeft = 371
-    ExplicitTop = -34
+    ExplicitWidth = 993
+    ExplicitHeight = 422
   end
 end

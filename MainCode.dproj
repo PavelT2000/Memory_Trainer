@@ -124,7 +124,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="FMainCode.pas">
-            <Form>Form1</Form>
+            <Form>MainForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GameSound.pas"/>
@@ -134,12 +134,12 @@
         <DCCReference Include="UnitGame1.pas"/>
         <DCCReference Include="gener.pas"/>
         <DCCReference Include="MenuGame.pas">
-            <Form>Frame1</Form>
+            <Form>MenuFrame</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Game.pas">
-            <Form>Frame2</Form>
+            <Form>GameFrame</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
