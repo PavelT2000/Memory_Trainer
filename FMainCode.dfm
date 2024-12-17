@@ -31,14 +31,19 @@ object Form1: TForm1
     Height = 430
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = -110
-    ExplicitTop = -193
+    ExplicitWidth = 995
+    ExplicitHeight = 430
     inherited Image1: TImage
       Width = 995
       Height = 430
-      ExplicitLeft = 3
-      ExplicitWidth = 995
-      ExplicitHeight = 430
+    end
+    inherited NewGameButton: TButton
+      Left = 357
+      ExplicitLeft = 357
+    end
+    inherited ContinueButton: TButton
+      Left = 357
+      ExplicitLeft = 357
     end
   end
   inline Game: TFrame2
@@ -48,7 +53,7 @@ object Form1: TForm1
     Height = 430
     Align = alClient
     TabOrder = 2
-    ExplicitLeft = 371
-    ExplicitTop = -34
+    ExplicitWidth = 995
+    ExplicitHeight = 430
   end
 end

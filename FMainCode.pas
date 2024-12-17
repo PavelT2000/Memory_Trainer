@@ -39,8 +39,8 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  Game.Visible:= False;
-  Menu.Visible:= True;
+  Game.Visible:= True;
+  Menu.Visible:= False;
 end;
 
 procedure TForm1.Frame11Image1Click(Sender: TObject);
