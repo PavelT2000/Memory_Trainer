@@ -13,7 +13,8 @@ type
     Image1: TImage;
     NewGameButton: TButton;
     ContinueButton: TButton;
-    RulesButtom: TButton;
+    RulesButton: TButton;
+    procedure RulesButtonClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -27,6 +28,7 @@ var
 
 
 implementation
+uses FMainCode;
 
 {$R *.dfm}
 
@@ -36,5 +38,11 @@ begin
   MenuFrame.Visible:= False;
   game.StartGame();
 end;}
+
+procedure TMenuFrame.RulesButtonClick(Sender: TObject);
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.RulesFrame.Visible := True;
+end;
 
 end.

@@ -4309,9 +4309,9 @@ object MenuFrame: TMenuFrame
     ParentFont = False
     TabOrder = 1
   end
-  object RulesButtom: TButton
+  object RulesButton: TButton
     Left = 360
-    Top = 392
+    Top = 384
     Width = 353
     Height = 57
     Anchors = []
@@ -4323,5 +4323,6 @@ object MenuFrame: TMenuFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnClick = RulesButtonClick
   end
 end

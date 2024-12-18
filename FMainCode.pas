@@ -5,14 +5,16 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, MenuGame,
-  Game;
+  Game, Rules;
 
 type
   TMainFormGame = class(TForm)
     MediaPlayer1: TMediaPlayer;
     GameFrame: TGameFrame;
     MenuFrame: TMenuFrame;
+    RulesFrame: TRulesFrame;
     procedure FormCreate(Sender: TObject);
+    procedure CloseAllFrames;
     procedure MenuFrameNewGameButtonClick(Sender: TObject);
 
   private
@@ -50,12 +52,20 @@ begin
   Frame11.Left:=0;
 end;}
 
+procedure TMainFormGame.CloseAllFrames;
+begin
+  GameFrame.Visible := False;
+  MenuFrame.Visible := False;
+end;
+
 procedure TMainFormGame.MenuFrameNewGameButtonClick(Sender: TObject);
 begin
   //MenuFrame.NewGameButtonClick(Sender);
+  CloseAllFrames;
+
   GameFrame.Visible:= True;
-  MenuFrame.Visible:= False;
   game.StartGame();
 end;
+
 
 end.
