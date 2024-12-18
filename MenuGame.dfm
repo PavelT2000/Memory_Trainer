@@ -4309,6 +4309,7 @@ object MenuFrame: TMenuFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnClick = ContinueButtonClick
   end
   object RulesButton: TButton
     Left = 360

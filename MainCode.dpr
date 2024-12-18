@@ -11,7 +11,8 @@ uses
   gener in 'gener.pas',
   MenuGame in 'MenuGame.pas' {MenuFrame: TFrame},
   Game in 'Game.pas' {GameFrame: TFrame},
-  Rules in 'Rules.pas' {RulesFrame: TFrame};
+  Rules in 'Rules.pas' {RulesFrame: TFrame},
+  SaveMenu in 'SaveMenu.pas' {SaveMenuFrame: TFrame};
 
 {$R *.res}
 

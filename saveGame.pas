@@ -8,6 +8,8 @@ procedure SaveG(SaveNum, CurrentStage, subStage: integer);
 
 implementation
 
+uses Vcl.Dialogs;
+
 procedure loadG(saveNum: integer; var CurrentStage, subStage: integer);
 var myFile: TextFile;
     strIn, resultStr: string;
@@ -53,7 +55,7 @@ begin
     end;
   end;
   if (CurrentStage = -1) and (subStage = -1) then begin
-    writeln('We cant find your save');
+    ShowMessage('We cant find your save, we load basic game');
     CurrentStage:= 1; //game mode
     subStage:=5; //num of letters or words
   end;

@@ -16006,10 +16006,11 @@ object GameFrame: TGameFrame
       Top = 1
       Width = 241
       Height = 24
+      Alignment = taCenter
       AutoSize = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -16020,10 +16021,11 @@ object GameFrame: TGameFrame
       Top = 31
       Width = 385
       Height = 50
+      Alignment = taCenter
       AutoSize = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -20
+      Font.Height = -27
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -16103,6 +16105,13 @@ object GameFrame: TGameFrame
     Enabled = False
     OnTimer = Timer1Timer
     Left = 696
+    Top = 48
+  end
+  object nextWordTimer: TTimer
+    Enabled = False
+    Interval = 1300
+    OnTimer = nextWordTimerTimer
+    Left = 648
     Top = 48
   end
 end

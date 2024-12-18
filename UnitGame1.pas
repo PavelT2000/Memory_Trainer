@@ -6,6 +6,7 @@ uses
   System.SysUtils, Windows, Gener, UnitBasic, SplitGo;
 
 var CurrentStage, subStage: integer;
+    exampleS: string;
 
 procedure nextStage();
 procedure StartGame();
@@ -18,18 +19,12 @@ uses FMainCode;
 
 var
   WinCount: integer;
-  inputS, exampleS, slovoOut, StatistikOut: string;
+  inputS, slovoOut, StatistikOut: string;
 
 procedure nextStage();
 var rulesOut: string;
     pbTime: integer;
 begin
-  //statistik Out
-  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
-  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
-  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
-  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
-
   MainFormGame.GameFrame.SlovoEdit.Enabled:= False;
 
   case CurrentStage of
@@ -66,13 +61,13 @@ begin
   end;
   MainFormGame.GameFrame.statistikRulesLabel.Caption:= rulesOut;
   exampleS := Trim(exampleS);
-  slovoOut:= 'Запомните слово: ';
-  slovoOut:= slovoOut + exampleS;
-  MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
-  MainFormGame.GameFrame.SlovoPanel.Visible:= True;
-  MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
+  MainFormGame.GameFrame.SlovoRememberLabel.Caption:= 'Запомните слово: ';
+  MainFormGame.GameFrame.OnlySlovoLable.Caption:= exampleS;
+  //MainFormGame.GameFrame.SlovoPanel.Visible:= True;
+  //MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
 
   //game (time) bar
+  MainFormGame.GameFrame.ProgressBar1.Position:= 0;
   MainFormGame.GameFrame.Timer1.Interval := pbTime div 100;
   MainFormGame.GameFrame.Timer1.Enabled := True;
   //after we wait and next part of program will go after press the button
@@ -102,23 +97,29 @@ begin
   begin
     WinCount:=0;
     slovoOut:= 'Ответ не верный(';
+    MainFormGame.GameFrame.OnlySlovoLable.Caption:= exampleS;
   end;
   MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
-  MainFormGame.GameFrame.SlovoPanel.Visible:= True;
-  MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
+  //MainFormGame.GameFrame.SlovoPanel.Visible:= True;
+  //MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
                 //3
   if WinCount = 3 then
   begin
     WinCount := 0;
     Inc(SubStage);
+    StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+    MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
   end;        //9
   if SubStage = 9 then
   begin
     SubStage := 5;
     Inc(CurrentStage);
+    StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+    MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+    StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
+    MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
   end;
-  //Sleep(1500);
 end;
 
 procedure StartGame();
@@ -128,6 +129,11 @@ begin
   subStage:=5;
   WinCount := 0;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
+  //statistik Out
+  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
+  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
+  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
 end;
 
 end.

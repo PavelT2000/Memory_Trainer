@@ -21,8 +21,10 @@ type
     ProgressBar1: TProgressBar;
     Timer1: TTimer;
     OnlySlovoLable: TLabel;
+    nextWordTimer: TTimer;
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure nextWordTimerTimer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,6 +60,19 @@ begin
   SplitGo.LowerRus(wordIn);
   wordIn := Trim(wordIn);
   unitGame1.CheckAllStage(wordIn);
+  NextWordTimer.Enabled:= True;
+  SlovoEdit.Text:= '';
+end;
+
+procedure TGameFrame.nextWordTimerTimer(Sender: TObject);
+begin
+  NextWordTimer.Enabled:= False;
+  if (CurrentStage >= 6) then begin
+
+  end
+  else begin
+    UnitGame1.nextStage;
+  end;
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);
@@ -69,8 +84,9 @@ begin
     ProgressBar1.Position := ProgressBar1.Position + 1;
     Timer1.Enabled := False;
 
-    SlovoPanel.Visible:= False;
-    SlovoRememberLabel.Visible:= False;
+    //SlovoPanel.Visible:= False;
+    //SlovoRememberLabel.Visible:= False;
+    OnlySlovoLable.Caption:= '';
     MainFormGame.GameFrame.CheckButton.Enabled:= True;
     MainFormGame.GameFrame.SlovoEdit.Enabled:= True;
   end;
