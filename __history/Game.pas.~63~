@@ -57,6 +57,7 @@ begin
   SplitGo.LowerRus(wordIn);
   wordIn := Trim(wordIn);
   unitGame1.CheckAllStage(wordIn);
+  dfghjk;
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);
@@ -64,13 +65,13 @@ begin
   ProgressBar1.Position := ProgressBar1.Position + 1;
   if ProgressBar1.Position >= ProgressBar1.Max then
   begin
-    dNIKITOS;
     ProgressBar1.Position := ProgressBar1.Position - 1;
     ProgressBar1.Position := ProgressBar1.Position + 1;
     Timer1.Enabled := False;
 
     SlovoPanel.Visible:= False;
     SlovoRememberLabel.Visible:= False;
+    asdsadasd;
   end;
 end;
 
