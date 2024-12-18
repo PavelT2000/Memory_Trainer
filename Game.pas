@@ -25,32 +25,21 @@ type
 
   end;
 
-var GameFrame: TGameFrame;
+//var GameFrame: TGameFrame;
 procedure StartGame();
 
 implementation
 
-uses SplitGo;
+uses SplitGo, FMainCode;
 
 {$R *.dfm}
 
 procedure StartGame();
 var CurrentStage, subStage: integer;
-    continiunGame: boolean;
 begin
   UnitGame1.StartGame;
-  continiunGame := True;
-  while continiunGame do
-  begin
-    UnitGame1.nextStage;
-    if (UnitGame1.CurrentStage > 5) then
-    begin
-      writeln('Вы прошли тренажер-памяти! Поздравляем! Вы зря потратили ',
-        'свое время! Нажмите Enter для выхода из программы.');
-      readln;
-      continiunGame := False;
-    end;
-  end;
+  UnitGame1.nextStage;
+  //if (UnitGame1.CurrentStage > 5) then
 end;
 
 procedure LoadSavegame();
@@ -61,7 +50,7 @@ end;
 procedure TGameFrame.CheckButtonClick(Sender: TObject);
 var wordIn: string;
 begin
-  wordIn:= GameFrame.SlovoEdit.Text;
+  wordIn:= MainFormGame.GameFrame.SlovoEdit.Text;
   SplitGo.LowerRus(wordIn);
   wordIn := Trim(wordIn);
   unitGame1.CheckAllStage(wordIn);

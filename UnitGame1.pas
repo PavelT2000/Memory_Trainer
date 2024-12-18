@@ -13,7 +13,8 @@ procedure CheckAllStage(wordIn: string);
 
 implementation
 
-uses Game;
+//uses Game
+uses FMainCode;
 
 var
   WinCount: integer;
@@ -26,9 +27,9 @@ begin
 
   slovoOut:= 'Запомните слово:';
   slovoOut:= slovoOut + exampleS;
-  GameFrame.SlovoRememberLabel.Caption:= slovoOut;
-  GameFrame.SlovoPanel.Visible:= True;
-  GameFrame.SlovoRememberLabel.Visible:= True;
+  MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
+  MainFormGame.GameFrame.SlovoPanel.Visible:= True;
+  MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
 
   //game (time) bar
 
@@ -36,19 +37,6 @@ begin
   GameFrame.SlovoRememberLabel.Visible:= False;}
 
   //after we wait and next part of program will go after press the button
-  Readln(inputS);
-  SplitGo.LowerRus(inputS);
-  inputS := Trim(inputS);
-  if G1Check(exampleS,InputS) then
-  begin
-    Inc(WinCount);
-    Writeln('Верно');
-  end
-  else
-  begin
-    WinCount:=0;
-    Writeln('Не верно');
-  end;
 end;
 
 procedure Stage2();
@@ -150,16 +138,18 @@ end;
 procedure nextStage();
 begin
   //statistik Out
-  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage) + '.';
-  GameFrame.StatistikStageLable.Caption:= StatistikOut;
-  StatistikOut:= 'Количество букв ' + IntToStr(SubStage) + '.';
-  GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
-  StatistikOut:= 'Введите слово перевёрнутым.';
-  GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
+  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
+  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
 
   case CurrentStage of
     1:
+    begin
       Stage1;
+      StatistikOut:= 'Введите слово перевёрнутым';
+      MainFormGame.GameFrame.statistikRulesLabel.Caption:= StatistikOut;
+    end;
     2:
       Stage2;
     3:

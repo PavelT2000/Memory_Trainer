@@ -13,6 +13,7 @@ type
     GameFrame: TGameFrame;
     MenuFrame: TMenuFrame;
     procedure FormCreate(Sender: TObject);
+    procedure MenuFrameNewGameButtonClick(Sender: TObject);
 
   private
 
@@ -48,5 +49,13 @@ begin
   Frame11.Top:=0;
   Frame11.Left:=0;
 end;}
+
+procedure TMainFormGame.MenuFrameNewGameButtonClick(Sender: TObject);
+begin
+  //MenuFrame.NewGameButtonClick(Sender);
+  GameFrame.Visible:= True;
+  MenuFrame.Visible:= False;
+  game.StartGame();
+end;
 
 end.

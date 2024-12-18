@@ -36,6 +36,8 @@ object MainFormGame: TMainFormGame
     inherited bg: TImage
       Width = 995
       Height = 430
+      ExplicitWidth = 995
+      ExplicitHeight = 430
     end
     inherited SlovoEdit: TEdit
       StyleElements = [seFont, seClient, seBorder]
@@ -66,8 +68,8 @@ object MainFormGame: TMainFormGame
     Height = 430
     Align = alClient
     TabOrder = 2
-    ExplicitLeft = -110
-    ExplicitTop = -193
+    ExplicitWidth = 993
+    ExplicitHeight = 422
     inherited Image1: TImage
       Width = 995
       Height = 430
@@ -75,14 +77,21 @@ object MainFormGame: TMainFormGame
     inherited NewGameButton: TButton
       Left = 307
       Top = 80
+      OnClick = MenuFrameNewGameButtonClick
+      ExplicitLeft = 306
+      ExplicitTop = 78
     end
     inherited ContinueButton: TButton
       Left = 307
-      Top = 173
+      Top = 174
+      ExplicitLeft = 306
+      ExplicitTop = 170
     end
     inherited RulesButtom: TButton
       Left = 307
-      Top = 262
+      Top = 261
+      ExplicitLeft = 306
+      ExplicitTop = 256
     end
   end
 end

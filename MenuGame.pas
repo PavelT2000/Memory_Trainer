@@ -14,7 +14,7 @@ type
     NewGameButton: TButton;
     ContinueButton: TButton;
     RulesButtom: TButton;
-    procedure NewGameButtonClick(Sender: TObject);
+    //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,11 +30,11 @@ implementation
 
 {$R *.dfm}
 
-procedure TMenuFrame.NewGameButtonClick(Sender: TObject);
+{procedure TMenuFrame.NewGameButtonClick(Sender: TObject);
 begin
   GameFrame.Visible:= True;
   MenuFrame.Visible:= False;
   game.StartGame();
-end;
+end;}
 
 end.

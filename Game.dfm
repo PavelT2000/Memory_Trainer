@@ -15982,7 +15982,7 @@ object GameFrame: TGameFrame
     Left = 130
     Top = 192
     Width = 441
-    Height = 57
+    Height = 45
     Anchors = []
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -15998,12 +15998,16 @@ object GameFrame: TGameFrame
     Top = 64
     Width = 289
     Height = 49
+    Anchors = []
+    ParentBackground = False
     TabOrder = 1
     object SlovoRememberLabel: TLabel
       Left = 24
       Top = 8
       Width = 241
       Height = 33
+      AutoSize = False
+      WordWrap = True
     end
   end
   object statistikPanel: TPanel
@@ -16011,24 +16015,30 @@ object GameFrame: TGameFrame
     Top = 17
     Width = 137
     Height = 144
+    Anchors = []
+    ParentBackground = False
     TabOrder = 2
     object StatistikStageLable: TLabel
-      Left = 0
-      Top = 8
-      Width = 129
-      Height = 25
+      Left = 8
+      Top = 0
+      Width = 121
+      Height = 15
+      AutoSize = False
+      WordWrap = True
     end
     object statistikSubStageLabel: TLabel
       Left = 8
       Top = 48
-      Width = 113
-      Height = 34
+      Width = 3
+      Height = 15
     end
     object statistikRulesLabel: TLabel
-      Left = 11
-      Top = 88
-      Width = 110
-      Height = 49
+      Left = 8
+      Top = 96
+      Width = 121
+      Height = 41
+      AutoSize = False
+      WordWrap = True
     end
   end
   object CheckButton: TButton
