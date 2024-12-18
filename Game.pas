@@ -57,6 +57,7 @@ begin
   SplitGo.LowerRus(wordIn);
   wordIn := Trim(wordIn);
   unitGame1.CheckAllStage(wordIn);
+  dfghjk;
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);
