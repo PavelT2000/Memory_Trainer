@@ -15979,7 +15979,7 @@ object GameFrame: TGameFrame
     ExplicitWidth = 640
   end
   object SlovoEdit: TEdit
-    Left = 130
+    Left = 186
     Top = 192
     Width = 441
     Height = 45
@@ -15996,17 +15996,37 @@ object GameFrame: TGameFrame
   object SlovoPanel: TPanel
     Left = 200
     Top = 64
-    Width = 289
-    Height = 49
+    Width = 401
+    Height = 81
     Anchors = []
     ParentBackground = False
     TabOrder = 1
     object SlovoRememberLabel: TLabel
-      Left = 24
-      Top = 8
+      Left = 48
+      Top = 1
       Width = 241
-      Height = 33
+      Height = 24
       AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      WordWrap = True
+    end
+    object OnlySlovoLable: TLabel
+      Left = 8
+      Top = 31
+      Width = 385
+      Height = 50
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       WordWrap = True
     end
   end
@@ -16014,7 +16034,7 @@ object GameFrame: TGameFrame
     Left = 16
     Top = 17
     Width = 137
-    Height = 144
+    Height = 184
     Anchors = []
     ParentBackground = False
     TabOrder = 2
@@ -16022,27 +16042,41 @@ object GameFrame: TGameFrame
       Left = 8
       Top = 0
       Width = 121
-      Height = 15
+      Height = 25
       AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       WordWrap = True
     end
     object statistikSubStageLabel: TLabel
       Left = 8
-      Top = 48
-      Width = 3
-      Height = 15
+      Top = 47
+      Width = 121
+      Height = 43
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      WordWrap = True
     end
     object statistikRulesLabel: TLabel
       Left = 8
       Top = 96
       Width = 121
-      Height = 41
+      Height = 81
       AutoSize = False
       WordWrap = True
     end
   end
   object CheckButton: TButton
-    Left = 592
+    Left = 664
     Top = 192
     Width = 57
     Height = 54
@@ -16058,7 +16092,7 @@ object GameFrame: TGameFrame
     OnClick = CheckButtonClick
   end
   object ProgressBar1: TProgressBar
-    Left = 130
+    Left = 186
     Top = 376
     Width = 441
     Height = 26

@@ -20,6 +20,7 @@ type
     SlovoRememberLabel: TLabel;
     ProgressBar1: TProgressBar;
     Timer1: TTimer;
+    OnlySlovoLable: TLabel;
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private

@@ -4293,6 +4293,7 @@ object MenuFrame: TMenuFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnClick = NewGameButtonClick
   end
   object ContinueButton: TButton
     Left = 360

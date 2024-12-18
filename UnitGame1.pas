@@ -35,31 +35,31 @@ begin
   case CurrentStage of
     1:
     begin
-      rulesOut:= 'Введите слово перевёрнутым';
+      rulesOut:= 'Правило: Введите слово перевёрнутым';
       exampleS:=gener.GetWord(subStage);
       pbTime := 4000;
     end;
     2:
     begin
-      rulesOut:= 'Введите все слова через пробел в любом порядке';
+      rulesOut:= 'Правило: Введите все слова через пробел в любом порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     3:
     begin
-      rulesOut:= 'Введите все слова через пробел в том же порядке';
+      rulesOut:= 'Правило: Введите все слова через пробел в том же порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     4:
     begin
-      rulesOut:= 'Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке';
+      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     5:
     begin
-      rulesOut:= 'Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
+      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
     end;
