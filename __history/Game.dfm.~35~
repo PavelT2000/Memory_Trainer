@@ -15998,13 +15998,16 @@ object GameFrame: TGameFrame
     Top = 64
     Width = 289
     Height = 49
+    Anchors = []
     ParentBackground = False
     TabOrder = 1
     object SlovoRememberLabel: TLabel
       Left = 24
       Top = 8
-      Width = 3
-      Height = 15
+      Width = 241
+      Height = 33
+      AutoSize = False
+      WordWrap = True
     end
   end
   object statistikPanel: TPanel
@@ -16012,13 +16015,16 @@ object GameFrame: TGameFrame
     Top = 17
     Width = 137
     Height = 144
+    Anchors = []
     ParentBackground = False
     TabOrder = 2
     object StatistikStageLable: TLabel
-      Left = 0
-      Top = 8
-      Width = 3
+      Left = 8
+      Top = 0
+      Width = 121
       Height = 15
+      AutoSize = False
+      WordWrap = True
     end
     object statistikSubStageLabel: TLabel
       Left = 8
@@ -16027,10 +16033,12 @@ object GameFrame: TGameFrame
       Height = 15
     end
     object statistikRulesLabel: TLabel
-      Left = 11
-      Top = 88
-      Width = 3
-      Height = 15
+      Left = 8
+      Top = 96
+      Width = 121
+      Height = 41
+      AutoSize = False
+      WordWrap = True
     end
   end
   object CheckButton: TButton
@@ -16048,5 +16056,21 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 3
     OnClick = CheckButtonClick
+  end
+  object ProgressBar1: TProgressBar
+    Left = 130
+    Top = 368
+    Width = 441
+    Height = 34
+    Anchors = []
+    DoubleBuffered = False
+    ParentDoubleBuffered = False
+    TabOrder = 4
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 696
+    Top = 48
   end
 end

@@ -16059,12 +16059,10 @@ object GameFrame: TGameFrame
   end
   object ProgressBar1: TProgressBar
     Left = 130
-    Top = 368
+    Top = 376
     Width = 441
-    Height = 34
+    Height = 26
     Anchors = []
-    DoubleBuffered = False
-    ParentDoubleBuffered = False
     TabOrder = 4
   end
   object Timer1: TTimer
