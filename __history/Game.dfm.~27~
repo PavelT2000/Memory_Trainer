@@ -16057,18 +16057,4 @@ object GameFrame: TGameFrame
     TabOrder = 3
     OnClick = CheckButtonClick
   end
-  object ProgressBar1: TProgressBar
-    Left = 130
-    Top = 376
-    Width = 441
-    Height = 26
-    Anchors = []
-    TabOrder = 4
-  end
-  object Timer1: TTimer
-    Enabled = False
-    OnTimer = Timer1Timer
-    Left = 696
-    Top = 48
-  end
 end

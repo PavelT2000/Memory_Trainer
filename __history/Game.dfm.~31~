@@ -16063,6 +16063,7 @@ object GameFrame: TGameFrame
     Width = 441
     Height = 26
     Anchors = []
+    Max = 1000
     TabOrder = 4
   end
   object Timer1: TTimer

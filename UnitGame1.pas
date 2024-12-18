@@ -21,6 +21,8 @@ var
   inputS, exampleS, slovoOut, StatistikOut: string;
 
 procedure Stage1();
+var
+  pbTime: Integer;
 begin
   exampleS:=gener.GetWord(subStage);
   exampleS := Trim(exampleS);
@@ -32,6 +34,9 @@ begin
   MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
 
   //game (time) bar
+  pbTime := 5000;
+  MainFormGame.GameFrame.Timer1.Interval := pbTime div 100;
+  MainFormGame.GameFrame.Timer1.Enabled := True;
 
   {GameFrame.SlovoPanel.Visible:= False;
   GameFrame.SlovoRememberLabel.Visible:= False;}
