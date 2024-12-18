@@ -12,7 +12,7 @@ type
     MediaPlayer1: TMediaPlayer;
     GameFrame: TGameFrame;
     MenuFrame: TMenuFrame;
-    RulesFrame1: TRulesFrame;
+    RulesFrame: TRulesFrame;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure MenuFrameNewGameButtonClick(Sender: TObject);
@@ -66,5 +66,6 @@ begin
   GameFrame.Visible:= True;
   game.StartGame();
 end;
+
 
 end.

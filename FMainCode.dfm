@@ -31,7 +31,7 @@ object MainFormGame: TMainFormGame
     Height = 430
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 995
+    ExplicitWidth = 899
     ExplicitHeight = 430
     inherited bg: TImage
       Width = 899
@@ -42,17 +42,24 @@ object MainFormGame: TMainFormGame
     inherited SlovoEdit: TEdit
       Left = 96
       StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 94
+      ExplicitTop = 184
     end
     inherited SlovoPanel: TPanel
       Left = 167
       StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 165
+      ExplicitTop = 61
       inherited SlovoRememberLabel: TLabel
         StyleElements = [seFont, seClient, seBorder]
       end
     end
     inherited statistikPanel: TPanel
       Left = 8
+      Top = 16
       StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 7
+      ExplicitTop = 13
       inherited StatistikStageLable: TLabel
         StyleElements = [seFont, seClient, seBorder]
       end
@@ -65,9 +72,13 @@ object MainFormGame: TMainFormGame
     end
     inherited CheckButton: TButton
       Left = 532
+      ExplicitLeft = 528
+      ExplicitTop = 183
     end
     inherited ProgressBar1: TProgressBar
       Left = 96
+      ExplicitLeft = 94
+      ExplicitTop = 361
     end
   end
   inline MenuFrame: TMenuFrame
@@ -77,7 +88,7 @@ object MainFormGame: TMainFormGame
     Height = 430
     Align = alClient
     TabOrder = 2
-    ExplicitWidth = 989
+    ExplicitWidth = 893
     ExplicitHeight = 413
     inherited Image1: TImage
       Width = 899
@@ -87,38 +98,32 @@ object MainFormGame: TMainFormGame
       Left = 260
       Top = 80
       OnClick = MenuFrameNewGameButtonClick
-      ExplicitLeft = 304
+      ExplicitLeft = 257
       ExplicitTop = 76
     end
     inherited ContinueButton: TButton
       Left = 260
       Top = 178
       Width = 371
-      ExplicitLeft = 260
-      ExplicitTop = 178
+      ExplicitLeft = 257
+      ExplicitTop = 170
       ExplicitWidth = 371
     end
     inherited RulesButton: TButton
       Left = 260
       Top = 261
-      ExplicitLeft = 304
+      ExplicitLeft = 257
       ExplicitTop = 250
     end
   end
   inline RulesFrame: TRulesFrame
-    Left = 278
+    Left = 182
     Top = -1
     Width = 717
     Height = 431
     TabOrder = 3
-    Visible = False
-    ExplicitLeft = 278
+    ExplicitLeft = 182
     ExplicitTop = -1
-    inherited Image1: TImage
-      ExplicitLeft = 216
-      ExplicitTop = 0
-      ExplicitWidth = 501
-    end
     inherited Panel1: TPanel
       StyleElements = [seFont, seClient, seBorder]
     end
