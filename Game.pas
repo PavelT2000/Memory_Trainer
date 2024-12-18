@@ -64,6 +64,8 @@ begin
   ProgressBar1.Position := ProgressBar1.Position + 1;
   if ProgressBar1.Position >= ProgressBar1.Max then
   begin
+    ProgressBar1.Position := ProgressBar1.Position - 1;
+    ProgressBar1.Position := ProgressBar1.Position + 1;
     Timer1.Enabled := False;
     SlovoPanel.Visible:= False;
     SlovoRememberLabel.Visible:= False;
