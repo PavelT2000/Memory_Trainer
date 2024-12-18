@@ -20,127 +20,9 @@ var
   WinCount: integer;
   inputS, exampleS, slovoOut, StatistikOut: string;
 
-procedure Stage1();
-var
-  pbTime: Integer;
-begin
-  exampleS:=gener.GetWord(subStage);
-  exampleS := Trim(exampleS);
-
-  slovoOut:= 'Запомните слово:';
-  slovoOut:= slovoOut + exampleS;
-  MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
-  MainFormGame.GameFrame.SlovoPanel.Visible:= True;
-  MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
-
-  //game (time) bar
-  pbTime := 5000;
-  MainFormGame.GameFrame.Timer1.Interval := pbTime div 100;
-  MainFormGame.GameFrame.Timer1.Enabled := True;
-
-  {GameFrame.SlovoPanel.Visible:= False;
-  GameFrame.SlovoRememberLabel.Visible:= False;}
-
-  //after we wait and next part of program will go after press the button
-end;
-
-procedure Stage2();
-begin
-  exampleS:=gener.Get5word(subStage);
-  Writeln('Запомните слова:');
-  Writeln(exampleS);
-  exampleS := Trim(exampleS);
-  Sleep(8000 + (subStage-5)*2000);
-  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
-  writeln('Введите все слова через пробел в любом порядке');
-  Readln(inputS);
-  SplitGo.LowerRus(inputS);
-  inputS := Trim(inputS);
-  if G2Check(exampleS,InputS) then
-  begin
-    Inc(WinCount);
-    Writeln('Верно');
-  end
-  else
-  begin
-    WinCount:=0;
-    Writeln('Не верно');
-  end;
-end;
-
-procedure Stage3();
-begin
-  exampleS:=gener.Get5word(subStage);
-  Writeln('Запомните слова:');
-  Writeln(exampleS);
-  exampleS := Trim(exampleS);
-  Sleep(8000 + (subStage-5)*2000);
-  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
-  writeln('Введите все слова через пробел в том же порядке');
-  Readln(inputS);
-  SplitGo.LowerRus(inputS);
-  inputS := Trim(inputS);
-  if G3Check(exampleS,InputS) then
-  begin
-    Inc(WinCount);
-    Writeln('Верно');
-  end
-  else
-  begin
-    WinCount:=0;
-    Writeln('Не верно');
-  end;
-end;
-
-procedure Stage4();
-begin
-  exampleS:=gener.Get5word(subStage);
-  Writeln('Запомните слова:');
-  Writeln(exampleS);
-  exampleS := Trim(exampleS);
-  Sleep(8000 + (subStage-5)*2000);
-  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
-  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
-  Readln(inputS);
-  SplitGo.LowerRus(inputS);
-  inputS := Trim(inputS);
-  if G4Check(exampleS,InputS) then
-  begin
-    Inc(WinCount);
-    Writeln('Верно');
-  end
-  else
-  begin
-    WinCount:=0;
-    Writeln('Не верно');
-  end;
-end;
-
-procedure Stage5();
-begin
-  exampleS:=gener.Get5word(subStage);
-  Writeln('Запомните слова:');
-  Writeln(exampleS);
-  exampleS := Trim(exampleS);
-  Sleep(8000 + (subStage-5)*2000);
-  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
-  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
-  Readln(inputS);
-  SplitGo.LowerRus(inputS);
-  inputS := Trim(inputS);
-  if G5Check(exampleS,InputS) then
-  begin
-    Inc(WinCount);
-    Writeln('Верно');
-  end
-  else
-  begin
-    WinCount:=0;
-    Writeln('Не верно');
-  end;
-end;
-
 procedure nextStage();
+var rulesOut: string;
+    pbTime: integer;
 begin
   //statistik Out
   StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
@@ -148,22 +30,52 @@ begin
   StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
   MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
 
+  MainFormGame.GameFrame.SlovoEdit.Enabled:= False;
+
   case CurrentStage of
     1:
     begin
-      Stage1;
-      StatistikOut:= 'Введите слово перевёрнутым';
-      MainFormGame.GameFrame.statistikRulesLabel.Caption:= StatistikOut;
+      rulesOut:= 'Введите слово перевёрнутым';
+      exampleS:=gener.GetWord(subStage);
+      pbTime := 4000;
     end;
     2:
-      Stage2;
+    begin
+      rulesOut:= 'Введите все слова через пробел в любом порядке';
+      exampleS:=gener.Get5word(subStage);
+      pbTime := 8000 + (subStage-5)*2000;
+    end;
     3:
-      Stage3;
+    begin
+      rulesOut:= 'Введите все слова через пробел в том же порядке';
+      exampleS:=gener.Get5word(subStage);
+      pbTime := 8000 + (subStage-5)*2000;
+    end;
     4:
-      Stage4;
+    begin
+      rulesOut:= 'Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке';
+      exampleS:=gener.Get5word(subStage);
+      pbTime := 8000 + (subStage-5)*2000;
+    end;
     5:
-      Stage5;
+    begin
+      rulesOut:= 'Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
+      exampleS:=gener.Get5word(subStage);
+      pbTime := 8000 + (subStage-5)*2000;
+    end;
   end;
+  MainFormGame.GameFrame.statistikRulesLabel.Caption:= rulesOut;
+  exampleS := Trim(exampleS);
+  slovoOut:= 'Запомните слово: ';
+  slovoOut:= slovoOut + exampleS;
+  MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
+  MainFormGame.GameFrame.SlovoPanel.Visible:= True;
+  MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
+
+  //game (time) bar
+  MainFormGame.GameFrame.Timer1.Interval := pbTime div 100;
+  MainFormGame.GameFrame.Timer1.Enabled := True;
+  //after we wait and next part of program will go after press the button
 end;
 
 procedure CheckAllStage(wordIn: string);
@@ -184,13 +96,17 @@ begin
   if ansCheck then
   begin
     Inc(WinCount);
-    Writeln('Верно');
+    slovoOut:= 'Ответ верный!';
   end
   else
   begin
     WinCount:=0;
-    Writeln('Не верно');
+    slovoOut:= 'Ответ не верный(';
   end;
+  MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
+  MainFormGame.GameFrame.SlovoPanel.Visible:= True;
+  MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
+  MainFormGame.GameFrame.CheckButton.Enabled:= False;
                 //3
   if WinCount = 3 then
   begin
@@ -211,6 +127,7 @@ begin
   CurrentStage := 1;  //1
   subStage:=5;
   WinCount := 0;
+  MainFormGame.GameFrame.CheckButton.Enabled:= False;
 end;
 
 end.

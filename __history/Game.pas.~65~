@@ -64,14 +64,14 @@ begin
   ProgressBar1.Position := ProgressBar1.Position + 1;
   if ProgressBar1.Position >= ProgressBar1.Max then
   begin
+    dNIKITOS;
     ProgressBar1.Position := ProgressBar1.Position - 1;
     ProgressBar1.Position := ProgressBar1.Position + 1;
     Timer1.Enabled := False;
 
     SlovoPanel.Visible:= False;
     SlovoRememberLabel.Visible:= False;
-    MainFormGame.GameFrame.CheckButton.Enabled:= True;
-    MainFormGame.GameFrame.SlovoEdit.Enabled:= True;
+    dfgh;
   end;
 end;
 
