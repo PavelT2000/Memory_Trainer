@@ -71,6 +71,7 @@ begin
 
     SlovoPanel.Visible:= False;
     SlovoRememberLabel.Visible:= False;
+    dfgh;
   end;
 end;
 
