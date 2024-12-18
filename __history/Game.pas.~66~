@@ -70,8 +70,6 @@ begin
 
     SlovoPanel.Visible:= False;
     SlovoRememberLabel.Visible:= False;
-    MainFormGame.GameFrame.CheckButton.Enabled:= True;
-    MainFormGame.GameFrame.SlovoEdit.Enabled:= True;
   end;
 end;
 
