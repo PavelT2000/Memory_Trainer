@@ -22,6 +22,9 @@ type
     Timer1: TTimer;
     OnlySlovoLable: TLabel;
     nextWordTimer: TTimer;
+    backFrameButton: TButton;
+    HintButton: TButton;
+    SaveGameNowButton: TButton;
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure nextWordTimerTimer(Sender: TObject);
@@ -41,11 +44,9 @@ uses SplitGo, FMainCode;
 {$R *.dfm}
 
 procedure StartGame();
-var CurrentStage, subStage: integer;
 begin
   UnitGame1.StartGame;
   UnitGame1.nextStage;
-  //if (UnitGame1.CurrentStage > 5) then
 end;
 
 procedure LoadSavegame();
@@ -67,7 +68,7 @@ end;
 procedure TGameFrame.nextWordTimerTimer(Sender: TObject);
 begin
   NextWordTimer.Enabled:= False;
-  if (CurrentStage >= 6) then begin
+  if (CurrentStage > 5) then begin
 
   end
   else begin

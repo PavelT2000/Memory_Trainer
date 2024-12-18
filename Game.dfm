@@ -1,16 +1,16 @@
 object GameFrame: TGameFrame
   Left = 0
   Top = 0
-  Width = 760
+  Width = 942
   Height = 480
   TabOrder = 0
   DesignSize = (
-    760
+    942
     480)
   object bg: TImage
     Left = 0
     Top = 0
-    Width = 760
+    Width = 942
     Height = 480
     Align = alClient
     Picture.Data = {
@@ -15975,15 +15975,15 @@ object GameFrame: TGameFrame
       A489783F4E8699E8060FAD3B2A0E41C93D08A6901320057818F40475A7AA9DBB
       8004FF002A894952091C7AE69EEDB7259BB63AD35B01FFD9}
     Stretch = True
-    ExplicitTop = 3
-    ExplicitWidth = 640
+    ExplicitLeft = -16
   end
   object SlovoEdit: TEdit
-    Left = 186
+    Left = 256
     Top = 192
     Width = 441
-    Height = 45
+    Height = 57
     Anchors = []
+    AutoSize = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -15994,8 +15994,8 @@ object GameFrame: TGameFrame
     Text = 'Enter your Answer'
   end
   object SlovoPanel: TPanel
-    Left = 200
-    Top = 64
+    Left = 280
+    Top = 68
     Width = 401
     Height = 81
     Anchors = []
@@ -16033,13 +16033,14 @@ object GameFrame: TGameFrame
     end
   end
   object statistikPanel: TPanel
-    Left = 16
+    Left = 36
     Top = 17
     Width = 137
     Height = 184
     Anchors = []
     ParentBackground = False
     TabOrder = 2
+    ExplicitLeft = 16
     object StatistikStageLable: TLabel
       Left = 8
       Top = 0
@@ -16078,10 +16079,10 @@ object GameFrame: TGameFrame
     end
   end
   object CheckButton: TButton
-    Left = 664
+    Left = 726
     Top = 192
     Width = 57
-    Height = 54
+    Height = 57
     Anchors = []
     Caption = 'Check'
     Font.Charset = DEFAULT_CHARSET
@@ -16094,12 +16095,58 @@ object GameFrame: TGameFrame
     OnClick = CheckButtonClick
   end
   object ProgressBar1: TProgressBar
-    Left = 186
-    Top = 376
+    Left = 256
+    Top = 368
     Width = 441
     Height = 26
     Anchors = []
     TabOrder = 4
+  end
+  object backFrameButton: TButton
+    Left = 36
+    Top = 407
+    Width = 137
+    Height = 49
+    Anchors = []
+    Caption = #1042#1077#1088#1085#1091#1090#1100#1089#1103
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    ExplicitLeft = 16
+  end
+  object HintButton: TButton
+    Left = 764
+    Top = 287
+    Width = 137
+    Height = 49
+    Anchors = []
+    Caption = #1055#1086#1076#1089#1082#1072#1079#1082#1072
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+  end
+  object SaveGameNowButton: TButton
+    Left = 752
+    Top = 407
+    Width = 169
+    Height = 49
+    Anchors = []
+    Caption = #1057#1086#1093#1088#1072#1085#1077#1085#1080#1077
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
   end
   object Timer1: TTimer
     Enabled = False

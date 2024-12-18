@@ -11,6 +11,7 @@ var CurrentStage, subStage: integer;
 procedure nextStage();
 procedure StartGame();
 procedure CheckAllStage(wordIn: string);
+procedure StartSaveGame();
 
 implementation
 
@@ -127,6 +128,18 @@ begin
   gener.GetAllSArr();
   CurrentStage := 1;  //1
   subStage:=5;
+  WinCount := 0;
+  MainFormGame.GameFrame.CheckButton.Enabled:= False;
+  //statistik Out
+  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
+  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
+  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+end;
+
+procedure StartSaveGame();
+begin
+  gener.GetAllSArr();
   WinCount := 0;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
   //statistik Out

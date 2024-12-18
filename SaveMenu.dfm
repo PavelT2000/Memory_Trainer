@@ -1,14 +1,17 @@
 object SaveMenuFrame: TSaveMenuFrame
   Left = 0
   Top = 0
-  Width = 640
-  Height = 480
+  Width = 876
+  Height = 546
   TabOrder = 0
+  DesignSize = (
+    876
+    546)
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 640
-    Height = 480
+    Width = 876
+    Height = 546
     Align = alClient
     AutoSize = True
     Picture.Data = {
@@ -4273,6 +4276,87 @@ object SaveMenuFrame: TSaveMenuFrame
       02800A002800A002800A002800A002801B400500140050014005001400500140
       0500140050014005001400500140050014005007FFD9}
     Stretch = True
-    ExplicitWidth = 617
+    ExplicitWidth = 1920
+    ExplicitHeight = 1080
+  end
+  object Save1Button: TButton
+    Left = 304
+    Top = 128
+    Width = 241
+    Height = 49
+    Anchors = []
+    Caption = #1057#1086#1093#1088#1072#1085#1077#1085#1080#1077' 1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Save1ButtonClick
+  end
+  object Save2Button: TButton
+    Left = 304
+    Top = 208
+    Width = 241
+    Height = 49
+    Anchors = []
+    Caption = #1057#1086#1093#1088#1072#1085#1077#1085#1080#1077' 2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = Save2ButtonClick
+  end
+  object AutoSaveButton: TButton
+    Left = 304
+    Top = 368
+    Width = 241
+    Height = 49
+    Anchors = []
+    Caption = 'auto save'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = AutoSaveButtonClick
+  end
+  object Save3Button: TButton
+    Left = 304
+    Top = 288
+    Width = 241
+    Height = 49
+    Anchors = []
+    Caption = #1057#1086#1093#1088#1072#1085#1077#1085#1080#1077' 3'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    OnClick = Save3ButtonClick
+  end
+  object backFrameButton: TButton
+    Left = 24
+    Top = 464
+    Width = 137
+    Height = 49
+    Anchors = []
+    Caption = #1042#1077#1088#1085#1091#1090#1100#1089#1103
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+    OnClick = backFrameButtonClick
   end
 end

@@ -16,50 +16,57 @@ var myFile: TextFile;
     wordArr: SArr;
     i: integer;
 begin
-  if (SaveNum = 1) then begin
-    AssignFile(myFile, 'saves\SaveData1.txt');
-  end
-  else if (SaveNum = 2) then begin
-    AssignFile(myFile, 'saves\SaveData2.txt');
-  end
-  else if (SaveNum = 3) then begin
-    AssignFile(myFile, 'saves\SaveData3.txt');
-  end
-  else if (SaveNum = 4) then begin
-    AssignFile(myFile, 'saves\SaveData4.txt');
-  end;
-
-  ReSet(MyFile);
-  readln(myFile, strIn);
-
-  CurrentStage:= -1;
-  subStage:= -1;
-  if (strIn <> '') then begin
-    resultStr:= strIn;
-    while (not Eof(myFile)) do begin
-      readln(myFile, strIn);
-      resultStr:= resultStr + strIn;
+  try begin
+    if (SaveNum = 1) then begin
+      AssignFile(myFile, 'saves\SaveData1.txt');
+    end
+    else if (SaveNum = 2) then begin
+      AssignFile(myFile, 'saves\SaveData2.txt');
+    end
+    else if (SaveNum = 3) then begin
+      AssignFile(myFile, 'saves\SaveData3.txt');
+    end
+    else if (SaveNum = 4) then begin
+      AssignFile(myFile, 'saves\SaveData4.txt');
     end;
-    wordArr:= splitGo.ListOfWordsAndNum(resultStr);
-    i:= Low(wordArr);
-    while (i <= High(wordArr)) do begin
-      if (wordArr[i] = 'currentStage') then begin
-        inc(i);
-        CurrentStage:= strToInt(wordArr[i]);
-      end
-      else if (wordArr[i] = 'subStage') then begin
-        inc(i);
-        subStage:= strToInt(wordArr[i]);
+
+    ReSet(MyFile);
+    readln(myFile, strIn);
+
+    CurrentStage:= -1;
+    subStage:= -1;
+    if (strIn <> '') then begin
+      resultStr:= strIn;
+      while (not Eof(myFile)) do begin
+        readln(myFile, strIn);
+        resultStr:= resultStr + strIn;
       end;
-      inc(i);
+      wordArr:= splitGo.ListOfWordsAndNum(resultStr);
+      i:= Low(wordArr);
+      while (i <= High(wordArr)) do begin
+        if (wordArr[i] = 'currentStage') then begin
+          inc(i);
+          CurrentStage:= strToInt(wordArr[i]);
+        end
+        else if (wordArr[i] = 'subStage') then begin
+          inc(i);
+          subStage:= strToInt(wordArr[i]);
+        end;
+        inc(i);
+      end;
     end;
+    if (CurrentStage = -1) and (subStage = -1) then begin
+      ShowMessage('We cant find your save, loading basic game...');
+      CurrentStage:= 1; //game mode
+      subStage:= 5; //num of letters or words
+    end;
+    closeFile(myFile);
   end;
-  if (CurrentStage = -1) and (subStage = -1) then begin
-    ShowMessage('We cant find your save, we load basic game');
+  except
+    ShowMessage('We cant find your save, loading basic game...');
     CurrentStage:= 1; //game mode
-    subStage:=5; //num of letters or words
+    subStage:= 5; //num of letters or words
   end;
-  closeFile(myFile);
 end;
 
 {AssignFile(myFile, 'test2.txt');
