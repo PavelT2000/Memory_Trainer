@@ -1,0 +1,30 @@
+unit Setting;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type DifficultLevel = (TestMod, Easy, Medium, Hard);
+
+type
+  TSettingFrame = class(TFrame)
+    Image1: TImage;
+    arrowLeftButton: TButton;
+    arrowRightButton: TButton;
+    difficultPanel: TPanel;
+    difficultLevelNameLabel: TLabel;
+    difficultLevelLabel: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+end.

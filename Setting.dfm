@@ -1,14 +1,17 @@
 object SettingFrame: TSettingFrame
   Left = 0
   Top = 0
-  Width = 919
-  Height = 548
+  Width = 1099
+  Height = 617
   TabOrder = 0
+  DesignSize = (
+    1099
+    617)
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 919
-    Height = 548
+    Width = 1099
+    Height = 617
     Align = alClient
     AutoSize = True
     Picture.Data = {
@@ -4275,5 +4278,122 @@ object SettingFrame: TSettingFrame
     Stretch = True
     ExplicitWidth = 1920
     ExplicitHeight = 1080
+  end
+  object arrowLeftButton: TButton
+    Left = 328
+    Top = 174
+    Width = 47
+    Height = 39
+    Anchors = []
+    Caption = '<'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 50
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object arrowRightButton: TButton
+    Left = 658
+    Top = 174
+    Width = 47
+    Height = 39
+    Anchors = []
+    Caption = '>'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 50
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object difficultPanel: TPanel
+    Left = 392
+    Top = 157
+    Width = 236
+    Height = 72
+    Anchors = []
+    ParentBackground = False
+    TabOrder = 2
+    object difficultLevelNameLabel: TLabel
+      Left = 0
+      Top = 0
+      Width = 233
+      Height = 25
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #1059#1088#1086#1074#1077#1085#1100' '#1089#1083#1086#1078#1085#1086#1089#1090#1080':'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      WordWrap = True
+    end
+    object difficultLevelLabel: TLabel
+      Left = 3
+      Top = 31
+      Width = 233
+      Height = 41
+      Alignment = taCenter
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+  object BackInMenuButton: TButton
+    Left = 18
+    Top = 558
+    Width = 127
+    Height = 39
+    Anchors = []
+    Caption = #1042#1077#1088#1085#1091#1090#1100#1089#1103
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    OnClick = BackInMenuButtonClick
+  end
+  object Panel1: TPanel
+    Left = 392
+    Top = 264
+    Width = 236
+    Height = 41
+    Anchors = []
+    Caption = #1042#1082#1083'/'#1042#1099#1082#1083' '#1084#1091#1079#1099#1082#1080
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 4
+  end
+  object MuteMusicButton: TButton
+    Left = 658
+    Top = 264
+    Width = 47
+    Height = 41
+    Anchors = []
+    Caption = 'Mute'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
   end
 end

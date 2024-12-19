@@ -8,9 +8,11 @@ uses
 const basicCurrentStage = 1;
       basicSubStage = 5;
       basicWinCount = 0;
-      basicNextSubStage = 9;
-      basicNextWinCount = 3;
-      basicMaxStage = 5;
+
+var   basicNextSubStage: integer = 9;
+      basicNextWinCount: integer = 3;
+      basicMaxStage: integer = 5;
+
 var CurrentStage, subStage: integer;
     exampleS: string;
 

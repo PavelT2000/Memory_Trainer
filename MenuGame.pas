@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls,
-  Vcl.Imaging.jpeg, Vcl.StdCtrls, Game;
+  Vcl.Imaging.jpeg, Vcl.StdCtrls, Game, GameSound;
 
 type
   TMenuFrame = class(TFrame)
@@ -14,10 +14,11 @@ type
     NewGameButton: TButton;
     ContinueButton: TButton;
     RulesButton: TButton;
-    Setting: TButton;
+    SettingButton: TButton;
     procedure RulesButtonClick(Sender: TObject);
     procedure NewGameButtonClick(Sender: TObject);
     procedure ContinueButtonClick(Sender: TObject);
+    procedure SettingButtonClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -60,6 +61,13 @@ procedure TMenuFrame.RulesButtonClick(Sender: TObject);
 begin
   MainFormGame.CloseAllFrames;
   MainFormGame.RulesFrame.Visible := True;
+end;
+
+procedure TMenuFrame.SettingButtonClick(Sender: TObject);
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.SettingFrame.Visible := True;
+  GameSound.TurnOnMusuc(GameSound.elevator);
 end;
 
 end.

@@ -14,7 +14,7 @@ type
     MenuFrame: TMenuFrame;
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
-    SettingFrame1: TSettingFrame;
+    SettingFrame: TSettingFrame;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
 
@@ -37,6 +37,7 @@ begin
   MenuFrame.Visible := False;
   RulesFrame.Visible:= False;
   SaveMenuFrame.Visible:= False;
+  SettingFrame.Visible:= False;
 end;
 
 procedure TMainFormGame.FormCreate(Sender: TObject);
@@ -44,6 +45,7 @@ begin
   CloseAllFrames;
   MenuFrame.Visible:= True;
   Game.GameFrameMode:= False;
+  GameSound.TurnOnMusuc(GameSound.calmMind);
 end;
 
 end.

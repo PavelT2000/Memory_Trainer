@@ -1,0 +1,46 @@
+unit Setting;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type DifficultLevel = (TestMod, Easy, Medium, Hard);
+{hard, no word only random letters
+Medium, usuful game
+Easy, winStreak only 2
+TestMod, winStreak only 1 and 2 subStage in every CurStage}
+
+type
+  TSettingFrame = class(TFrame)
+    Image1: TImage;
+    arrowLeftButton: TButton;
+    arrowRightButton: TButton;
+    difficultPanel: TPanel;
+    difficultLevelNameLabel: TLabel;
+    difficultLevelLabel: TLabel;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var currentDifficult: DifficultLevel = Medium;
+
+implementation
+
+uses FMainCode;
+
+{$R *.dfm}
+
+procedure TSettingFrame.Button1Click(Sender: TObject);
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.MenuFrame.Visible:= True;
+end;
+
+end.
