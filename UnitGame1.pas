@@ -5,6 +5,12 @@ interface
 uses
   System.SysUtils, Windows, Gener, UnitBasic, SplitGo;
 
+const basicCurrentStage = 1;
+      basicSubStage = 5;
+      basicWinCount = 0;
+      basicNextSubStage = 9;
+      basicNextWinCount = 3;
+      basicMaxStage = 5;
 var CurrentStage, subStage: integer;
     exampleS: string;
 
@@ -96,7 +102,7 @@ begin
   end
   else
   begin
-    WinCount:=0;
+    WinCount:= basicWinCount;
     slovoOut:= 'Ответ не верный(';
     MainFormGame.GameFrame.OnlySlovoLable.Caption:= exampleS;
   end;
@@ -105,16 +111,16 @@ begin
   //MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
                 //3
-  if WinCount = 3 then
+  if WinCount >= basicNextWinCount then
   begin
-    WinCount := 0;
+    WinCount := basicWinCount;
     Inc(SubStage);
     StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
     MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
   end;        //9
-  if SubStage = 9 then
+  if SubStage >= basicNextSubStage then
   begin
-    SubStage := 5;
+    SubStage := basicSubStage;
     Inc(CurrentStage);
     StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
     MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
@@ -126,9 +132,9 @@ end;
 procedure StartGame();
 begin
   gener.GetAllSArr();
-  CurrentStage := 1;  //1
-  subStage:=5;
-  WinCount := 0;
+  CurrentStage:= basicCurrentStage;  //1
+  subStage:= basicSubStage;
+  WinCount := basicWinCount;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
   //statistik Out
   StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
@@ -140,7 +146,7 @@ end;
 procedure StartSaveGame();
 begin
   gener.GetAllSArr();
-  WinCount := 0;
+  WinCount := basicWinCount;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
   //statistik Out
   StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);

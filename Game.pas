@@ -28,13 +28,15 @@ type
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure nextWordTimerTimer(Sender: TObject);
+    procedure backFrameButtonClick(Sender: TObject);
+    procedure SaveGameNowButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
 
   end;
 
-//var GameFrame: TGameFrame;
+var GameFrameMode: boolean;
 procedure StartGame();
 
 implementation
@@ -54,6 +56,13 @@ begin
 
 end;
 
+procedure TGameFrame.backFrameButtonClick(Sender: TObject);
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.MenuFrame.Visible:= True;
+  GameFrameMode:= False;
+end;
+
 procedure TGameFrame.CheckButtonClick(Sender: TObject);
 var wordIn: string;
 begin
@@ -68,12 +77,19 @@ end;
 procedure TGameFrame.nextWordTimerTimer(Sender: TObject);
 begin
   NextWordTimer.Enabled:= False;
-  if (CurrentStage > 5) then begin
+  if (CurrentStage > UnitGame1.basicMaxStage) then begin
 
   end
   else begin
     UnitGame1.nextStage;
   end;
+end;
+
+procedure TGameFrame.SaveGameNowButtonClick(Sender: TObject);
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.SaveMenuFrame.Visible:= True;
+  MainFormGame.SaveMenuFrame.AutoSaveButton.Visible:= False;
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);

@@ -12,7 +12,8 @@ uses
   MenuGame in 'MenuGame.pas' {MenuFrame: TFrame},
   Game in 'Game.pas' {GameFrame: TFrame},
   Rules in 'Rules.pas' {RulesFrame: TFrame},
-  SaveMenu in 'SaveMenu.pas' {SaveMenuFrame: TFrame};
+  SaveMenu in 'SaveMenu.pas' {SaveMenuFrame: TFrame},
+  Setting in 'Setting.pas' {SettingFrame: TFrame};
 
 {$R *.res}
 

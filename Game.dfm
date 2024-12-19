@@ -1,16 +1,16 @@
 object GameFrame: TGameFrame
   Left = 0
   Top = 0
-  Width = 942
+  Width = 944
   Height = 480
   TabOrder = 0
   DesignSize = (
-    942
+    944
     480)
   object bg: TImage
     Left = 0
     Top = 0
-    Width = 942
+    Width = 944
     Height = 480
     Align = alClient
     Picture.Data = {
@@ -15976,9 +15976,10 @@ object GameFrame: TGameFrame
       8004FF002A894952091C7AE69EEDB7259BB63AD35B01FFD9}
     Stretch = True
     ExplicitLeft = -16
+    ExplicitWidth = 942
   end
   object SlovoEdit: TEdit
-    Left = 256
+    Left = 257
     Top = 192
     Width = 441
     Height = 57
@@ -15992,15 +15993,17 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 0
     Text = 'Enter your Answer'
+    ExplicitLeft = 256
   end
   object SlovoPanel: TPanel
-    Left = 280
+    Left = 281
     Top = 68
     Width = 401
     Height = 81
     Anchors = []
     ParentBackground = False
     TabOrder = 1
+    ExplicitLeft = 280
     object SlovoRememberLabel: TLabel
       Left = 48
       Top = 1
@@ -16040,7 +16043,6 @@ object GameFrame: TGameFrame
     Anchors = []
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 16
     object StatistikStageLable: TLabel
       Left = 8
       Top = 0
@@ -16079,7 +16081,7 @@ object GameFrame: TGameFrame
     end
   end
   object CheckButton: TButton
-    Left = 726
+    Left = 728
     Top = 192
     Width = 57
     Height = 57
@@ -16093,14 +16095,16 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 3
     OnClick = CheckButtonClick
+    ExplicitLeft = 726
   end
   object ProgressBar1: TProgressBar
-    Left = 256
+    Left = 257
     Top = 368
     Width = 441
     Height = 26
     Anchors = []
     TabOrder = 4
+    ExplicitLeft = 256
   end
   object backFrameButton: TButton
     Left = 36
@@ -16116,10 +16120,10 @@ object GameFrame: TGameFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 5
-    ExplicitLeft = 16
+    OnClick = backFrameButtonClick
   end
   object HintButton: TButton
-    Left = 764
+    Left = 766
     Top = 287
     Width = 137
     Height = 49
@@ -16132,9 +16136,10 @@ object GameFrame: TGameFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+    ExplicitLeft = 764
   end
   object SaveGameNowButton: TButton
-    Left = 752
+    Left = 754
     Top = 407
     Width = 169
     Height = 49
@@ -16147,18 +16152,20 @@ object GameFrame: TGameFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 7
+    OnClick = SaveGameNowButtonClick
+    ExplicitLeft = 752
   end
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 696
-    Top = 48
+    Left = 856
+    Top = 40
   end
   object nextWordTimer: TTimer
     Enabled = False
     Interval = 1300
     OnTimer = nextWordTimerTimer
-    Left = 648
-    Top = 48
+    Left = 784
+    Top = 40
   end
 end

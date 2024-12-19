@@ -8,7 +8,7 @@ procedure SaveG(SaveNum, CurrentStage, subStage: integer);
 
 implementation
 
-uses Vcl.Dialogs;
+uses Vcl.Dialogs, UnitGame1;
 
 procedure loadG(saveNum: integer; var CurrentStage, subStage: integer);
 var myFile: TextFile;
@@ -57,15 +57,15 @@ begin
     end;
     if (CurrentStage = -1) and (subStage = -1) then begin
       ShowMessage('We cant find your save, loading basic game...');
-      CurrentStage:= 1; //game mode
-      subStage:= 5; //num of letters or words
+      CurrentStage:= UnitGame1.basicCurrentStage; //game mode
+      subStage:= UnitGame1.basicSubStage; //num of letters or words
     end;
     closeFile(myFile);
   end;
   except
     ShowMessage('We cant find your save, loading basic game...');
-    CurrentStage:= 1; //game mode
-    subStage:= 5; //num of letters or words
+    CurrentStage:= UnitGame1.basicCurrentStage; //game mode
+    subStage:= UnitGame1.basicSubStage; //num of letters or words
   end;
 end;
 

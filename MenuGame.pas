@@ -14,6 +14,7 @@ type
     NewGameButton: TButton;
     ContinueButton: TButton;
     RulesButton: TButton;
+    Setting: TButton;
     procedure RulesButtonClick(Sender: TObject);
     procedure NewGameButtonClick(Sender: TObject);
     procedure ContinueButtonClick(Sender: TObject);
@@ -45,6 +46,7 @@ procedure TMenuFrame.NewGameButtonClick(Sender: TObject);
 begin
   MainFormGame.CloseAllFrames;
   MainFormGame.GameFrame.Visible:= True;
+  Game.GameFrameMode:= True;
   game.StartGame();
 end;
 
