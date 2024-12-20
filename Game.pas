@@ -36,7 +36,7 @@ type
 
   end;
 
-var GameFrameMode: boolean;
+var GameFrameMode: boolean = False;
 procedure StartGame();
 
 implementation
@@ -58,9 +58,7 @@ end;
 
 procedure TGameFrame.backFrameButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.MenuFrame.Visible:= True;
-  GameFrameMode:= False;
+  FMainCode.LoadMenuFrame;
 end;
 
 procedure TGameFrame.CheckButtonClick(Sender: TObject);
@@ -87,9 +85,7 @@ end;
 
 procedure TGameFrame.SaveGameNowButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.SaveMenuFrame.Visible:= True;
-  MainFormGame.SaveMenuFrame.AutoSaveButton.Visible:= False;
+  FMainCode.LoadSaveMenuFrame;
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);

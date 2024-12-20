@@ -27,6 +27,12 @@ type
 var
   MainFormGame: TMainFormGame;
 
+procedure LoadGameFrame();
+procedure LoadMenuFrame();
+procedure LoadRulesFrame();
+procedure LoadSaveMenuFrame();
+procedure LoadSettingsFrame();
+
 implementation
 
 {$R *.dfm}
@@ -40,12 +46,52 @@ begin
   SettingFrame.Visible:= False;
 end;
 
+procedure LoadGameFrame();
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.GameFrame.Visible := True;
+  GameSound.TurnOnMusuc(GameSound.doomFear);
+  Game.GameFrameMode:= true;
+end;
+
+procedure LoadMenuFrame();
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.MenuFrame.Visible := True;
+  GameSound.TurnOnMusuc(GameSound.calmMind);
+  Game.GameFrameMode:= false;
+end;
+
+procedure LoadRulesFrame();
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.RulesFrame.Visible:= True;
+  GameSound.TurnOnMusuc(GameSound.elevator);
+end;
+
+procedure LoadSaveMenuFrame();
+begin
+  if (game.GameFrameMode = true) then begin
+    MainFormGame.SaveMenuFrame.AutoSaveButton.Visible:= False;
+  end
+  else begin
+    MainFormGame.SaveMenuFrame.AutoSaveButton.Visible:= True;
+  end;
+  MainFormGame.CloseAllFrames;
+  MainFormGame.SaveMenuFrame.Visible:= True;
+  GameSound.TurnOnMusuc(GameSound.elevator);
+end;
+
+procedure LoadSettingsFrame();
+begin
+  MainFormGame.CloseAllFrames;
+  MainFormGame.SettingFrame.Visible:= True;
+  GameSound.TurnOnMusuc(GameSound.elevator);
+end;
+
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
-  CloseAllFrames;
-  MenuFrame.Visible:= True;
-  Game.GameFrameMode:= False;
-  GameSound.TurnOnMusuc(GameSound.calmMind);
+  FMainCode.LoadMenuFrame
 end;
 
 end.

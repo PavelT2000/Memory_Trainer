@@ -41,8 +41,7 @@ uses FMainCode;
 
 procedure TSettingFrame.BackInMenuButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.MenuFrame.Visible:= True;
+  FMainCode.LoadMenuFrame;
 end;
 
 end.
