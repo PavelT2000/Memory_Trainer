@@ -4395,5 +4395,6 @@ object SettingFrame: TSettingFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 5
+    OnClick = MuteMusicButtonClick
   end
 end

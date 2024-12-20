@@ -39,12 +39,12 @@ object MainFormGame: TMainFormGame
     end
     inherited Save1Button: TButton
       Left = 349
-      Top = 66
+      Top = 65
       Width = 355
       Height = 58
       Font.Height = -43
       ExplicitLeft = 348
-      ExplicitTop = 65
+      ExplicitTop = 64
       ExplicitWidth = 355
       ExplicitHeight = 58
     end
@@ -206,13 +206,11 @@ object MainFormGame: TMainFormGame
     inherited HintButton: TButton
       Left = 872
       Top = 288
-      Width = 169
       Height = 57
       Caption = #1087#1086#1076#1089#1084#1086#1090#1088#1077#1090#1100
       Font.Height = -19
       ExplicitLeft = 870
       ExplicitTop = 284
-      ExplicitWidth = 169
       ExplicitHeight = 57
     end
     inherited SaveGameNowButton: TButton
@@ -245,22 +243,22 @@ object MainFormGame: TMainFormGame
       Height = 604
     end
     inherited arrowLeftButton: TButton
-      Left = 333
-      Top = 179
-      ExplicitLeft = 332
-      ExplicitTop = 176
+      Left = 335
+      Top = 181
+      ExplicitLeft = 334
+      ExplicitTop = 178
     end
     inherited arrowRightButton: TButton
-      Left = 653
-      Top = 179
-      ExplicitLeft = 652
-      ExplicitTop = 176
+      Left = 651
+      Top = 181
+      ExplicitLeft = 650
+      ExplicitTop = 178
     end
     inherited difficultPanel: TPanel
-      Top = 162
+      Top = 164
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 391
-      ExplicitTop = 159
+      ExplicitTop = 161
       inherited difficultLevelNameLabel: TLabel
         Height = 23
         Font.Height = -17
@@ -273,9 +271,9 @@ object MainFormGame: TMainFormGame
     end
     inherited BackInMenuButton: TButton
       Left = 23
-      Top = 532
+      Top = 530
       ExplicitLeft = 23
-      ExplicitTop = 525
+      ExplicitTop = 523
     end
     inherited Panel1: TPanel
       Font.Height = -17
@@ -284,9 +282,41 @@ object MainFormGame: TMainFormGame
       ExplicitTop = 260
     end
     inherited MuteMusicButton: TButton
-      Left = 653
-      ExplicitLeft = 652
+      Left = 651
+      ExplicitLeft = 650
       ExplicitTop = 260
+    end
+  end
+  inline RulesFrame: TRulesFrame
+    Left = 0
+    Top = 0
+    Width = 1078
+    Height = 604
+    Align = alClient
+    TabOrder = 3
+    ExplicitWidth = 1076
+    ExplicitHeight = 596
+    inherited Image1: TImage
+      Width = 1078
+      Height = 604
+    end
+    inherited Panel1: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+      inherited Label1: TLabel
+        Width = 497
+        Height = 441
+        Font.Height = -17
+        ParentFont = False
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 497
+        ExplicitHeight = 441
+      end
+    end
+    inherited FromRuleToMenuButton: TButton
+      Left = 23
+      Top = 527
+      ExplicitLeft = 23
+      ExplicitTop = 520
     end
   end
   inline MenuFrame: TMenuFrame
@@ -320,49 +350,17 @@ object MainFormGame: TMainFormGame
     end
     inherited RulesButton: TButton
       Left = 345
-      Top = 399
+      Top = 401
       Width = 355
       ExplicitLeft = 344
-      ExplicitTop = 393
+      ExplicitTop = 395
       ExplicitWidth = 355
     end
     inherited SettingButton: TButton
       Left = 1016
-      Top = 12
+      Top = 10
       ExplicitLeft = 1014
-      ExplicitTop = 12
-    end
-  end
-  inline RulesFrame: TRulesFrame
-    Left = 0
-    Top = 0
-    Width = 1078
-    Height = 604
-    Align = alClient
-    TabOrder = 3
-    ExplicitWidth = 1076
-    ExplicitHeight = 596
-    inherited Image1: TImage
-      Width = 1078
-      Height = 604
-    end
-    inherited Panel1: TPanel
-      StyleElements = [seFont, seClient, seBorder]
-      inherited Label1: TLabel
-        Width = 497
-        Height = 441
-        Font.Height = -17
-        ParentFont = False
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 497
-        ExplicitHeight = 441
-      end
-    end
-    inherited FromRuleToMenuButton: TButton
-      Left = 23
-      Top = 529
-      ExplicitLeft = 23
-      ExplicitTop = 529
+      ExplicitTop = 10
     end
   end
 end
