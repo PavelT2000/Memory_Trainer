@@ -4327,20 +4327,4 @@ object MenuFrame: TMenuFrame
     TabOrder = 2
     OnClick = RulesButtonClick
   end
-  object SettingButton: TButton
-    Left = 1040
-    Top = 16
-    Width = 41
-    Height = 41
-    Anchors = []
-    Caption = '+'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 50
-    Font.Name = '@Arial Unicode MS'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    OnClick = SettingButtonClick
-  end
 end

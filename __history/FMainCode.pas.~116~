@@ -15,8 +15,10 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
+    SettingButton: TButton;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
+    procedure SettingButtonClick(Sender: TObject);
 
   private
 
@@ -24,8 +26,17 @@ type
 
   end;
 
+type AllFrames = (GameFrame, MenuFrame, RulesFrame, SaveMenuFrame, SettingFrame);
+
 var
   MainFormGame: TMainFormGame;
+  preFrame, nowFrame: AllFrames;
+
+procedure LoadGameFrame();
+procedure LoadMenuFrame();
+procedure LoadRulesFrame();
+procedure LoadSaveMenuFrame();
+procedure LoadSettingsFrame();
 
 implementation
 
@@ -45,6 +56,7 @@ begin
   MainFormGame.CloseAllFrames;
   MainFormGame.GameFrame.Visible := True;
   GameSound.TurnOnMusuc(GameSound.doomFear);
+  Game.GameFrameMode:= true;
 end;
 
 procedure LoadMenuFrame();
@@ -52,6 +64,7 @@ begin
   MainFormGame.CloseAllFrames;
   MainFormGame.MenuFrame.Visible := True;
   GameSound.TurnOnMusuc(GameSound.calmMind);
+  Game.GameFrameMode:= false;
 end;
 
 procedure LoadRulesFrame();
@@ -63,6 +76,12 @@ end;
 
 procedure LoadSaveMenuFrame();
 begin
+  if (game.GameFrameMode = true) then begin
+    MainFormGame.SaveMenuFrame.AutoSaveButton.Visible:= False;
+  end
+  else begin
+    MainFormGame.SaveMenuFrame.AutoSaveButton.Visible:= True;
+  end;
   MainFormGame.CloseAllFrames;
   MainFormGame.SaveMenuFrame.Visible:= True;
   GameSound.TurnOnMusuc(GameSound.elevator);
@@ -70,6 +89,16 @@ end;
 
 procedure LoadSettingsFrame();
 begin
+  if (game.GameFrameMode = True) then begin
+    MainFormGame.SettingFrame.arrowRightButton.Visible:= False;
+    MainFormGame.SettingFrame.arrowLeftButton.Visible:= False;
+    MainFormGame.SettingFrame.difficultPanel.Visible:= False;
+  end
+  else begin
+    MainFormGame.SettingFrame.arrowRightButton.Visible:= True;
+    MainFormGame.SettingFrame.arrowLeftButton.Visible:= True;
+    MainFormGame.SettingFrame.difficultPanel.Visible:= True;
+  end;
   MainFormGame.CloseAllFrames;
   MainFormGame.SettingFrame.Visible:= True;
   GameSound.TurnOnMusuc(GameSound.elevator);
@@ -77,7 +106,12 @@ end;
 
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
-  FMainCode.LoadMenuFrame
+  LoadMenuFrame;
+end;
+
+procedure TMainFormGame.SettingButtonClick(Sender: TObject);
+begin
+  LoadSettingsFrame;
 end;
 
 end.

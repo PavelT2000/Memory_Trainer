@@ -14,11 +14,9 @@ type
     NewGameButton: TButton;
     ContinueButton: TButton;
     RulesButton: TButton;
-    SettingButton: TButton;
     procedure RulesButtonClick(Sender: TObject);
     procedure NewGameButtonClick(Sender: TObject);
     procedure ContinueButtonClick(Sender: TObject);
-    procedure SettingButtonClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -57,11 +55,6 @@ end;
 procedure TMenuFrame.RulesButtonClick(Sender: TObject);
 begin
   FMainCode.LoadRulesFrame;
-end;
-
-procedure TMenuFrame.SettingButtonClick(Sender: TObject);
-begin
-  FMainCode.LoadSettingsFrame;
 end;
 
 end.

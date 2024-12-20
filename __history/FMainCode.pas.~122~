@@ -56,12 +56,13 @@ procedure LoadGameFrame();
 begin
   preFrame:= nowFrame;
   nowFrame:= GameFrame;
-  MainFormGame.CloseAllFrames;
+  //MainFormGame.CloseAllFrames;
+  //GameFrame.Visible := False;
   MainFormGame.GameFrame.Visible := True;
-  {MainFormGame.MenuFrame.Visible := False;
+  MainFormGame.MenuFrame.Visible := False;
   MainFormGame.RulesFrame.Visible:= False;
   MainFormGame.SaveMenuFrame.Visible:= False;
-  MainFormGame.SettingFrame.Visible:= False;}
+  MainFormGame.SettingFrame.Visible:= False;
   GameSound.TurnOnMusuc(GameSound.doomFear);
   Game.GameFrameMode:= true;
 end;

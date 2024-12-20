@@ -42,7 +42,13 @@ uses FMainCode, GameSound;
 
 procedure TSettingFrame.BackInMenuButtonClick(Sender: TObject);
 begin
-  FMainCode.LoadMenuFrame;
+  case FMainCode.preFrame of
+    GameFrame: FMainCode.LoadGameFrame;
+    MenuFrame: FMainCode.LoadMenuFrame;
+    RulesFrame: FMainCode.LoadRulesFrame;
+    SaveMenuFrame: FMainCode.LoadSaveMenuFrame;
+    SettingFrame: FMainCode.LoadSettingFrame;
+  end;
 end;
 
 procedure TSettingFrame.MuteMusicButtonClick(Sender: TObject);

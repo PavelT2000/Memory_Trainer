@@ -15,14 +15,18 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
+    SettingButton: TButton;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
+    procedure SettingButtonClick(Sender: TObject);
 
   private
 
   public
 
   end;
+
+type AllFrames = (GameFrame, MenuFrame, RulesFrame, SaveMenuFrame, SettingFrame);
 
 var
   MainFormGame: TMainFormGame;
@@ -84,6 +88,16 @@ end;
 
 procedure LoadSettingsFrame();
 begin
+  if (game.GameFrameMode = True) then begin
+    MainFormGame.SettingFrame.arrowRightButton.Visible:= False;
+    MainFormGame.SettingFrame.arrowLeftButton.Visible:= False;
+    MainFormGame.SettingFrame.difficultPanel.Visible:= False;
+  end
+  else begin
+    MainFormGame.SettingFrame.arrowRightButton.Visible:= True;
+    MainFormGame.SettingFrame.arrowLeftButton.Visible:= True;
+    MainFormGame.SettingFrame.difficultPanel.Visible:= True;
+  end;
   MainFormGame.CloseAllFrames;
   MainFormGame.SettingFrame.Visible:= True;
   GameSound.TurnOnMusuc(GameSound.elevator);
@@ -91,8 +105,12 @@ end;
 
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
-  GameSound.TurnOffMusic;
-  FMainCode.LoadMenuFrame
+  LoadMenuFrame;
+end;
+
+procedure TMainFormGame.SettingButtonClick(Sender: TObject);
+begin
+  LoadSettingsFrame;
 end;
 
 end.

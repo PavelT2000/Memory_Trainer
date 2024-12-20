@@ -21,8 +21,11 @@ type
     difficultPanel: TPanel;
     difficultLevelNameLabel: TLabel;
     difficultLevelLabel: TLabel;
-    backFrameButton: TButton;
-    procedure backFrameButtonClick(Sender: TObject);
+    BackInMenuButton: TButton;
+    Panel1: TPanel;
+    MuteMusicButton: TButton;
+    procedure BackInMenuButtonClick(Sender: TObject);
+    procedure MuteMusicButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,12 +36,18 @@ var currentDifficult: DifficultLevel = Medium;
 
 implementation
 
+uses FMainCode, GameSound;
+
 {$R *.dfm}
 
-procedure TSettingFrame.backFrameButtonClick(Sender: TObject);
+procedure TSettingFrame.BackInMenuButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.MenuFrame.Visible:= True;
+  FMainCode.LoadMenuFrame;
+end;
+
+procedure TSettingFrame.MuteMusicButtonClick(Sender: TObject);
+begin
+  GameSound.OnOffMuteMusic;
 end;
 
 end.

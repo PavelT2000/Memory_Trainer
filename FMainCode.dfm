@@ -12,6 +12,9 @@ object MainFormGame: TMainFormGame
   Font.Style = []
   GlassFrame.Enabled = True
   OnCreate = FormCreate
+  DesignSize = (
+    1078
+    604)
   TextHeight = 23
   object MediaPlayer1: TMediaPlayer
     Left = -8
@@ -243,22 +246,22 @@ object MainFormGame: TMainFormGame
       Height = 604
     end
     inherited arrowLeftButton: TButton
-      Left = 335
-      Top = 181
-      ExplicitLeft = 334
-      ExplicitTop = 178
+      Left = 336
+      Top = 182
+      ExplicitLeft = 335
+      ExplicitTop = 179
     end
     inherited arrowRightButton: TButton
       Left = 651
-      Top = 181
+      Top = 182
       ExplicitLeft = 650
-      ExplicitTop = 178
+      ExplicitTop = 179
     end
     inherited difficultPanel: TPanel
-      Top = 164
+      Top = 165
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 391
-      ExplicitTop = 161
+      ExplicitTop = 162
       inherited difficultLevelNameLabel: TLabel
         Height = 23
         Font.Height = -17
@@ -271,9 +274,9 @@ object MainFormGame: TMainFormGame
     end
     inherited BackInMenuButton: TButton
       Left = 23
-      Top = 530
+      Top = 529
       ExplicitLeft = 23
-      ExplicitTop = 523
+      ExplicitTop = 522
     end
     inherited Panel1: TPanel
       Font.Height = -17
@@ -314,9 +317,9 @@ object MainFormGame: TMainFormGame
     end
     inherited FromRuleToMenuButton: TButton
       Left = 23
-      Top = 527
+      Top = 526
       ExplicitLeft = 23
-      ExplicitTop = 520
+      ExplicitTop = 519
     end
   end
   inline MenuFrame: TMenuFrame
@@ -350,17 +353,27 @@ object MainFormGame: TMainFormGame
     end
     inherited RulesButton: TButton
       Left = 345
-      Top = 401
+      Top = 402
       Width = 355
       ExplicitLeft = 344
-      ExplicitTop = 395
+      ExplicitTop = 396
       ExplicitWidth = 355
     end
-    inherited SettingButton: TButton
-      Left = 1016
-      Top = 10
-      ExplicitLeft = 1014
-      ExplicitTop = 10
-    end
+  end
+  object SettingButton: TButton
+    Left = 1013
+    Top = 15
+    Width = 41
+    Height = 41
+    Anchors = []
+    Caption = '+'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 50
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = SettingButtonClick
   end
 end
