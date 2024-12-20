@@ -4276,7 +4276,8 @@ object RulesFrame: TRulesFrame
       02800A002800A002800A002800A002801B400500140050014005001400500140
       0500140050014005001400500140050014005007FFD9}
     Stretch = True
-    ExplicitLeft = 3
+    ExplicitWidth = 1920
+    ExplicitHeight = 1080
   end
   object Panel1: TPanel
     Left = 272
@@ -4326,20 +4327,20 @@ object RulesFrame: TRulesFrame
       WordWrap = True
     end
   end
-  object fromRulesTomenuButton: TButton
-    Left = 22
-    Top = 503
-    Width = 137
-    Height = 49
+  object FromRuleToMenuButton: TButton
+    Left = 28
+    Top = 496
+    Width = 125
+    Height = 42
     Anchors = []
     Caption = #1042#1077#1088#1085#1091#1090#1100#1089#1103
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -27
+    Font.Height = -21
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    OnClick = fromRulesTomenuButtonClick
+    OnClick = FromRuleToMenuButtonClick
   end
 end

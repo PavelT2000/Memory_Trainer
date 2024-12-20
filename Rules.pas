@@ -12,8 +12,8 @@ type
     Image1: TImage;
     Panel1: TPanel;
     Label1: TLabel;
-    fromRulesTomenuButton: TButton;
-    procedure fromRulesTomenuButtonClick(Sender: TObject);
+    FromRuleToMenuButton: TButton;
+    procedure FromRuleToMenuButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,7 +26,7 @@ uses FMainCode;
 
 {$R *.dfm}
 
-procedure TRulesFrame.fromRulesTomenuButtonClick(Sender: TObject);
+procedure TRulesFrame.FromRuleToMenuButtonClick(Sender: TObject);
 begin
   FMainCode.LoadMenuFrame;
 end;
