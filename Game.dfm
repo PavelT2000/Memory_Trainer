@@ -15993,7 +15993,6 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 0
     Text = 'Enter your Answer'
-    ExplicitLeft = 256
   end
   object SlovoPanel: TPanel
     Left = 281
@@ -16003,7 +16002,6 @@ object GameFrame: TGameFrame
     Anchors = []
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 280
     object SlovoRememberLabel: TLabel
       Left = 48
       Top = 1
@@ -16095,7 +16093,6 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 3
     OnClick = CheckButtonClick
-    ExplicitLeft = 726
   end
   object ProgressBar1: TProgressBar
     Left = 257
@@ -16104,7 +16101,6 @@ object GameFrame: TGameFrame
     Height = 26
     Anchors = []
     TabOrder = 4
-    ExplicitLeft = 256
   end
   object backFrameButton: TButton
     Left = 36
@@ -16123,12 +16119,11 @@ object GameFrame: TGameFrame
     OnClick = backFrameButtonClick
   end
   object HintButton: TButton
-    Left = 766
+    Left = 754
     Top = 287
-    Width = 137
+    Width = 169
     Height = 49
     Anchors = []
-    Caption = #1055#1086#1076#1089#1082#1072#1079#1082#1072
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -16136,7 +16131,7 @@ object GameFrame: TGameFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 6
-    ExplicitLeft = 764
+    OnClick = HintButtonClick
   end
   object SaveGameNowButton: TButton
     Left = 754
@@ -16153,7 +16148,6 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 7
     OnClick = SaveGameNowButtonClick
-    ExplicitLeft = 752
   end
   object Timer1: TTimer
     Enabled = False
@@ -16167,5 +16161,11 @@ object GameFrame: TGameFrame
     OnTimer = nextWordTimerTimer
     Left = 784
     Top = 40
+  end
+  object HintTimer: TTimer
+    Enabled = False
+    OnTimer = HintTimerTimer
+    Left = 856
+    Top = 104
   end
 end

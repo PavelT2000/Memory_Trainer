@@ -4284,6 +4284,7 @@ object RulesFrame: TRulesFrame
     Top = 24
     Width = 521
     Height = 452
+    ParentBackground = False
     TabOrder = 0
     object Label1: TLabel
       Left = 8

@@ -8,12 +8,13 @@ uses
 const basicCurrentStage = 1;
       basicSubStage = 5;
       basicWinCount = 0;
+      basicHint = 5;
 
 var   basicNextSubStage: integer = 9;
       basicNextWinCount: integer = 3;
       basicMaxStage: integer = 5;
 
-var CurrentStage, subStage: integer;
+var CurrentStage, subStage, CurrentHint, pbTime: integer;
     exampleS: string;
 
 procedure nextStage();
@@ -32,7 +33,6 @@ var
 
 procedure nextStage();
 var rulesOut: string;
-    pbTime: integer;
 begin
   MainFormGame.GameFrame.SlovoEdit.Enabled:= False;
 
@@ -111,7 +111,6 @@ begin
   MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
   //MainFormGame.GameFrame.SlovoPanel.Visible:= True;
   //MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
-  MainFormGame.GameFrame.CheckButton.Enabled:= False;
                 //3
   if WinCount >= basicNextWinCount then
   begin
@@ -131,13 +130,17 @@ begin
   end;
 end;
 
-procedure StartGame();
+procedure basicStartGame();
 begin
   gener.GetAllSArr();
   CurrentStage:= basicCurrentStage;  //1
   subStage:= basicSubStage;
   WinCount := basicWinCount;
+  CurrentHint:= basicHint;
+  pbTime:= 4000;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
+  MainFormGame.GameFrame.HintButton.Enabled:= False;
+  MainFormGame.GameFrame.HintButton.Caption:= 'Подсказок: ' + intToStr(CurrentHint);
   //statistik Out
   StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
   MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
@@ -145,16 +148,16 @@ begin
   MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
 end;
 
+procedure StartGame();
+begin
+  CurrentStage:= basicCurrentStage;  //1
+  subStage:= basicSubStage;
+  basicStartgame;
+end;
+
 procedure StartSaveGame();
 begin
-  gener.GetAllSArr();
-  WinCount := basicWinCount;
-  MainFormGame.GameFrame.CheckButton.Enabled:= False;
-  //statistik Out
-  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
-  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
-  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
-  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+  basicStartGame;
 end;
 
 end.
