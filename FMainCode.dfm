@@ -95,6 +95,151 @@ object MainFormGame: TMainFormGame
       ExplicitHeight = 58
     end
   end
+  inline SettingFrame: TSettingFrame
+    Left = 0
+    Top = 0
+    Width = 1078
+    Height = 604
+    Align = alClient
+    TabOrder = 5
+    ExplicitWidth = 1076
+    ExplicitHeight = 596
+    inherited Image1: TImage
+      Width = 1078
+      Height = 604
+    end
+    inherited arrowLeftButton: TButton
+      Left = 337
+      Top = 183
+      ExplicitLeft = 336
+      ExplicitTop = 180
+    end
+    inherited arrowRightButton: TButton
+      Left = 651
+      Top = 183
+      ExplicitLeft = 650
+      ExplicitTop = 180
+    end
+    inherited difficultPanel: TPanel
+      Top = 166
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 391
+      ExplicitTop = 163
+      inherited difficultLevelNameLabel: TLabel
+        Height = 23
+        Font.Height = -17
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitHeight = 23
+      end
+      inherited difficultLevelLabel: TLabel
+        StyleElements = [seFont, seClient, seBorder]
+      end
+    end
+    inherited BackInMenuButton: TButton
+      Left = 23
+      Top = 528
+      ExplicitLeft = 23
+      ExplicitTop = 521
+    end
+    inherited Panel1: TPanel
+      Font.Height = -17
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 391
+      ExplicitTop = 260
+    end
+    inherited MuteMusicButton: TButton
+      Left = 651
+      ExplicitLeft = 650
+      ExplicitTop = 260
+    end
+  end
+  inline RulesFrame: TRulesFrame
+    Left = 0
+    Top = 0
+    Width = 1078
+    Height = 604
+    Align = alClient
+    TabOrder = 3
+    ExplicitWidth = 1076
+    ExplicitHeight = 596
+    inherited Image1: TImage
+      Width = 1078
+      Height = 604
+    end
+    inherited Panel1: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+      inherited Label1: TLabel
+        Width = 497
+        Height = 441
+        Font.Height = -17
+        ParentFont = False
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 497
+        ExplicitHeight = 441
+      end
+    end
+    inherited FromRuleToMenuButton: TButton
+      Left = 23
+      Top = 526
+      ExplicitLeft = 23
+      ExplicitTop = 519
+    end
+  end
+  inline MenuFrame: TMenuFrame
+    Left = 0
+    Top = 0
+    Width = 1078
+    Height = 604
+    Align = alClient
+    TabOrder = 2
+    ExplicitWidth = 1076
+    ExplicitHeight = 596
+    inherited Image1: TImage
+      Width = 1078
+      Height = 604
+    end
+    inherited NewGameButton: TButton
+      Left = 345
+      Top = 127
+      Width = 355
+      ExplicitLeft = 344
+      ExplicitTop = 125
+      ExplicitWidth = 355
+    end
+    inherited ContinueButton: TButton
+      Left = 345
+      Top = 261
+      Width = 355
+      ExplicitLeft = 344
+      ExplicitTop = 257
+      ExplicitWidth = 355
+    end
+    inherited RulesButton: TButton
+      Left = 345
+      Top = 403
+      Width = 355
+      ExplicitLeft = 344
+      ExplicitTop = 397
+      ExplicitWidth = 355
+    end
+  end
+  object SettingButton: TButton
+    Left = 1013
+    Top = 14
+    Width = 41
+    Height = 41
+    Anchors = []
+    Caption = '+'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 50
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = SettingButtonClick
+    ExplicitLeft = 1011
+  end
   inline GameFrame: TGameFrame
     Left = 0
     Top = 0
@@ -180,6 +325,11 @@ object MainFormGame: TMainFormGame
         ExplicitWidth = 153
         ExplicitHeight = 113
       end
+      inherited statistikWinStreak: TLabel
+        Width = 169
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 169
+      end
     end
     inherited CheckButton: TButton
       Left = 748
@@ -231,149 +381,5 @@ object MainFormGame: TMainFormGame
       Left = 936
       Top = 24
     end
-  end
-  inline SettingFrame: TSettingFrame
-    Left = 0
-    Top = 0
-    Width = 1078
-    Height = 604
-    Align = alClient
-    TabOrder = 5
-    ExplicitWidth = 1076
-    ExplicitHeight = 596
-    inherited Image1: TImage
-      Width = 1078
-      Height = 604
-    end
-    inherited arrowLeftButton: TButton
-      Left = 336
-      Top = 182
-      ExplicitLeft = 335
-      ExplicitTop = 179
-    end
-    inherited arrowRightButton: TButton
-      Left = 651
-      Top = 182
-      ExplicitLeft = 650
-      ExplicitTop = 179
-    end
-    inherited difficultPanel: TPanel
-      Top = 165
-      StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 391
-      ExplicitTop = 162
-      inherited difficultLevelNameLabel: TLabel
-        Height = 23
-        Font.Height = -17
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitHeight = 23
-      end
-      inherited difficultLevelLabel: TLabel
-        StyleElements = [seFont, seClient, seBorder]
-      end
-    end
-    inherited BackInMenuButton: TButton
-      Left = 23
-      Top = 529
-      ExplicitLeft = 23
-      ExplicitTop = 522
-    end
-    inherited Panel1: TPanel
-      Font.Height = -17
-      StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 391
-      ExplicitTop = 260
-    end
-    inherited MuteMusicButton: TButton
-      Left = 651
-      ExplicitLeft = 650
-      ExplicitTop = 260
-    end
-  end
-  inline RulesFrame: TRulesFrame
-    Left = 0
-    Top = 0
-    Width = 1078
-    Height = 604
-    Align = alClient
-    TabOrder = 3
-    ExplicitWidth = 1076
-    ExplicitHeight = 596
-    inherited Image1: TImage
-      Width = 1078
-      Height = 604
-    end
-    inherited Panel1: TPanel
-      StyleElements = [seFont, seClient, seBorder]
-      inherited Label1: TLabel
-        Width = 497
-        Height = 441
-        Font.Height = -17
-        ParentFont = False
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 497
-        ExplicitHeight = 441
-      end
-    end
-    inherited FromRuleToMenuButton: TButton
-      Left = 23
-      Top = 526
-      ExplicitLeft = 23
-      ExplicitTop = 519
-    end
-  end
-  inline MenuFrame: TMenuFrame
-    Left = 0
-    Top = 0
-    Width = 1078
-    Height = 604
-    Align = alClient
-    TabOrder = 2
-    ExplicitWidth = 1076
-    ExplicitHeight = 596
-    inherited Image1: TImage
-      Width = 1078
-      Height = 604
-    end
-    inherited NewGameButton: TButton
-      Left = 345
-      Top = 127
-      Width = 355
-      ExplicitLeft = 344
-      ExplicitTop = 125
-      ExplicitWidth = 355
-    end
-    inherited ContinueButton: TButton
-      Left = 345
-      Top = 261
-      Width = 355
-      ExplicitLeft = 344
-      ExplicitTop = 257
-      ExplicitWidth = 355
-    end
-    inherited RulesButton: TButton
-      Left = 345
-      Top = 402
-      Width = 355
-      ExplicitLeft = 344
-      ExplicitTop = 396
-      ExplicitWidth = 355
-    end
-  end
-  object SettingButton: TButton
-    Left = 1013
-    Top = 15
-    Width = 41
-    Height = 41
-    Anchors = []
-    Caption = '+'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 50
-    Font.Name = '@Arial Unicode MS'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 6
-    OnClick = SettingButtonClick
   end
 end

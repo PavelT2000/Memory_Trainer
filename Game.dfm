@@ -15975,8 +15975,7 @@ object GameFrame: TGameFrame
       A489783F4E8699E8060FAD3B2A0E41C93D08A6901320057818F40475A7AA9DBB
       8004FF002A894952091C7AE69EEDB7259BB63AD35B01FFD9}
     Stretch = True
-    ExplicitLeft = -16
-    ExplicitWidth = 942
+    ExplicitLeft = 3
   end
   object SlovoEdit: TEdit
     Left = 257
@@ -15993,6 +15992,7 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 0
     Text = 'Enter your Answer'
+    OnKeyDown = SlovoEditKeyDown
   end
   object SlovoPanel: TPanel
     Left = 281
@@ -16046,6 +16046,7 @@ object GameFrame: TGameFrame
       Top = 0
       Width = 121
       Height = 25
+      Alignment = taCenter
       AutoSize = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -16057,9 +16058,10 @@ object GameFrame: TGameFrame
     end
     object statistikSubStageLabel: TLabel
       Left = 8
-      Top = 47
+      Top = 62
       Width = 121
-      Height = 43
+      Height = 33
+      Alignment = taCenter
       AutoSize = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -16074,7 +16076,23 @@ object GameFrame: TGameFrame
       Top = 96
       Width = 121
       Height = 81
+      Alignment = taCenter
       AutoSize = False
+      WordWrap = True
+    end
+    object statistikWinStreak: TLabel
+      Left = 0
+      Top = 33
+      Width = 137
+      Height = 28
+      Alignment = taCenter
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       WordWrap = True
     end
   end
