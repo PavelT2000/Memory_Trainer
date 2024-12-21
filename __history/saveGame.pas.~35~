@@ -3,14 +3,14 @@ unit saveGame;
 interface
 
 uses SplitGo, System.SysUtils;
-procedure loadG(SaveNum: integer; var CurrentStage, subStage: integer);
-procedure SaveG(SaveNum, CurrentStage, subStage: integer);
+procedure loadG(SaveNum: integer; var CurrentStage, subStage, CurrentHint: integer);
+procedure SaveG(SaveNum, CurrentStage, subStage, CurrentHint: integer);
 
 implementation
 
-uses Vcl.Dialogs;
+uses Vcl.Dialogs, UnitGame1;
 
-procedure loadG(saveNum: integer; var CurrentStage, subStage: integer);
+procedure loadG(saveNum: integer; var CurrentStage, subStage, CurrentHint: integer);
 var myFile: TextFile;
     strIn, resultStr: string;
     wordArr: SArr;
@@ -51,21 +51,26 @@ begin
         else if (wordArr[i] = 'subStage') then begin
           inc(i);
           subStage:= strToInt(wordArr[i]);
+        end
+        else if (wordArr[i] = 'CurrentHint') then begin
+          inc(i);
+          CurrentHint:= strToInt(wordArr[i]);
         end;
         inc(i);
       end;
     end;
     if (CurrentStage = -1) and (subStage = -1) then begin
-      ShowMessage('We cant find your save, we load basic game');
-      CurrentStage:= 1; //game mode
-      subStage:=5; //num of letters or words
+      ShowMessage('We cant find your save, loading basic game...');
+      CurrentStage:= UnitGame1.basicCurrentStage; //game mode
+      subStage:= UnitGame1.basicSubStage; //num of letters or words
     end;
     closeFile(myFile);
   end;
   except
-    ShowMessage('We cant find your save, we load basic game');
+    ShowMessage('We cant find your save, loading basic game...');
+    CurrentStage:= UnitGame1.basicCurrentStage; //game mode
+    subStage:= UnitGame1.basicSubStage; //num of letters or words
   end;
-
 end;
 
 {AssignFile(myFile, 'test2.txt');
@@ -80,7 +85,7 @@ end;
 
    closeFile(MyFile);}
 
-procedure SaveG(SaveNum, CurrentStage, subStage: integer);
+procedure SaveG(SaveNum, CurrentStage, subStage, CurrentHint: integer);
 var myFile: TextFile;
     str: string;
 begin
@@ -100,6 +105,8 @@ begin
   str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';
   writeln(myFile, str);
   str:= 'subStage ' + IntToStr(subStage) + ' ';
+  writeln(myFile, str);
+  str:= 'CurrentHint ' + IntToStr(CurrentHint) + ' ';
   writeln(myFile, str);
 
   closeFile(myFile);

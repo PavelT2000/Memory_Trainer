@@ -64,7 +64,6 @@ begin
       ShowMessage('We cant find your save, loading basic game...');
       CurrentStage:= UnitGame1.basicCurrentStage; //game mode
       subStage:= UnitGame1.basicSubStage; //num of letters or words
-      CurrentHint:= UnitGame1.basicHint;
     end;
     closeFile(myFile);
   end;
@@ -72,7 +71,6 @@ begin
     ShowMessage('We cant find your save, loading basic game...');
     CurrentStage:= UnitGame1.basicCurrentStage; //game mode
     subStage:= UnitGame1.basicSubStage; //num of letters or words
-    CurrentHint:= UnitGame1.basicHint;
   end;
 end;
 

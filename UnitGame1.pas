@@ -135,7 +135,7 @@ begin
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
   end;
-  saveGame.SaveG(4, CurrentStage, subStage);
+  saveGame.SaveG(4, CurrentStage, subStage, CurrentHint);
 end;
 
 procedure basicStartGame();
@@ -143,7 +143,6 @@ begin
   gener.GetAllSArr();
   WinCount:= basicWinCount;
   WinStreak:= 0;
-  CurrentHint:= basicHint;
   pbTime:= 4000;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;
   MainFormGame.GameFrame.HintButton.Enabled:= False;
@@ -161,6 +160,7 @@ procedure StartGame();
 begin
   CurrentStage:= basicCurrentStage;  //1
   subStage:= basicSubStage;
+  CurrentHint:= basicHint;
   basicStartgame;
 end;
 
