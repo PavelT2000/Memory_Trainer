@@ -36,12 +36,11 @@ var saveNumButton: integer;
 
 procedure TSaveMenuFrame.backFrameButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
   if (Game.GameFrameMode = True) then begin
-    MainFormGame.GameFrame.Visible:= True;
+    FMainCode.LoadGameFrame;
   end
   else begin
-    MainFormGame.MenuFrame.Visible:= True;
+    FMainCode.LoadMenuFrame;
   end;
 end;
 
@@ -49,14 +48,11 @@ procedure SaveOrLoadOnButton(numSave: integer);
 begin
   if (Game.GameFrameMode = True) then begin
     saveGame.SaveG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage);
-    MainFormGame.CloseAllFrames;
-    MainFormGame.MenuFrame.Visible:= True;
+    FmainCode.LoadMenuFrame;
   end
   else begin
-    MainFormGame.CloseAllFrames;
-    MainFormGame.GameFrame.Visible:= True;
+    FMainCode.LoadGameFrame;
     saveGame.loadG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage);
-    Game.GameFrameMode:= True;
     UnitGame1.StartSaveGame;
     UnitGame1.nextStage;
   end;

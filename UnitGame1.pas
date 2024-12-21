@@ -8,12 +8,13 @@ uses
 const basicCurrentStage = 1;
       basicSubStage = 5;
       basicWinCount = 0;
+      basicHint = 5;
 
-var   basicNextSubStage: integer = 9;
-      basicNextWinCount: integer = 3;
+var   basicNextSubStage: integer = 7; //9
+      basicNextWinCount: integer = 2; //3
       basicMaxStage: integer = 5;
 
-var CurrentStage, subStage: integer;
+var CurrentStage, subStage, CurrentHint, pbTime: integer;
     exampleS: string;
 
 procedure nextStage();
@@ -24,15 +25,14 @@ procedure StartSaveGame();
 implementation
 
 //uses Game
-uses FMainCode;
+uses FMainCode, saveGame;
 
 var
-  WinCount: integer;
+  WinCount, winStreak: integer;
   inputS, slovoOut, StatistikOut: string;
 
 procedure nextStage();
 var rulesOut: string;
-    pbTime: integer;
 begin
   MainFormGame.GameFrame.SlovoEdit.Enabled:= False;
 
@@ -96,24 +96,25 @@ begin
       ansCheck:= G4Check(exampleS,wordIn);
     5:
       ansCheck:= G5Check(exampleS,wordIn);
+    else ansCheck:= False;
   end;
   if ansCheck then
   begin
     Inc(WinCount);
+    inc(WinStreak);
     slovoOut:= 'Ответ верный!';
   end
   else
   begin
     WinCount:= basicWinCount;
+    WinStreak:= 0;
     slovoOut:= 'Ответ не верный(';
     MainFormGame.GameFrame.OnlySlovoLable.Caption:= exampleS;
   end;
   MainFormGame.GameFrame.SlovoRememberLabel.Caption:= slovoOut;
-  //MainFormGame.GameFrame.SlovoPanel.Visible:= True;
-  //MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
-  MainFormGame.GameFrame.CheckButton.Enabled:= False;
-                //3
-  if WinCount >= basicNextWinCount then
+  StatistikOut:= 'Угадано подряд ' + IntToStr(WinStreak);
+  MainFormGame.GameFrame.statistikWinStreak.Caption:= StatistikOut;
+  if WinCount >= basicNextWinCount then    //3
   begin
     WinCount := basicWinCount;
     Inc(SubStage);
@@ -129,32 +130,38 @@ begin
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
   end;
+  saveGame.SaveG(4, CurrentStage, subStage);
+end;
+
+procedure basicStartGame();
+begin
+  gener.GetAllSArr();
+  WinCount:= basicWinCount;
+  WinStreak:= 0;
+  CurrentHint:= basicHint;
+  pbTime:= 4000;
+  MainFormGame.GameFrame.CheckButton.Enabled:= False;
+  MainFormGame.GameFrame.HintButton.Enabled:= False;
+  MainFormGame.GameFrame.HintButton.Caption:= 'Подсказок: ' + intToStr(CurrentHint);
+  //statistik Out
+  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
+  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
+  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+  StatistikOut:= 'Угадано подряд ' + IntToStr(WinStreak);
+  MainFormGame.GameFrame.statistikWinStreak.Caption:= StatistikOut;
 end;
 
 procedure StartGame();
 begin
-  gener.GetAllSArr();
   CurrentStage:= basicCurrentStage;  //1
   subStage:= basicSubStage;
-  WinCount := basicWinCount;
-  MainFormGame.GameFrame.CheckButton.Enabled:= False;
-  //statistik Out
-  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
-  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
-  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
-  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+  basicStartgame;
 end;
 
 procedure StartSaveGame();
 begin
-  gener.GetAllSArr();
-  WinCount := basicWinCount;
-  MainFormGame.GameFrame.CheckButton.Enabled:= False;
-  //statistik Out
-  StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
-  MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
-  StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
-  MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+  basicStartGame;
 end;
 
 end.

@@ -5,7 +5,7 @@ interface
 type TMusic = (calmMind, doomFear, doomTear, elevator);
 procedure TurnOnMusuc(music: TMusic);
 procedure TurnOffMusic;
-procedure MuteMusic;
+procedure OnOffMuteMusic;
 
 implementation
 
@@ -18,6 +18,7 @@ procedure TurnOnMusuc(music: TMusic);
 //var SFileName: string;
 begin
   if playerMute = false then begin
+    playerOn:= True;
     case music of
       calmMind: MainFormGame.MediaPlayer1.FileName:= 'music\calmMind.mp3';
       doomFear: MainFormGame.MediaPlayer1.FileName:= 'music\doomFear.mp3';
@@ -38,10 +39,30 @@ begin
   end;
 end;
 
-procedure MuteMusic;
+procedure OnOffMuteMusic;
 begin
-  TurnOffMusic;
-  playerMute:= True;
+  if (playerMute = True) then begin
+    playerMute:= False;
+    if (MainFormGame.GameFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.doomFear);
+    end;
+    if (MainFormGame.MenuFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.calmMind);
+    end;
+    if (MainFormGame.RulesFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.elevator);
+    end;
+    if (MainFormGame.SaveMenuFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.elevator);
+    end;
+    if (MainFormGame.SettingFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.elevator);
+    end;
+  end
+  else begin
+    playerMute:= True;
+    TurnOffMusic;
+  end;
 end;
 
 end.

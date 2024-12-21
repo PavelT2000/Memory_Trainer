@@ -116,4 +116,22 @@ begin
   end;
 end;
 
+function getWordRandLetter(numLetter: integer):string;
+var randomNum: integer;
+begin
+  result:= '';
+  Randomize;
+  for var i:= 1 to numLetter do begin
+    randomNum:= Random(2); //from 0 to 1
+    if (randomNum = 0) then begin  //small letter
+      randomNum:= Random(33) + ord('а'); //+1 (rand = max-1)
+      result:= result + chr(randomNum);
+    end
+    else begin //big letter
+      randomNum:= Random(33) + ord('А'); //+1 (rand = max-1)
+      result:= result + chr(randomNum);
+    end;
+  end;
+end;
+
 end.

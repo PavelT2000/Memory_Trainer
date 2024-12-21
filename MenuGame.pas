@@ -14,11 +14,9 @@ type
     NewGameButton: TButton;
     ContinueButton: TButton;
     RulesButton: TButton;
-    SettingButton: TButton;
     procedure RulesButtonClick(Sender: TObject);
     procedure NewGameButtonClick(Sender: TObject);
     procedure ContinueButtonClick(Sender: TObject);
-    procedure SettingButtonClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -45,29 +43,18 @@ end;}
 
 procedure TMenuFrame.NewGameButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.GameFrame.Visible:= True;
-  Game.GameFrameMode:= True;
+  FMainCode.LoadGameFrame;
   game.StartGame();
 end;
 
 procedure TMenuFrame.ContinueButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.SaveMenuFrame.Visible:= True;
+  FMainCode.LoadSaveMenuFrame;
 end;
 
 procedure TMenuFrame.RulesButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.RulesFrame.Visible := True;
-end;
-
-procedure TMenuFrame.SettingButtonClick(Sender: TObject);
-begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.SettingFrame.Visible := True;
-  GameSound.TurnOnMusuc(GameSound.elevator);
+  FMainCode.LoadRulesFrame;
 end;
 
 end.

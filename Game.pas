@@ -25,18 +25,24 @@ type
     backFrameButton: TButton;
     HintButton: TButton;
     SaveGameNowButton: TButton;
+    HintTimer: TTimer;
+    statistikWinStreak: TLabel;
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure nextWordTimerTimer(Sender: TObject);
     procedure backFrameButtonClick(Sender: TObject);
     procedure SaveGameNowButtonClick(Sender: TObject);
+    procedure HintButtonClick(Sender: TObject);
+    procedure HintTimerTimer(Sender: TObject);
+    procedure SlovoEditKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
   public
 
   end;
 
-var GameFrameMode: boolean;
+var GameFrameMode: boolean = False;
 procedure StartGame();
 
 implementation
@@ -58,20 +64,51 @@ end;
 
 procedure TGameFrame.backFrameButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.MenuFrame.Visible:= True;
-  GameFrameMode:= False;
+  FMainCode.LoadMenuFrame;
+end;
+
+procedure CheckButtonOutProc();
+var wordIn: string;
+begin
+  if (MainFormGame.GameFrame.CheckButton.Enabled = True) then begin
+    MainFormGame.GameFrame.HintButton.Enabled:= False;
+    MainFormGame.GameFrame.CheckButton.Enabled:= False;
+    wordIn:= MainFormGame.GameFrame.SlovoEdit.Text;
+    SplitGo.LowerRus(wordIn);
+    wordIn := Trim(wordIn);
+    unitGame1.CheckAllStage(wordIn);
+    MainFormGame.GameFrame.NextWordTimer.Enabled:= True;
+    MainFormGame.GameFrame.SlovoEdit.Text:= '';
+  end;
 end;
 
 procedure TGameFrame.CheckButtonClick(Sender: TObject);
-var wordIn: string;
 begin
-  wordIn:= SlovoEdit.Text;
-  SplitGo.LowerRus(wordIn);
-  wordIn := Trim(wordIn);
-  unitGame1.CheckAllStage(wordIn);
-  NextWordTimer.Enabled:= True;
-  SlovoEdit.Text:= '';
+  CheckButtonOutProc;
+end;
+
+procedure TGameFrame.HintButtonClick(Sender: TObject);
+begin
+  MainFormGame.GameFrame.HintButton.Enabled:= False;
+  if (UnitGame1.CurrentHint > 0) then begin
+    dec(UnitGame1.CurrentHint);
+    MainFormGame.GameFrame.HintButton.Caption:= 'Подсказок: ' + intToStr(UnitGame1.CurrentHint);
+    MainFormGame.GameFrame.OnlySlovoLable.Caption:= UnitGame1.exampleS;
+    MainFormGame.GameFrame.HintTimer.Interval:= UnitGame1.pbTime div 3;
+    MainFormGame.GameFrame.HintTimer.Enabled:= True;
+  end;
+end;
+
+procedure TGameFrame.HintTimerTimer(Sender: TObject);
+begin
+  HintTimer.Enabled:= False;
+  OnlySlovoLable.Caption:= '';
+  if (UnitGame1.CurrentHint = 0) then begin
+    MainFormGame.GameFrame.HintButton.Enabled:= False;
+  end
+  else begin
+    MainFormGame.GameFrame.HintButton.Enabled:= True;
+  end;
 end;
 
 procedure TGameFrame.nextWordTimerTimer(Sender: TObject);
@@ -87,9 +124,15 @@ end;
 
 procedure TGameFrame.SaveGameNowButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.SaveMenuFrame.Visible:= True;
-  MainFormGame.SaveMenuFrame.AutoSaveButton.Visible:= False;
+  FMainCode.LoadSaveMenuFrame;
+end;
+
+procedure TGameFrame.SlovoEditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if (key = 13) then begin  //13 - enter
+    CheckButtonOutProc;
+  end;
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);
@@ -104,8 +147,9 @@ begin
     //SlovoPanel.Visible:= False;
     //SlovoRememberLabel.Visible:= False;
     OnlySlovoLable.Caption:= '';
-    MainFormGame.GameFrame.CheckButton.Enabled:= True;
-    MainFormGame.GameFrame.SlovoEdit.Enabled:= True;
+    CheckButton.Enabled:= True;
+    SlovoEdit.Enabled:= True;
+    HintButton.Enabled:= True;
   end;
 end;
 

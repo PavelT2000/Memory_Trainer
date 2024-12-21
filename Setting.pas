@@ -25,6 +25,7 @@ type
     Panel1: TPanel;
     MuteMusicButton: TButton;
     procedure BackInMenuButtonClick(Sender: TObject);
+    procedure MuteMusicButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,14 +36,24 @@ var currentDifficult: DifficultLevel = Medium;
 
 implementation
 
-uses FMainCode;
+uses FMainCode, GameSound;
 
 {$R *.dfm}
 
 procedure TSettingFrame.BackInMenuButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.MenuFrame.Visible:= True;
+  case FMainCode.preFrame of
+    GameFrame: FMainCode.LoadGameFrame;
+    MenuFrame: FMainCode.LoadMenuFrame;
+    RulesFrame: FMainCode.LoadRulesFrame;
+    SaveMenuFrame: FMainCode.LoadSaveMenuFrame;
+    SettingFrame: FMainCode.LoadSettingFrame;
+  end;
+end;
+
+procedure TSettingFrame.MuteMusicButtonClick(Sender: TObject);
+begin
+  GameSound.OnOffMuteMusic;
 end;
 
 end.
