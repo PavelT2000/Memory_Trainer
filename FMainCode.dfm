@@ -31,8 +31,8 @@ object MainFormGame: TMainFormGame
     Height = 585
     Align = alClient
     TabOrder = 4
-    ExplicitWidth = 1085
-    ExplicitHeight = 568
+    ExplicitWidth = 1089
+    ExplicitHeight = 577
     inherited BackGround: TImage
       Width = 1091
       Height = 585
@@ -43,8 +43,8 @@ object MainFormGame: TMainFormGame
       Width = 355
       Height = 58
       Font.Height = -43
-      ExplicitLeft = 350
-      ExplicitTop = 59
+      ExplicitLeft = 352
+      ExplicitTop = 61
       ExplicitWidth = 355
       ExplicitHeight = 58
     end
@@ -54,8 +54,8 @@ object MainFormGame: TMainFormGame
       Width = 355
       Height = 59
       Font.Height = -43
-      ExplicitLeft = 350
-      ExplicitTop = 171
+      ExplicitLeft = 352
+      ExplicitTop = 174
       ExplicitWidth = 355
       ExplicitHeight = 59
     end
@@ -65,8 +65,8 @@ object MainFormGame: TMainFormGame
       Width = 355
       Height = 59
       Font.Height = -43
-      ExplicitLeft = 350
-      ExplicitTop = 380
+      ExplicitLeft = 352
+      ExplicitTop = 386
       ExplicitWidth = 355
       ExplicitHeight = 59
     end
@@ -76,8 +76,8 @@ object MainFormGame: TMainFormGame
       Width = 355
       Height = 59
       Font.Height = -43
-      ExplicitLeft = 350
-      ExplicitTop = 273
+      ExplicitLeft = 352
+      ExplicitTop = 278
       ExplicitWidth = 355
       ExplicitHeight = 59
     end
@@ -87,8 +87,8 @@ object MainFormGame: TMainFormGame
       Width = 161
       Height = 58
       Font.Height = -33
-      ExplicitLeft = 22
-      ExplicitTop = 486
+      ExplicitLeft = 23
+      ExplicitTop = 494
       ExplicitWidth = 161
       ExplicitHeight = 58
     end
@@ -101,29 +101,30 @@ object MainFormGame: TMainFormGame
     Align = alClient
     TabOrder = 5
     Visible = False
-    ExplicitWidth = 1085
-    ExplicitHeight = 568
+    ExplicitWidth = 1089
+    ExplicitHeight = 577
     inherited BackGround: TImage
       Width = 1091
       Height = 585
     end
     inherited arrowLeftButton: TButton
-      Left = 339
-      Top = 177
-      ExplicitLeft = 337
-      ExplicitTop = 171
+      Left = 340
+      Top = 178
+      ExplicitLeft = 339
+      ExplicitTop = 175
     end
     inherited arrowRightButton: TButton
       Left = 655
-      Top = 177
-      ExplicitLeft = 651
-      ExplicitTop = 171
+      Top = 178
+      ExplicitLeft = 654
+      ExplicitTop = 175
     end
     inherited difficultPanel: TPanel
       Left = 395
-      Top = 160
+      Top = 161
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitTop = 154
+      ExplicitLeft = 394
+      ExplicitTop = 158
       inherited difficultLevelNameLabel: TLabel
         Height = 23
         Font.Height = -17
@@ -138,20 +139,21 @@ object MainFormGame: TMainFormGame
       Left = 24
       Top = 511
       ExplicitLeft = 24
-      ExplicitTop = 496
+      ExplicitTop = 504
     end
     inherited Panel1: TPanel
       Left = 395
       Top = 255
       Font.Height = -17
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitTop = 247
+      ExplicitLeft = 394
+      ExplicitTop = 251
     end
     inherited MuteMusicButton: TButton
       Left = 655
       Top = 255
-      ExplicitLeft = 651
-      ExplicitTop = 247
+      ExplicitLeft = 654
+      ExplicitTop = 251
     end
   end
   inline RulesFrame: TRulesFrame
@@ -161,8 +163,8 @@ object MainFormGame: TMainFormGame
     Height = 585
     Align = alClient
     TabOrder = 3
-    ExplicitWidth = 1085
-    ExplicitHeight = 568
+    ExplicitWidth = 1089
+    ExplicitHeight = 577
     inherited BackGround: TImage
       Width = 1091
       Height = 585
@@ -183,7 +185,7 @@ object MainFormGame: TMainFormGame
       Left = 24
       Top = 509
       ExplicitLeft = 24
-      ExplicitTop = 494
+      ExplicitTop = 502
     end
   end
   inline MenuFrame: TMenuFrame
@@ -194,8 +196,11 @@ object MainFormGame: TMainFormGame
     Align = alClient
     TabOrder = 2
     Visible = False
-    ExplicitWidth = 1085
-    ExplicitHeight = 568
+    ExplicitWidth = 1089
+    ExplicitHeight = 577
+    DesignSize = (
+      1091
+      585)
     inherited BackGround: TImage
       Width = 1091
       Height = 585
@@ -216,18 +221,18 @@ object MainFormGame: TMainFormGame
     inherited bg: TImage
       Width = 1091
       Height = 585
-      ExplicitLeft = -176
-      ExplicitTop = -32
-      ExplicitWidth = 1612
-      ExplicitHeight = 784
+      ExplicitLeft = 0
+      ExplicitTop = 3
+      ExplicitWidth = 1091
+      ExplicitHeight = 585
     end
     inherited SlovoEdit: TEdit
       Left = 243
       Top = 280
       Width = 488
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 240
-      ExplicitTop = 271
+      ExplicitLeft = 242
+      ExplicitTop = 276
       ExplicitWidth = 488
     end
     inherited SlovoPanel: TPanel
@@ -236,8 +241,8 @@ object MainFormGame: TMainFormGame
       Width = 436
       Height = 123
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 264
-      ExplicitTop = 71
+      ExplicitLeft = 266
+      ExplicitTop = 73
       ExplicitWidth = 436
       ExplicitHeight = 123
       inherited SlovoRememberLabel: TLabel
@@ -267,8 +272,8 @@ object MainFormGame: TMainFormGame
       Width = 170
       Height = 219
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 23
-      ExplicitTop = 8
+      ExplicitLeft = 24
+      ExplicitTop = 10
       ExplicitWidth = 170
       ExplicitHeight = 219
       inherited StatistikStageLable: TLabel
@@ -301,8 +306,8 @@ object MainFormGame: TMainFormGame
       Left = 753
       Top = 278
       Width = 61
-      ExplicitLeft = 749
-      ExplicitTop = 269
+      ExplicitLeft = 752
+      ExplicitTop = 274
       ExplicitWidth = 61
     end
     inherited backFrameButton: TButton
@@ -310,7 +315,7 @@ object MainFormGame: TMainFormGame
       Top = 504
       Font.Height = -19
       ExplicitLeft = 22
-      ExplicitTop = 489
+      ExplicitTop = 497
     end
     inherited HintButton: TButton
       Left = 879
@@ -318,25 +323,26 @@ object MainFormGame: TMainFormGame
       Height = 57
       Caption = #1087#1086#1076#1089#1084#1086#1090#1088#1077#1090#1100
       Font.Height = -19
-      ExplicitLeft = 874
-      ExplicitTop = 269
+      ExplicitLeft = 877
+      ExplicitTop = 274
       ExplicitHeight = 57
     end
     inherited SaveGameNowButton: TButton
       Left = 879
       Top = 504
       Font.Height = -19
-      ExplicitLeft = 874
-      ExplicitTop = 489
+      ExplicitLeft = 877
+      ExplicitTop = 497
     end
     inherited CustomPB: TPanel
-      Top = 358
+      Top = 392
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 280
-      ExplicitTop = 347
+      ExplicitTop = 392
       inherited ProgressPB: TLabel
+        Width = 401
         Anchors = [akLeft, akTop, akBottom]
         StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 401
       end
     end
     inherited Timer1: TTimer

@@ -15,10 +15,9 @@ type
     NewGame: TImage;
     Exit: TImage;
     procedure RulesButtonClick(Sender: TObject);
-    procedure NewGameButtonClick(Sender: TObject);
-    procedure ContinueButtonClick(Sender: TObject);
+    
     procedure LoadGameClick(Sender: TObject);
-    procedure BackGroundClick(Sender: TObject);
+    procedure NewGameClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -43,27 +42,19 @@ begin
   game.StartGame();
 end;}
 
-procedure TMenuFrame.BackGroundClick(Sender: TObject);
+
+
+
+
+procedure TMenuFrame.NewGameClick(Sender: TObject);
 begin
-FMainCode.LoadGameFrame;
+   FMainCode.LoadGameFrame;
   game.StartGame();
 end;
 
 procedure TMenuFrame.LoadGameClick(Sender: TObject);
 begin
-FMainCode.LoadGameFrame;
-  game.StartGame();
-end;
-
-procedure TMenuFrame.NewGameButtonClick(Sender: TObject);
-begin
-  FMainCode.LoadGameFrame;
-  game.StartGame();
-end;
-
-procedure TMenuFrame.ContinueButtonClick(Sender: TObject);
-begin
-  FMainCode.LoadSaveMenuFrame;
+   FMainCode.LoadSaveMenuFrame;
 end;
 
 procedure TMenuFrame.RulesButtonClick(Sender: TObject);

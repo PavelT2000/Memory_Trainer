@@ -4,6 +4,9 @@ object MenuFrame: TMenuFrame
   Width = 1105
   Height = 623
   TabOrder = 0
+  DesignSize = (
+    1105
+    623)
   object BackGround: TImage
     Left = 0
     Top = 0
@@ -4273,15 +4276,15 @@ object MenuFrame: TMenuFrame
       02800A002800A002800A002800A002801B400500140050014005001400500140
       0500140050014005001400500140050014005007FFD9}
     Stretch = True
-    ExplicitWidth = 1920
-    ExplicitHeight = 1080
+    ExplicitLeft = 24
   end
   object LoadGame: TImage
-    Left = 360
+    Left = 376
     Top = 240
     Width = 353
     Height = 97
     HelpType = htKeyword
+    Anchors = []
     ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000002250000
@@ -4431,11 +4434,12 @@ object MenuFrame: TMenuFrame
     OnClick = LoadGameClick
   end
   object NewGame: TImage
-    Left = 360
-    Top = 120
+    Left = 376
+    Top = 112
     Width = 353
     Height = 97
     HelpType = htKeyword
+    Anchors = []
     ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000002250000
@@ -4561,11 +4565,12 @@ object MenuFrame: TMenuFrame
     OnClick = NewGameClick
   end
   object Exit: TImage
-    Left = 360
-    Top = 360
+    Left = 376
+    Top = 368
     Width = 353
     Height = 97
     HelpType = htKeyword
+    Anchors = []
     ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000002250000
@@ -4676,5 +4681,23 @@ object MenuFrame: TMenuFrame
       47FA2F105F6CAA1E81DCC00000000049454E44AE426082}
     ShowHint = True
     Stretch = True
+  end
+  object Button1: TButton
+    Left = 944
+    Top = 32
+    Width = 145
+    Height = 89
+    Caption = 'Button1'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 432
+    Top = 512
+    Width = 201
+    Height = 57
+    Caption = 'Button2'
+    TabOrder = 1
+    OnClick = Button2Click
   end
 end
