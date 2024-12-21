@@ -4276,11 +4276,12 @@ object MenuFrame: TMenuFrame
       02800A002800A002800A002800A002801B400500140050014005001400500140
       0500140050014005001400500140050014005007FFD9}
     Stretch = True
-    ExplicitLeft = 24
+    ExplicitWidth = 1920
+    ExplicitHeight = 1080
   end
   object LoadGame: TImage
     Left = 376
-    Top = 240
+    Top = 238
     Width = 353
     Height = 97
     HelpType = htKeyword
@@ -4435,7 +4436,7 @@ object MenuFrame: TMenuFrame
   end
   object NewGame: TImage
     Left = 376
-    Top = 112
+    Top = 96
     Width = 353
     Height = 97
     HelpType = htKeyword
@@ -4566,7 +4567,7 @@ object MenuFrame: TMenuFrame
   end
   object Exit: TImage
     Left = 376
-    Top = 368
+    Top = 376
     Width = 353
     Height = 97
     HelpType = htKeyword
@@ -4682,22 +4683,13 @@ object MenuFrame: TMenuFrame
     ShowHint = True
     Stretch = True
   end
-  object Button1: TButton
-    Left = 944
-    Top = 32
-    Width = 145
-    Height = 89
-    Caption = 'Button1'
-    TabOrder = 0
-    OnClick = Button1Click
-  end
   object Button2: TButton
     Left = 432
     Top = 512
     Width = 201
     Height = 57
     Caption = 'Button2'
-    TabOrder = 1
+    TabOrder = 0
     OnClick = Button2Click
   end
 end

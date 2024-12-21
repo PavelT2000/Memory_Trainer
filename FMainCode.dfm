@@ -108,23 +108,23 @@ object MainFormGame: TMainFormGame
       Height = 585
     end
     inherited arrowLeftButton: TButton
-      Left = 340
-      Top = 178
-      ExplicitLeft = 339
-      ExplicitTop = 175
+      Left = 341
+      Top = 179
+      ExplicitLeft = 340
+      ExplicitTop = 176
     end
     inherited arrowRightButton: TButton
       Left = 655
-      Top = 178
+      Top = 179
       ExplicitLeft = 654
-      ExplicitTop = 175
+      ExplicitTop = 176
     end
     inherited difficultPanel: TPanel
       Left = 395
-      Top = 161
+      Top = 162
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 394
-      ExplicitTop = 158
+      ExplicitTop = 159
       inherited difficultLevelNameLabel: TLabel
         Height = 23
         Font.Height = -17
@@ -154,58 +154,6 @@ object MainFormGame: TMainFormGame
       Top = 255
       ExplicitLeft = 654
       ExplicitTop = 251
-    end
-  end
-  inline RulesFrame: TRulesFrame
-    Left = 0
-    Top = 0
-    Width = 1091
-    Height = 585
-    Align = alClient
-    TabOrder = 3
-    ExplicitWidth = 1089
-    ExplicitHeight = 577
-    inherited BackGround: TImage
-      Width = 1091
-      Height = 585
-    end
-    inherited Panel1: TPanel
-      StyleElements = [seFont, seClient, seBorder]
-      inherited Label1: TLabel
-        Width = 497
-        Height = 441
-        Font.Height = -17
-        ParentFont = False
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 497
-        ExplicitHeight = 441
-      end
-    end
-    inherited FromRuleToMenuButton: TButton
-      Left = 24
-      Top = 509
-      ExplicitLeft = 24
-      ExplicitTop = 502
-    end
-  end
-  inline MenuFrame: TMenuFrame
-    Left = 0
-    Top = 0
-    Width = 1091
-    Height = 585
-    Align = alClient
-    TabOrder = 2
-    Visible = False
-    ExplicitWidth = 1089
-    ExplicitHeight = 577
-    DesignSize = (
-      1091
-      585)
-    inherited BackGround: TImage
-      Width = 1091
-      Height = 585
-      ExplicitWidth = 1091
-      ExplicitHeight = 585
     end
   end
   inline GameFrame: TGameFrame
@@ -337,7 +285,7 @@ object MainFormGame: TMainFormGame
     inherited CustomPB: TPanel
       Top = 392
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitTop = 392
+      ExplicitTop = 386
       inherited ProgressPB: TLabel
         Width = 401
         Anchors = [akLeft, akTop, akBottom]
@@ -353,5 +301,70 @@ object MainFormGame: TMainFormGame
       Left = 936
       Top = 24
     end
+  end
+  inline RulesFrame: TRulesFrame
+    Left = 0
+    Top = 0
+    Width = 1091
+    Height = 585
+    Align = alClient
+    TabOrder = 3
+    ExplicitWidth = 1089
+    ExplicitHeight = 577
+    inherited BackGround: TImage
+      Width = 1091
+      Height = 585
+    end
+    inherited Panel1: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+      inherited Label1: TLabel
+        Width = 497
+        Height = 441
+        Font.Height = -17
+        ParentFont = False
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 497
+        ExplicitHeight = 441
+      end
+    end
+    inherited FromRuleToMenuButton: TButton
+      Left = 24
+      Top = 509
+      ExplicitLeft = 24
+      ExplicitTop = 502
+    end
+  end
+  inline MenuFrame: TMenuFrame
+    Left = 0
+    Top = 0
+    Width = 1091
+    Height = 585
+    Align = alClient
+    TabOrder = 2
+    Visible = False
+    ExplicitWidth = 1089
+    ExplicitHeight = 577
+    DesignSize = (
+      1091
+      585)
+    inherited BackGround: TImage
+      Width = 1091
+      Height = 585
+    end
+  end
+  object settingButton: TButton
+    Left = 1032
+    Top = 21
+    Width = 40
+    Height = 36
+    Caption = '+'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -33
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = settingClick
   end
 end

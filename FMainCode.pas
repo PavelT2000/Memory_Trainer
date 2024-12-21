@@ -15,10 +15,12 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
+    settingButton: TButton;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure SettingButtonClick(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure settingClick(Sender: TObject);
 
   private
 
@@ -131,6 +133,12 @@ end;
 
 procedure TMainFormGame.SettingButtonClick(Sender: TObject);
 begin
+  LoadSettingFrame;
+end;
+
+procedure TMainFormGame.settingClick(Sender: TObject);
+begin
+  MainFormGame.settingButton.Visible:= False;
   LoadSettingFrame;
 end;
 

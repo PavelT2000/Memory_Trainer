@@ -14,7 +14,7 @@ uses
   Rules in 'Rules.pas' {RulesFrame: TFrame},
   SaveMenu in 'SaveMenu.pas' {SaveMenuFrame: TFrame},
   Setting in 'Setting.pas' {SettingFrame: TFrame},
-  Easygame in 'Easygame.pas';
+  DemoGame in 'DemoGame.pas';
 
 {$R *.res}
 

@@ -9,6 +9,7 @@ var arr5, arr6, arr7, arr8: SArr;
 procedure GetAllSArr();
 function GetWord(num: integer): string;
 function Get5Word(num: integer):string;
+function getWordRandLetter(numLetter: integer):string;
 
 implementation
 

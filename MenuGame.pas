@@ -14,14 +14,12 @@ type
     LoadGame: TImage;
     NewGame: TImage;
     Exit: TImage;
-    Button1: TButton;
     Button2: TButton;
     procedure RulesButtonClick(Sender: TObject);
     
     procedure LoadGameClick(Sender: TObject);
     procedure NewGameClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -54,11 +52,6 @@ procedure TMenuFrame.NewGameClick(Sender: TObject);
 begin
   FMainCode.LoadGameFrame;
   game.StartGame();
-end;
-
-procedure TMenuFrame.Button1Click(Sender: TObject);
-begin
-  FMainCode.LoadSettingFrame;
 end;
 
 procedure TMenuFrame.Button2Click(Sender: TObject);

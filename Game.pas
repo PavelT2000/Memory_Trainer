@@ -116,7 +116,7 @@ procedure TGameFrame.nextWordTimerTimer(Sender: TObject);
 begin
   NextWordTimer.Enabled:= False;
   if (CurrentStage > UnitGame1.basicMaxStage) then begin
-
+    ShowMessage('Вы победили!');
   end
   else begin
     UnitGame1.nextStage;
