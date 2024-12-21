@@ -7,7 +7,7 @@ object SaveMenuFrame: TSaveMenuFrame
   DesignSize = (
     876
     546)
-  object Image1: TImage
+  object BackGround: TImage
     Left = 0
     Top = 0
     Width = 876

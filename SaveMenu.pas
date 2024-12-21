@@ -9,7 +9,7 @@ uses
 
 type
   TSaveMenuFrame = class(TFrame)
-    Image1: TImage;
+    BackGround: TImage;
     Save1Button: TButton;
     Save2Button: TButton;
     AutoSaveButton: TButton;

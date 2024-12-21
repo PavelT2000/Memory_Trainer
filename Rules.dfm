@@ -7,7 +7,7 @@ object RulesFrame: TRulesFrame
   DesignSize = (
     996
     575)
-  object Image1: TImage
+  object BackGround: TImage
     Left = 0
     Top = 0
     Width = 996

@@ -6,17 +6,18 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls,
-  Vcl.Imaging.jpeg, Vcl.StdCtrls, Game, GameSound;
+  Vcl.Imaging.jpeg, Vcl.StdCtrls, Game, GameSound, Vcl.Imaging.pngimage;
 
 type
   TMenuFrame = class(TFrame)
-    Image1: TImage;
-    NewGameButton: TButton;
-    ContinueButton: TButton;
-    RulesButton: TButton;
+    BackGround: TImage;
+    LoadGame: TImage;
+    NewGame: TImage;
+    Exit: TImage;
     procedure RulesButtonClick(Sender: TObject);
-    procedure NewGameButtonClick(Sender: TObject);
-    procedure ContinueButtonClick(Sender: TObject);
+    
+    procedure LoadGameClick(Sender: TObject);
+    procedure NewGameClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -41,15 +42,19 @@ begin
   game.StartGame();
 end;}
 
-procedure TMenuFrame.NewGameButtonClick(Sender: TObject);
+
+
+
+
+procedure TMenuFrame.NewGameClick(Sender: TObject);
 begin
-  FMainCode.LoadGameFrame;
+   FMainCode.LoadGameFrame;
   game.StartGame();
 end;
 
-procedure TMenuFrame.ContinueButtonClick(Sender: TObject);
+procedure TMenuFrame.LoadGameClick(Sender: TObject);
 begin
-  FMainCode.LoadSaveMenuFrame;
+   FMainCode.LoadSaveMenuFrame;
 end;
 
 procedure TMenuFrame.RulesButtonClick(Sender: TObject);

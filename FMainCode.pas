@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, MenuGame,
-  Game, Rules, SaveMenu, Setting;
+  Game, Rules, SaveMenu, Setting, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
 
 type
   TMainFormGame = class(TForm)
@@ -15,10 +15,10 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
-    SettingButton: TButton;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure SettingButtonClick(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
 
   private
 
@@ -122,6 +122,11 @@ end;
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
   LoadMenuFrame;
+end;
+
+procedure TMainFormGame.Image1Click(Sender: TObject);
+begin
+   LoadSettingFrame
 end;
 
 procedure TMainFormGame.SettingButtonClick(Sender: TObject);

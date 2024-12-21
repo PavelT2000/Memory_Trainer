@@ -9,7 +9,7 @@ uses
 
 type
   TRulesFrame = class(TFrame)
-    Image1: TImage;
+    BackGround: TImage;
     Panel1: TPanel;
     Label1: TLabel;
     FromRuleToMenuButton: TButton;

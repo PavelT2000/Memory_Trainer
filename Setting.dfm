@@ -7,7 +7,7 @@ object SettingFrame: TSettingFrame
   DesignSize = (
     1099
     617)
-  object Image1: TImage
+  object BackGround: TImage
     Left = 0
     Top = 0
     Width = 1099

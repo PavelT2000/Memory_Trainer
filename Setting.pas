@@ -15,7 +15,7 @@ TestMod, winStreak only 1 and 2 subStage in every CurStage}
 
 type
   TSettingFrame = class(TFrame)
-    Image1: TImage;
+    BackGround: TImage;
     arrowLeftButton: TButton;
     arrowRightButton: TButton;
     difficultPanel: TPanel;
