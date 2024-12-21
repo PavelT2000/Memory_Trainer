@@ -18,6 +18,7 @@ type
     statistikRulesLabel: TLabel;
     CheckButton: TButton;
     SlovoRememberLabel: TLabel;
+    ProgressBar1: TProgressBar;
     Timer1: TTimer;
     OnlySlovoLable: TLabel;
     nextWordTimer: TTimer;
@@ -137,16 +138,14 @@ begin
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);
-var ElapsedTime: Integer;
+var ElapsedTime: Cardinal;
 begin
-  // Calculate time from the start moment
+  // Расчет времени с момента запуска
   ElapsedTime := GetTickCount - pbStartTime;
 
-  // Calculate progress
-  // No problem if Width will be < 0
-  ProgressPB.Width := pbMax - Round(pbMax * ElapsedTime / pbTime);
-
-  if ElapsedTime >= pbTime then
+  ProgressPB.Width := ProgressPB.Width - 4;
+  ProgressPB.Caption := IntToStr(pbTime);
+  if ProgressPB.Width <= 0 then
   begin
     Timer1.Enabled := False;
 

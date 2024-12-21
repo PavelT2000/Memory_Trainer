@@ -16122,6 +16122,16 @@ object GameFrame: TGameFrame
     ExplicitLeft = 728
     ExplicitTop = 192
   end
+  object ProgressBar1: TProgressBar
+    Left = 250
+    Top = 412
+    Width = 441
+    Height = 26
+    Anchors = []
+    TabOrder = 4
+    ExplicitLeft = 257
+    ExplicitTop = 368
+  end
   object backFrameButton: TButton
     Left = 35
     Top = 456
@@ -16135,7 +16145,7 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 5
     OnClick = backFrameButtonClick
     ExplicitLeft = 36
     ExplicitTop = 407
@@ -16152,7 +16162,7 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 6
     OnClick = HintButtonClick
     ExplicitLeft = 754
     ExplicitTop = 287
@@ -16170,7 +16180,7 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 7
     OnClick = SaveGameNowButtonClick
     ExplicitLeft = 754
     ExplicitTop = 407
@@ -16185,7 +16195,7 @@ object GameFrame: TGameFrame
     Ctl3D = True
     ParentBackground = False
     ParentCtl3D = False
-    TabOrder = 7
+    TabOrder = 8
     object ProgressPB: TLabel
       Left = 0
       Top = 0

@@ -18,6 +18,7 @@ type
     statistikRulesLabel: TLabel;
     CheckButton: TButton;
     SlovoRememberLabel: TLabel;
+    ProgressBar1: TProgressBar;
     Timer1: TTimer;
     OnlySlovoLable: TLabel;
     nextWordTimer: TTimer;

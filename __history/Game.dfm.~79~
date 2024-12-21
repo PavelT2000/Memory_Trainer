@@ -1,17 +1,17 @@
 object GameFrame: TGameFrame
   Left = 0
   Top = 0
-  Width = 931
-  Height = 535
+  Width = 944
+  Height = 480
   TabOrder = 0
   DesignSize = (
-    931
-    535)
+    944
+    480)
   object bg: TImage
     Left = 0
     Top = 0
-    Width = 931
-    Height = 535
+    Width = 944
+    Height = 480
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765E9CA0700FFD8FFE000104A46494600010101000100
@@ -15976,12 +15976,10 @@ object GameFrame: TGameFrame
       8004FF002A894952091C7AE69EEDB7259BB63AD35B01FFD9}
     Stretch = True
     ExplicitLeft = 3
-    ExplicitWidth = 944
-    ExplicitHeight = 480
   end
   object SlovoEdit: TEdit
-    Left = 250
-    Top = 217
+    Left = 257
+    Top = 192
     Width = 441
     Height = 57
     Anchors = []
@@ -15993,21 +15991,17 @@ object GameFrame: TGameFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    TextHint = 'Enter your Answer'
+    Text = 'Enter your Answer'
     OnKeyDown = SlovoEditKeyDown
-    ExplicitLeft = 257
-    ExplicitTop = 192
   end
   object SlovoPanel: TPanel
-    Left = 275
-    Top = 80
+    Left = 282
+    Top = 68
     Width = 401
     Height = 81
     Anchors = []
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 282
-    ExplicitTop = 68
     object SlovoRememberLabel: TLabel
       Left = 48
       Top = 1
@@ -16040,15 +16034,13 @@ object GameFrame: TGameFrame
     end
   end
   object statistikPanel: TPanel
-    Left = 35
-    Top = 29
+    Left = 36
+    Top = 17
     Width = 137
     Height = 184
     Anchors = []
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 36
-    ExplicitTop = 17
     object StatistikStageLable: TLabel
       Left = 8
       Top = 0
@@ -16105,8 +16097,8 @@ object GameFrame: TGameFrame
     end
   end
   object CheckButton: TButton
-    Left = 718
-    Top = 217
+    Left = 728
+    Top = 192
     Width = 57
     Height = 57
     Anchors = []
@@ -16119,12 +16111,18 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 3
     OnClick = CheckButtonClick
-    ExplicitLeft = 728
-    ExplicitTop = 192
+  end
+  object ProgressBar1: TProgressBar
+    Left = 257
+    Top = 368
+    Width = 441
+    Height = 26
+    Anchors = []
+    TabOrder = 4
   end
   object backFrameButton: TButton
-    Left = 35
-    Top = 456
+    Left = 36
+    Top = 407
     Width = 137
     Height = 49
     Anchors = []
@@ -16135,14 +16133,12 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 5
     OnClick = backFrameButtonClick
-    ExplicitLeft = 36
-    ExplicitTop = 407
   end
   object HintButton: TButton
-    Left = 742
-    Top = 323
+    Left = 754
+    Top = 287
     Width = 169
     Height = 49
     Anchors = []
@@ -16152,14 +16148,12 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 6
     OnClick = HintButtonClick
-    ExplicitLeft = 754
-    ExplicitTop = 287
   end
   object SaveGameNowButton: TButton
-    Left = 742
-    Top = 456
+    Left = 754
+    Top = 407
     Width = 169
     Height = 49
     Anchors = []
@@ -16170,37 +16164,33 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 7
     OnClick = SaveGameNowButtonClick
-    ExplicitLeft = 754
-    ExplicitTop = 407
   end
   object CustomPB: TPanel
-    Left = 283
-    Top = 323
+    Left = 274
+    Top = 332
     Width = 400
     Height = 30
     Anchors = []
     Color = clCream
-    Ctl3D = True
+    Ctl3D = False
     ParentBackground = False
     ParentCtl3D = False
-    TabOrder = 7
-    object ProgressPB: TLabel
+    TabOrder = 8
+    object Label1: TLabel
       Left = 0
       Top = 0
-      Width = 400
+      Width = 200
       Height = 30
       Alignment = taCenter
       AutoSize = False
-      BiDiMode = bdRightToLeft
       Color = clAqua
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
-      ParentBiDiMode = False
       ParentColor = False
       ParentFont = False
       Transparent = False

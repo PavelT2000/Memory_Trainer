@@ -14,8 +14,9 @@ var   basicNextSubStage: integer = 7; //9
       basicNextWinCount: integer = 2; //3
       basicMaxStage: integer = 5;
 
-var CurrentStage, subStage, CurrentHint, pbTime, pbMax, pbStartTime: integer;
+var CurrentStage, subStage, CurrentHint, pbTime, pbMax: integer;
     exampleS: string;
+    pbStartTime: Cardinal;
 
 procedure nextStage();
 procedure StartGame();

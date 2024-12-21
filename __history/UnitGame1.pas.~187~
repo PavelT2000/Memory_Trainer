@@ -14,8 +14,9 @@ var   basicNextSubStage: integer = 7; //9
       basicNextWinCount: integer = 2; //3
       basicMaxStage: integer = 5;
 
-var CurrentStage, subStage, CurrentHint, pbTime, pbMax, pbStartTime: integer;
+var CurrentStage, subStage, CurrentHint, pbTime, pbMax: integer;
     exampleS: string;
+    pbStartTime: Cardinal;
 
 procedure nextStage();
 procedure StartGame();
@@ -75,13 +76,13 @@ begin
   //MainFormGame.GameFrame.SlovoPanel.Visible:= True;
   //MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
 
-  // game (time) bar
+  //game (time) bar
   // From higher to lower progress bar
   pbMax := MainFormGame.GameFrame.CustomPB.Width;
   MainFormGame.GameFrame.ProgressPB.Width := pbMax;
   // Get start time to check out when pbTime will end
   pbStartTime := GetTickCount;
-  // Interval can be any amount, but < 50 recomended
+  // Interval can be any amount
   MainFormGame.GameFrame.Timer1.Interval := 10;
   MainFormGame.GameFrame.Timer1.Enabled := True;
   //after we wait and next part of program will go after press the button
