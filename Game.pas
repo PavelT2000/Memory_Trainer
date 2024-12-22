@@ -117,6 +117,7 @@ begin
   NextWordTimer.Enabled:= False;
   if (CurrentStage > UnitGame1.basicMaxStage) then begin
     ShowMessage('Вы победили!');
+    FMainCode.LoadMenuFrame;
   end
   else begin
     UnitGame1.nextStage;

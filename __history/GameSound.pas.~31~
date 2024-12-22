@@ -43,22 +43,21 @@ procedure OnOffMuteMusic;
 begin
   if (playerMute = True) then begin
     playerMute:= False;
-    TurnOnMusuc(GameSound.elevator);
-//    if (MainFormGame.GameFrame.Visible = true) then begin
-//      TurnOnMusuc(GameSound.doomFear);
-//    end;
-//    if (MainFormGame.MenuFrame.Visible = true) then begin
-//      TurnOnMusuc(GameSound.calmMind);
-//    end;
-//    if (MainFormGame.RulesFrame.Visible = true) then begin
-//      TurnOnMusuc(GameSound.elevator);
-//    end;
-//    if (MainFormGame.SaveMenuFrame.Visible = true) then begin
-//      TurnOnMusuc(GameSound.elevator);
-//    end;
-//    if (MainFormGame.SettingFrame.Visible = true) then begin
-//      TurnOnMusuc(GameSound.elevator);
-//    end;
+    if (MainFormGame.GameFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.doomFear);
+    end;
+    if (MainFormGame.MenuFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.calmMind);
+    end;
+    if (MainFormGame.RulesFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.elevator);
+    end;
+    if (MainFormGame.SaveMenuFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.elevator);
+    end;
+    if (MainFormGame.SettingFrame.Visible = true) then begin
+      TurnOnMusuc(GameSound.elevator);
+    end;
   end
   else begin
     playerMute:= True;
