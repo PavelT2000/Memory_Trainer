@@ -866,7 +866,6 @@ object MainFormGame: TMainFormGame
     inherited CustomPB: TPanel
       Top = 392
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 280
       ExplicitTop = 380
       inherited ProgressPB: TLabel
         Width = 401
@@ -884,6 +883,21 @@ object MainFormGame: TMainFormGame
       Top = 24
     end
   end
+  object settingButton: TButton
+    Left = 1032
+    Top = 21
+    Width = 40
+    Height = 36
+    Caption = '+'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -33
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = settingClick
+  end
   inline RulesFrame: TRulesFrame
     Left = 0
     Top = 0
@@ -896,6 +910,9 @@ object MainFormGame: TMainFormGame
     inherited BackGround: TImage
       Width = 1091
       Height = 585
+      ExplicitLeft = -3
+      ExplicitWidth = 1091
+      ExplicitHeight = 585
     end
     inherited Panel1: TPanel
       Left = 293
@@ -940,20 +957,5 @@ object MainFormGame: TMainFormGame
       Width = 1091
       Height = 585
     end
-  end
-  object settingButton: TButton
-    Left = 1032
-    Top = 21
-    Width = 40
-    Height = 36
-    Caption = '+'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -33
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 6
-    OnClick = settingClick
   end
 end
