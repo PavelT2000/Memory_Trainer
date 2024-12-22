@@ -47,12 +47,12 @@ end;
 procedure SaveOrLoadOnButton(numSave: integer);
 begin
   if (Game.GameFrameMode = True) then begin
-    saveGame.SaveG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage, UnitGame1.CurrentStage, CurrentDifficult);
+    saveGame.SaveG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage, UnitGame1.CurrentStage);
     FmainCode.LoadMenuFrame;
   end
   else begin
     FMainCode.LoadGameFrame;
-    saveGame.loadG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage, UnitGame1.CurrentStage, CurrentDifficult);
+    saveGame.loadG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage, UnitGame1.CurrentStage);
     UnitGame1.StartSaveGame;
     UnitGame1.nextStage;
   end;

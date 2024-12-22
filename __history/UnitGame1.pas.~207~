@@ -294,7 +294,7 @@ begin
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
   end;
-  saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
+  saveGame.SaveG(4, CurrentStage, subStage, CurrentHint);
 end;
 
 procedure basicStartGame();

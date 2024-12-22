@@ -1,4 +1,4 @@
-unit DemoGame;
+﻿unit DemoGame;
 
 interface
 
@@ -90,7 +90,7 @@ begin
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
   end;
-  saveGame.SaveG(4, CurrentStage, subStage, CurrentHint);
+  //saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
 end;
 
 procedure basicStartGame();
