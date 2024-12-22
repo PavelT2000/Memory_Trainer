@@ -2,15 +2,19 @@ unit saveGame;
 
 interface
 
-uses SplitGo, System.SysUtils;
-procedure loadG(SaveNum: integer; var CurrentStage, subStage: integer);
-procedure SaveG(SaveNum, CurrentStage, subStage: integer);
+uses UnitGame1, SplitGo, System.SysUtils;
+
+procedure loadG(saveNum: integer; var CurrentStage, subStage, CurrentHint: integer;
+var CurrentDifficult: UnitGame1.AllDifficult);
+procedure SaveG(SaveNum, CurrentStage, subStage, CurrentHint: integer;
+var CurrentDifficult: UnitGame1.AllDifficult);
 
 implementation
 
 uses Vcl.Dialogs;
 
-procedure loadG(saveNum: integer; var CurrentStage, subStage: integer);
+procedure loadG(saveNum: integer; var CurrentStage, subStage, CurrentHint: integer;
+var CurrentDifficult: UnitGame1.AllDifficult);
 var myFile: TextFile;
     strIn, resultStr: string;
     wordArr: SArr;
@@ -35,6 +39,7 @@ begin
 
     CurrentStage:= -1;
     subStage:= -1;
+    CurrentHint:= -1;
     if (strIn <> '') then begin
       resultStr:= strIn;
       while (not Eof(myFile)) do begin
@@ -51,19 +56,31 @@ begin
         else if (wordArr[i] = 'subStage') then begin
           inc(i);
           subStage:= strToInt(wordArr[i]);
+        end
+        else if (wordArr[i] = 'CurrentHint') then begin
+          inc(i);
+          CurrentHint:= strToInt(wordArr[i]);
+        end
+        else if (wordArr[i] = 'CurrentDifficult') then begin
+          inc(i);
+          CurrentHint:= strToInt(wordArr[i]);
         end;
         inc(i);
       end;
     end;
-    if (CurrentStage = -1) and (subStage = -1) then begin
+    if (CurrentStage = -1) or (subStage = -1) or (CurrentHint = -1) then begin
       ShowMessage('We cant find your save, loading basic game...');
-      CurrentStage:= 1; //game mode
-      subStage:= 5; //num of letters or words
+      CurrentStage:= UnitGame1.basicCurrentStage; //game mode
+      subStage:= UnitGame1.basicSubStage; //num of letters or words
+      CurrentHint:= UnitGame1.basicHint;
     end;
     closeFile(myFile);
   end;
   except
     ShowMessage('We cant find your save, loading basic game...');
+    CurrentStage:= UnitGame1.basicCurrentStage; //game mode
+    subStage:= UnitGame1.basicSubStage; //num of letters or words
+    CurrentHint:= UnitGame1.basicHint;
   end;
 end;
 
@@ -79,7 +96,8 @@ end;
 
    closeFile(MyFile);}
 
-procedure SaveG(SaveNum, CurrentStage, subStage: integer);
+procedure SaveG(SaveNum, CurrentStage, subStage, CurrentHint: integer;
+var CurrentDifficult: UnitGame1.AllDifficult);
 var myFile: TextFile;
     str: string;
 begin
@@ -99,6 +117,10 @@ begin
   str:= 'currentStage ' + IntToStr(CurrentStage) + ' ';
   writeln(myFile, str);
   str:= 'subStage ' + IntToStr(subStage) + ' ';
+  writeln(myFile, str);
+  str:= 'CurrentHint ' + IntToStr(CurrentHint) + ' ';
+  writeln(myFile, str);
+  str:= 'CurrentDifficult ' + IntToStr(CurrentDifficult) + ' ';
   writeln(myFile, str);
 
   closeFile(myFile);
