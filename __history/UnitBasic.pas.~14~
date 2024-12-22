@@ -2,9 +2,8 @@
 
 interface
 uses
-  System.SysUtils;
+  System.SysUtils, splitGo;
 
-procedure LowerRus(var s1: String);
 function G1check(s1, s2: String):Boolean;
 function G2check(s1, s2_c: String):Boolean;
 function G3check(s1, s2_c: String):Boolean;
@@ -13,69 +12,6 @@ function G5check(s1, s2_c: String):Boolean;
 
 
 implementation
-
-type SArr = array of string;
-
-function NumOfWords(str: string): integer;
-begin
-  insert(' ', str, 1);
-  str := str + ' ';
-  result := 0;
-  for var i := 1 to length(str) - 1 do
-  begin
-    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
-      result := result + 1;
-  end;
-end;
-
-function ListOfWords(str: string): SArr;
-var
-  startPos, endPos, wordNow, CountWords: integer;
-  startFlag, endFlag: boolean;
-  word: string;
-begin
-  insert(' ', str, 1);
-  str := str + ' ';
-  CountWords:= NumOfWords(str);
-  setLength(result, CountWords);
-  startFlag := False;
-  endFlag := False;
-  wordNow := 0;
-  for var i := 1 to length(str) - 1 do
-  begin
-    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
-    begin
-      startPos := i + 1;
-      startFlag := True;
-    end;
-    if ((str[i] <> ' ') and (str[i + 1] = ' ')) then
-    begin
-      endPos := i;
-      endFlag := True;
-    end;
-    if (startFlag and endFlag) then
-    begin
-      word:= copy(str, startPos, endPos - startPos + 1);
-      result[wordNow] := word;
-      wordNow := wordNow + 1;
-      startFlag := False;
-      endFlag := False;
-    end;
-  end;
-end;
-
-
-procedure LowerRus(var s1: String);
-var
-  len, i: Integer;
-begin
-  len := Length(s1);
-  for i := 1 to len do
-    begin
-      if (s1[i] >= '�') and (s1[i] <= '�') then
-        s1[i] := Chr(Ord(s1[i])+32)
-    end;
-end;
 
 function G1check(s1, s2: String):Boolean;
 var
@@ -123,8 +59,8 @@ begin
     end;
 
 
-  as1 := ListOfWords(s1);
-  as2 := ListOfWords(s2);
+  as1 := splitGo.ListOfWords(s1);
+  as2 := splitGo.ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -142,12 +78,13 @@ begin
         // �� ��� ������ �� ��� ��������
         if (as1[i] = as2[j]) and (not sameString) then
         begin
+          as2[j] := '';
           Inc(tempResult);
           sameString := True;
         end;
 
     end;
-    writeln('DEBUG: len_as = ', len_as);
+
     if tempResult < len_as then
       Result := False
 
@@ -214,8 +151,8 @@ begin
       j := 0;
     end;
 
-  as1 := ListOfWords(s1);
-  as2 := ListOfWords(s2);
+  as1 := splitGo.ListOfWords(s1);
+  as2 := splitGo.ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -233,13 +170,14 @@ begin
         // �� ��� ������ �� ��� ��������
         if (G1check(as1[i], as2[j])) and (not sameString) then
         begin
+          as2[j] := '';
           Inc(tempResult);
           sameString := True;
         end;
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end
@@ -273,8 +211,8 @@ begin
       j := 0;
     end;
 
-  as1 := ListOfWords(s1);
-  as2 := ListOfWords(s2);
+  as1 := splitGo.ListOfWords(s1);
+  as2 := splitGo.ListOfWords(s2);
   len_as := Length(as1);
 
 
@@ -287,12 +225,13 @@ begin
     begin
       if G1check(as1[i], as2[i]) then
       begin
+        as2[j] := '';
         Inc(tempResult);
       end;
 
     end;
 
-    if tempResult < 5 then
+    if tempResult < len_as then
       Result := False
 
   end
