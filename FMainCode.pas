@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, MenuGame,
-  Game, Rules, SaveMenu, Setting, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+  Game, Rules, SaveMenu, Setting, UnitGame1, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
 
 type
   TMainFormGame = class(TForm)
@@ -115,6 +115,12 @@ begin
     MainFormGame.SettingFrame.arrowRightButton.Visible:= True;
     MainFormGame.SettingFrame.arrowLeftButton.Visible:= True;
     MainFormGame.SettingFrame.difficultPanel.Visible:= True;
+    case UnitGame1.CurrentDifficult of
+      UnitGame1.Demo: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Demo';
+      UnitGame1.Easy: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Easy';
+      UnitGame1.Medium: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Medium';
+      UnitGame1.Hard: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Hard';
+    end;
   end;
   MainFormGame.CloseAllFrames;
   MainFormGame.SettingFrame.Visible:= True;

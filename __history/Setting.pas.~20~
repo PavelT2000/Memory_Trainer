@@ -15,14 +15,18 @@ TestMod, winStreak only 1 and 2 subStage in every CurStage}
 
 type
   TSettingFrame = class(TFrame)
-    Image1: TImage;
+    BackGround: TImage;
     arrowLeftButton: TButton;
     arrowRightButton: TButton;
     difficultPanel: TPanel;
     difficultLevelNameLabel: TLabel;
     difficultLevelLabel: TLabel;
     BackInMenuButton: TButton;
+    Panel1: TPanel;
+    MuteMusicButton: TButton;
     procedure BackInMenuButtonClick(Sender: TObject);
+    procedure MuteMusicButtonClick(Sender: TObject);
+    procedure arrowRightButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,14 +37,34 @@ var currentDifficult: DifficultLevel = Medium;
 
 implementation
 
-uses FMainCode;
+uses FMainCode, GameSound, UnitGame1;
+
+//var AllDifficultArr: array[1..4] of UnitGame1.AllDifficult;
 
 {$R *.dfm}
 
+procedure TSettingFrame.arrowRightButtonClick(Sender: TObject);
+begin
+  if CurrentDifficult <> hard then begin
+    inc(currentDifficult);
+  end;
+end;
+
 procedure TSettingFrame.BackInMenuButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
-  MainFormGame.MenuFrame.Visible:= True;
+  case FMainCode.preFrame of
+    GameFrame: FMainCode.LoadGameFrame;
+    MenuFrame: FMainCode.LoadMenuFrame;
+    RulesFrame: FMainCode.LoadRulesFrame;
+    SaveMenuFrame: FMainCode.LoadSaveMenuFrame;
+    SettingFrame: FMainCode.LoadSettingFrame;
+  end;
+  MainFormGame.settingButton.Visible:= True;
+end;
+
+procedure TSettingFrame.MuteMusicButtonClick(Sender: TObject);
+begin
+  GameSound.OnOffMuteMusic;
 end;
 
 end.

@@ -4293,6 +4293,7 @@ object SettingFrame: TSettingFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnClick = arrowLeftButtonClick
   end
   object arrowRightButton: TButton
     Left = 658
@@ -4308,6 +4309,7 @@ object SettingFrame: TSettingFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnClick = arrowRightButtonClick
   end
   object difficultPanel: TPanel
     Left = 392

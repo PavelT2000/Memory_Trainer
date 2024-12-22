@@ -13,7 +13,6 @@ type
     BackGround: TImage;
     LoadGame: TImage;
     NewGame: TImage;
-    Exit: TImage;
     Button2: TButton;
     procedure RulesButtonClick(Sender: TObject);
     

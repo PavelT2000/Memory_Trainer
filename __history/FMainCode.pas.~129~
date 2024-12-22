@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, MenuGame,
-  Game, Rules, SaveMenu, Setting;
+  Game, Rules, SaveMenu, Setting, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
 
 type
   TMainFormGame = class(TForm)
@@ -15,10 +15,12 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
-    SettingButton: TButton;
+    settingButton: TButton;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure SettingButtonClick(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure settingClick(Sender: TObject);
 
   private
 
@@ -37,7 +39,7 @@ procedure LoadGameFrame();
 procedure LoadMenuFrame();
 procedure LoadRulesFrame();
 procedure LoadSaveMenuFrame();
-procedure LoadSettingsFrame();
+procedure LoadSettingFrame();
 
 implementation
 
@@ -58,6 +60,10 @@ begin
   nowFrame:= GameFrame;
   MainFormGame.CloseAllFrames;
   MainFormGame.GameFrame.Visible := True;
+  {MainFormGame.MenuFrame.Visible := False;
+  MainFormGame.RulesFrame.Visible:= False;
+  MainFormGame.SaveMenuFrame.Visible:= False;
+  MainFormGame.SettingFrame.Visible:= False;}
   GameSound.TurnOnMusuc(GameSound.doomFear);
   Game.GameFrameMode:= true;
 end;
@@ -96,8 +102,10 @@ begin
   GameSound.TurnOnMusuc(GameSound.elevator);
 end;
 
-procedure LoadSettingsFrame();
+procedure LoadSettingFrame();
 begin
+  preFrame:= nowFrame;
+  nowFrame:= SettingFrame;
   if (game.GameFrameMode = True) then begin
     MainFormGame.SettingFrame.arrowRightButton.Visible:= False;
     MainFormGame.SettingFrame.arrowLeftButton.Visible:= False;
@@ -118,9 +126,20 @@ begin
   LoadMenuFrame;
 end;
 
+procedure TMainFormGame.Image1Click(Sender: TObject);
+begin
+   LoadSettingFrame
+end;
+
 procedure TMainFormGame.SettingButtonClick(Sender: TObject);
 begin
-  LoadSettingsFrame;
+  LoadSettingFrame;
+end;
+
+procedure TMainFormGame.settingClick(Sender: TObject);
+begin
+  MainFormGame.settingButton.Visible:= False;
+  LoadSettingFrame;
 end;
 
 end.

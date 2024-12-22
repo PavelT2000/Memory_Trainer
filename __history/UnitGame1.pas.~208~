@@ -19,7 +19,7 @@ var   basicNextSubStage: integer = 7; //9
 
 var CurrentStage, subStage, CurrentHint, pbTime, pbMax, pbStartTime: integer;
     exampleS: string;
-    CurrentDifficult: AllDifficult = Medium;
+    CurrentDifficult: AllDifficult;
 
 procedure nextStage();
 procedure StartGame();

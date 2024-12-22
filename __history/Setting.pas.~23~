@@ -20,7 +20,7 @@ type
     arrowRightButton: TButton;
     difficultPanel: TPanel;
     difficultLevelNameLabel: TLabel;
-    difficultLevelLabel: TLabel;
+    difficultLevel: TLabel;
     BackInMenuButton: TButton;
     Panel1: TPanel;
     MuteMusicButton: TButton;
@@ -49,10 +49,10 @@ begin
   if UnitGame1.CurrentDifficult <> UnitGame1.Demo then begin
     dec(UnitGame1.currentDifficult);
     case UnitGame1.CurrentDifficult of
-      UnitGame1.Demo: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Demo';
-      UnitGame1.Easy: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Easy';
-      UnitGame1.Medium: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Medium';
-      UnitGame1.Hard: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Hard';
+      UnitGame1.Demo: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Demo';
+      UnitGame1.Easy: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Easy';
+      UnitGame1.Medium: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Medium';
+      UnitGame1.Hard: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Hard';
     end;
   end;
 end;
@@ -62,10 +62,10 @@ begin
   if UnitGame1.CurrentDifficult <> UnitGame1.hard then begin
     inc(UnitGame1.currentDifficult);
     case UnitGame1.CurrentDifficult of
-      UnitGame1.Demo: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Demo';
-      UnitGame1.Easy: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Easy';
-      UnitGame1.Medium: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Medium';
-      UnitGame1.Hard: MainFormGame.SettingFrame.difficultLevelLabel.Caption:= 'Hard';
+      UnitGame1.Demo: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Demo';
+      UnitGame1.Easy: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Easy';
+      UnitGame1.Medium: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Medium';
+      UnitGame1.Hard: MainFormGame.SettingFrame.difficultLevel.Caption:= 'Hard';
     end;
   end;
 end;

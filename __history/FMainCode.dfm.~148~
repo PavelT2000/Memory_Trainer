@@ -912,53 +912,33 @@ object MainFormGame: TMainFormGame
     inherited BackGround: TImage
       Width = 1091
       Height = 585
-      ExplicitLeft = 1
-      ExplicitWidth = 1091
-      ExplicitHeight = 585
     end
     inherited arrowLeftButton: TButton
-      Left = 327
-      Top = 162
-      Width = 52
-      Height = 49
-      ExplicitLeft = 327
-      ExplicitTop = 162
-      ExplicitWidth = 52
-      ExplicitHeight = 49
+      Left = 342
+      Top = 180
+      ExplicitLeft = 341
+      ExplicitTop = 177
     end
     inherited arrowRightButton: TButton
-      Left = 647
-      Top = 162
-      Width = 51
-      Height = 49
-      ExplicitLeft = 647
-      ExplicitTop = 162
-      ExplicitWidth = 51
-      ExplicitHeight = 49
+      Left = 655
+      Top = 180
+      ExplicitLeft = 654
+      ExplicitTop = 177
     end
     inherited difficultPanel: TPanel
       Left = 395
-      Top = 152
-      Height = 69
+      Top = 163
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 395
-      ExplicitTop = 152
-      ExplicitHeight = 69
+      ExplicitLeft = 394
+      ExplicitTop = 160
       inherited difficultLevelNameLabel: TLabel
-        Top = 2
-        Height = 31
-        Font.Height = -20
+        Height = 23
+        Font.Height = -17
         StyleElements = [seFont, seClient, seBorder]
-        ExplicitTop = 2
-        ExplicitHeight = 31
+        ExplicitHeight = 23
       end
       inherited difficultLevelLabel: TLabel
-        Top = 32
-        Height = 40
-        Font.Height = -24
         StyleElements = [seFont, seClient, seBorder]
-        ExplicitTop = 32
-        ExplicitHeight = 40
       end
     end
     inherited BackInMenuButton: TButton
