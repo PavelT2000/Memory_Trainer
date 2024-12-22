@@ -15995,8 +15995,6 @@ object GameFrame: TGameFrame
     TabOrder = 0
     TextHint = 'Enter your Answer'
     OnKeyDown = SlovoEditKeyDown
-    ExplicitLeft = 257
-    ExplicitTop = 192
   end
   object SlovoPanel: TPanel
     Left = 275
@@ -16006,8 +16004,6 @@ object GameFrame: TGameFrame
     Anchors = []
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 282
-    ExplicitTop = 68
     object SlovoRememberLabel: TLabel
       Left = 48
       Top = 1
@@ -16042,17 +16038,15 @@ object GameFrame: TGameFrame
   object statistikPanel: TPanel
     Left = 35
     Top = 29
-    Width = 137
-    Height = 184
+    Width = 150
+    Height = 228
     Anchors = []
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 36
-    ExplicitTop = 17
     object StatistikStageLable: TLabel
       Left = 8
       Top = 0
-      Width = 121
+      Width = 137
       Height = 25
       Alignment = taCenter
       AutoSize = False
@@ -16067,7 +16061,7 @@ object GameFrame: TGameFrame
     object statistikSubStageLabel: TLabel
       Left = 8
       Top = 62
-      Width = 121
+      Width = 137
       Height = 33
       Alignment = taCenter
       AutoSize = False
@@ -16080,10 +16074,10 @@ object GameFrame: TGameFrame
       WordWrap = True
     end
     object statistikRulesLabel: TLabel
-      Left = 8
+      Left = 0
       Top = 96
-      Width = 121
-      Height = 81
+      Width = 145
+      Height = 129
       Alignment = taCenter
       AutoSize = False
       WordWrap = True
@@ -16091,7 +16085,7 @@ object GameFrame: TGameFrame
     object statistikWinStreak: TLabel
       Left = 0
       Top = 33
-      Width = 137
+      Width = 145
       Height = 28
       Alignment = taCenter
       AutoSize = False
@@ -16119,8 +16113,6 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 3
     OnClick = CheckButtonClick
-    ExplicitLeft = 728
-    ExplicitTop = 192
   end
   object backFrameButton: TButton
     Left = 35
@@ -16137,8 +16129,6 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 4
     OnClick = backFrameButtonClick
-    ExplicitLeft = 36
-    ExplicitTop = 407
   end
   object HintButton: TButton
     Left = 742
@@ -16154,8 +16144,6 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 5
     OnClick = HintButtonClick
-    ExplicitLeft = 754
-    ExplicitTop = 287
   end
   object SaveGameNowButton: TButton
     Left = 742
@@ -16172,8 +16160,6 @@ object GameFrame: TGameFrame
     ParentFont = False
     TabOrder = 6
     OnClick = SaveGameNowButtonClick
-    ExplicitLeft = 754
-    ExplicitTop = 407
   end
   object CustomPB: TPanel
     Left = 283
