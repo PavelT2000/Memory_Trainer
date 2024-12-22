@@ -18,7 +18,6 @@ type
     statistikRulesLabel: TLabel;
     CheckButton: TButton;
     SlovoRememberLabel: TLabel;
-    ProgressBar1: TProgressBar;
     Timer1: TTimer;
     OnlySlovoLable: TLabel;
     nextWordTimer: TTimer;
@@ -76,7 +75,10 @@ begin
     MainFormGame.GameFrame.HintButton.Enabled:= False;
     MainFormGame.GameFrame.CheckButton.Enabled:= False;
     wordIn:= MainFormGame.GameFrame.SlovoEdit.Text;
-    SplitGo.LowerRus(wordIn);
+    if (UnitGame1.CurrentDifficult <> Hard) then begin
+      SplitGo.LowerRus(wordIn);
+    end;
+
     wordIn := Trim(wordIn);
     unitGame1.CheckAllStage(wordIn);
     MainFormGame.GameFrame.NextWordTimer.Enabled:= True;
@@ -117,7 +119,8 @@ procedure TGameFrame.nextWordTimerTimer(Sender: TObject);
 begin
   NextWordTimer.Enabled:= False;
   if (CurrentStage > UnitGame1.basicMaxStage) then begin
-
+    ShowMessage('Вы победили!');
+    FMainCode.LoadMenuFrame;
   end
   else begin
     UnitGame1.nextStage;
@@ -138,20 +141,16 @@ begin
 end;
 
 procedure TGameFrame.Timer1Timer(Sender: TObject);
-var ElapsedTime: Cardinal;
+var ElapsedTime: Integer;
 begin
-  // Расчет времени с момента запуска
+  // Calculate time from the start moment
   ElapsedTime := GetTickCount - pbStartTime;
 
-  if pbMax - Round(pbMax * ElapsedTime / pbTime) < 0 then
-    ProgressPB.Width := 0
-  else
-    ProgressPB.Width := pbMax - Round(pbMax * ElapsedTime / pbTime;
+  // Calculate progress
+  // No problem if Width will be < 0
+  ProgressPB.Width := pbMax - Round(pbMax * ElapsedTime / pbTime);
 
-
-  //ProgressPB.Width := ProgressPB.Width - 4;
-  ProgressPB.Caption := IntToStr(pbTime);
-  if ProgressPB.Width <= 0 then
+  if ElapsedTime >= pbTime then
   begin
     Timer1.Enabled := False;
 

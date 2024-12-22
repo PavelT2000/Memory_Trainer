@@ -19,7 +19,7 @@ var   basicNextSubStage: integer = 7; //9
 
 var CurrentStage, subStage, CurrentHint, pbTime, pbMax, pbStartTime: integer;
     exampleS: string;
-    CurrentDifficult: AllDifficult;
+    CurrentDifficult: AllDifficult = Medium;
 
 procedure nextStage();
 procedure StartGame();
@@ -190,8 +190,36 @@ begin
   //after we wait and next part of program will go after press the button
 end;
 
-procedure CheckAllStage(wordIn: string);
-var ansCheck: boolean;
+procedure DemoDifficultCheckAllStage(var ansCheck: boolean; wordIn: string);
+begin
+  case CurrentStage of
+    1:
+      begin
+        if (exampleS = wordIn) then ansCheck:= true
+        else ansCheck:= False;
+      end;
+    2:
+      ansCheck:= G1Check(exampleS,wordIn);
+    3:
+      ansCheck:= G2Check(exampleS,wordIn);
+    4:
+      ansCheck:= G4Check(exampleS,wordIn);
+    5:
+      ansCheck:= G3Check(exampleS,wordIn);
+    6:
+      ansCheck:= G5Check(exampleS,wordIn);
+    7:
+      ansCheck:= G6Check(exampleS,wordIn);
+    else ansCheck:= False;
+  end;
+end;
+
+procedure EasyDifficultCheckAllStage(var ansCheck: boolean; wordIn: string);
+begin
+
+end;
+
+procedure MediumDifficultCheckAllStage(var ansCheck: boolean; wordIn: string);
 begin
   case CurrentStage of
     1:
@@ -205,6 +233,34 @@ begin
     5:
       ansCheck:= G5Check(exampleS,wordIn);
     else ansCheck:= False;
+  end;
+end;
+
+procedure HardDifficultCheckAllStage(var ansCheck: boolean; wordIn: string);
+begin
+  case CurrentStage of
+    1:
+      ansCheck:= G1Check(exampleS,wordIn);
+    2:
+      ansCheck:= G2Check(exampleS,wordIn);
+    3:
+      ansCheck:= G3Check(exampleS,wordIn);
+    4:
+      ansCheck:= G4Check(exampleS,wordIn);
+    5:
+      ansCheck:= G5Check(exampleS,wordIn);
+    else ansCheck:= False;
+  end;
+end;
+
+procedure CheckAllStage(wordIn: string);
+var ansCheck: boolean;
+begin
+  case CurrentDifficult of
+    Demo: DemoDifficultCheckAllStage(ansCheck, wordIn);
+    Easy: EasyDifficultCheckAllStage(ansCheck, wordIn);
+    Medium: MediumDifficultCheckAllStage(ansCheck, wordIn);
+    Hard: HardDifficultCheckAllStage(ansCheck, wordIn);
   end;
   if ansCheck then
   begin
@@ -238,14 +294,27 @@ begin
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
   end;
-  saveGame.SaveG(4, CurrentStage, subStage, CurrentHint);
+  saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
 end;
 
 procedure basicStartGame();
 begin
+  case CurrentDifficult of
+    Demo: begin
+      basicMaxStage:= 7;
+    end;
+    Easy: begin
+
+    end;
+    Medium: begin
+      basicMaxStage:= 5;
+    end;
+    Hard: begin
+      basicMaxStage:= 5;
+    end;
+  end;
   gener.GetAllSArr();
   WinCount:= basicWinCount;
-  CurrentDifficult:= basicDifficult;
   WinStreak:= 0;
   pbTime:= 4000;
   MainFormGame.GameFrame.CheckButton.Enabled:= False;

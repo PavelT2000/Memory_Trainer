@@ -75,7 +75,9 @@ begin
     MainFormGame.GameFrame.HintButton.Enabled:= False;
     MainFormGame.GameFrame.CheckButton.Enabled:= False;
     wordIn:= MainFormGame.GameFrame.SlovoEdit.Text;
-    SplitGo.LowerRus(wordIn);
+    if (UnitGame1.CurrentDifficult <> Hard) then begin
+      SplitGo.LowerRus(wordIn);
+    end;
     wordIn := Trim(wordIn);
     unitGame1.CheckAllStage(wordIn);
     MainFormGame.GameFrame.NextWordTimer.Enabled:= True;
