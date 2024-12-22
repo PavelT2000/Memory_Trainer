@@ -15,13 +15,11 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
-    settingButton: TButton;
+    settingPanel: TPanel;
     settingImage: TImage;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
-    procedure SettingButtonClick(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
-    procedure settingClick(Sender: TObject);
+    procedure settingImageClick(Sender: TObject);
 
   private
 
@@ -105,6 +103,7 @@ end;
 
 procedure LoadSettingFrame();
 begin
+  MainFormGame.settingPanel.Visible:= False;
   preFrame:= nowFrame;
   nowFrame:= SettingFrame;
   if (game.GameFrameMode = True) then begin
@@ -133,21 +132,21 @@ begin
   LoadMenuFrame;
 end;
 
-procedure TMainFormGame.Image1Click(Sender: TObject);
-begin
-   LoadSettingFrame
-end;
-
-procedure TMainFormGame.SettingButtonClick(Sender: TObject);
+procedure TMainFormGame.settingImageClick(Sender: TObject);
 begin
   LoadSettingFrame;
 end;
 
-procedure TMainFormGame.settingClick(Sender: TObject);
+{procedure TMainFormGame.SettingButtonClick(Sender: TObject);
 begin
-  MainFormGame.settingButton.Visible:= False;
   LoadSettingFrame;
-end;
+end;}
+
+{procedure TMainFormGame.settingClick(Sender: TObject);
+begin
+  MainFormGame.settingImage.Visible:= False;
+  LoadSettingFrame;
+end;}
 
 end.
 

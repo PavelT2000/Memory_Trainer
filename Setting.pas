@@ -79,7 +79,7 @@ begin
     SaveMenuFrame: FMainCode.LoadSaveMenuFrame;
     SettingFrame: FMainCode.LoadSettingFrame;
   end;
-  MainFormGame.settingButton.Visible:= True;
+  MainFormGame.settingPanel.Visible:= True;
 end;
 
 procedure TSettingFrame.MuteMusicButtonClick(Sender: TObject);
