@@ -175,27 +175,27 @@ begin
     2:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в любом порядке. Размер букв учитывается!';
-      exampleS:=gener.getWordRandLetter(subStage-3);
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     3:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в том же порядке. Размер букв учитывается!';
-      exampleS:=gener.getWordRandLetter(subStage-3);
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     4:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это'+
       'перевёртыш в любом порядке. Размер букв учитывается!';
-      exampleS:=gener.getWordRandLetter(subStage-3);
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     5:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово' +
       'это перевёртыш в том же порядке. Размер букв учитывается!';
-      exampleS:=gener.getWordRandLetter(subStage-3);
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
   end;

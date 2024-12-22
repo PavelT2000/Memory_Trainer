@@ -596,6 +596,12 @@ object MainFormGame: TMainFormGame
     120000000049454E44AE426082}
   OnCreate = FormCreate
   TextHeight = 23
+  object settingImage: TImage
+    Left = 936
+    Top = 80
+    Width = 105
+    Height = 105
+  end
   object MediaPlayer1: TMediaPlayer
     Left = -8
     Top = 0
@@ -715,43 +721,6 @@ object MainFormGame: TMainFormGame
       ExplicitTop = 502
     end
   end
-  inline MenuFrame: TMenuFrame
-    Left = 0
-    Top = 0
-    Width = 1091
-    Height = 585
-    Align = alClient
-    TabOrder = 2
-    Visible = False
-    ExplicitWidth = 1089
-    ExplicitHeight = 577
-    DesignSize = (
-      1091
-      585)
-    inherited BackGround: TImage
-      Width = 1091
-      Height = 585
-    end
-    inherited NewGame: TImage
-      Height = 92
-      ExplicitHeight = 92
-    end
-  end
-  object settingButton: TButton
-    Left = 1032
-    Top = 21
-    Width = 40
-    Height = 36
-    Caption = '+'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -33
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 6
-    OnClick = settingClick
-  end
   inline SettingFrame: TSettingFrame
     Left = 0
     Top = 0
@@ -767,31 +736,31 @@ object MainFormGame: TMainFormGame
       Height = 585
     end
     inherited arrowLeftButton: TButton
-      Top = 163
+      Left = 329
+      Top = 164
       Width = 52
       Height = 49
-      ExplicitLeft = 327
-      ExplicitTop = 160
+      ExplicitTop = 161
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
     inherited arrowRightButton: TButton
       Left = 647
-      Top = 163
+      Top = 164
       Width = 51
       Height = 49
       ExplicitLeft = 646
-      ExplicitTop = 160
+      ExplicitTop = 161
       ExplicitWidth = 51
       ExplicitHeight = 49
     end
     inherited difficultPanel: TPanel
       Left = 395
-      Top = 153
+      Top = 154
       Height = 69
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 394
-      ExplicitTop = 150
+      ExplicitTop = 151
       ExplicitHeight = 69
       inherited difficultLevelNameLabel: TLabel
         Top = 2
@@ -896,7 +865,7 @@ object MainFormGame: TMainFormGame
       Height = 237
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 24
-      ExplicitTop = 12
+      ExplicitTop = 10
       ExplicitWidth = 170
       ExplicitHeight = 237
       inherited StatistikStageLable: TLabel
@@ -977,5 +946,42 @@ object MainFormGame: TMainFormGame
       Left = 936
       Top = 24
     end
+  end
+  inline MenuFrame: TMenuFrame
+    Left = 0
+    Top = 0
+    Width = 1091
+    Height = 585
+    Align = alClient
+    TabOrder = 2
+    Visible = False
+    ExplicitWidth = 1089
+    ExplicitHeight = 577
+    DesignSize = (
+      1091
+      585)
+    inherited BackGround: TImage
+      Width = 1091
+      Height = 585
+    end
+    inherited NewGame: TImage
+      Height = 92
+      ExplicitHeight = 92
+    end
+  end
+  object settingButton: TButton
+    Left = 1032
+    Top = 21
+    Width = 40
+    Height = 36
+    Caption = '+'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -33
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = settingClick
   end
 end

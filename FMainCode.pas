@@ -16,6 +16,7 @@ type
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
     settingButton: TButton;
+    settingImage: TImage;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure SettingButtonClick(Sender: TObject);

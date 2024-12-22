@@ -10,6 +10,7 @@ procedure GetAllSArr();
 function GetWord(num: integer): string;
 function Get5Word(num: integer):string;
 function getWordRandLetter(numLetter: integer):string;
+function Get5WordRandLetter(num: integer):string;
 
 implementation
 
@@ -132,6 +133,19 @@ begin
       randomNum:= Random(33) + ord('А'); //+1 (rand = max-1)
       result:= result + chr(randomNum);
     end;
+  end;
+end;
+
+function Get5WordRandLetter(num: integer):string;
+var word: string;
+    randomNum: integer;
+begin
+  result:= '';
+  Randomize;
+  for var i:= 1 to num do begin
+    randomNum:= Random(4)+3;  //from 3 to 6
+    word:= getWordRandLetter(randomNum);
+    result:= result + word + ' ';
   end;
 end;
 
