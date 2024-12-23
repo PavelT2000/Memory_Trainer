@@ -351,7 +351,7 @@ begin
   saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
 end;
 
-procedure basicStartGame();
+procedure basicVarStartGame();
 begin
   case CurrentDifficult of
     Demo: begin
@@ -379,6 +379,10 @@ begin
       basicNextSubStage:= 7;
     end;
   end;
+end;
+
+procedure basicStartGame();
+begin
   gener.GetAllSArr();
   WinCount:= basicWinCount;
   WinStreak:= 0;
@@ -397,6 +401,7 @@ end;
 
 procedure StartGame();
 begin
+  basicVarStartGame;
   CurrentStage:= basicCurrentStage;  //1
   subStage:= basicSubStage;
   CurrentHint:= basicHint;
@@ -405,6 +410,7 @@ end;
 
 procedure StartSaveGame();
 begin
+  basicVarStartGame;
   basicStartGame;
 end;
 

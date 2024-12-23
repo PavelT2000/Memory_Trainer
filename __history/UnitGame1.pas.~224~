@@ -168,32 +168,34 @@ begin
   case CurrentStage of
     1:
     begin
-      rulesOut:= 'Правило: Введите слово перевёрнутым';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите слово перевёрнутым. Размер букв учитывается!';
+      exampleS:=gener.getWordRandLetter(subStage-2);
       pbTime := 4000;
     end;
     2:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел в любом порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел в любом порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     3:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел в том же порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел в том же порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     4:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это'+
+      'перевёртыш в любом порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     5:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово' +
+      'это перевёртыш в том же порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
   end;
@@ -355,18 +357,26 @@ begin
     Demo: begin
       basicMaxStage:= 7;
       basicNextWinCount:= 1;
+      basicHint:= 15;
+      basicNextSubStage:= 7;
     end;
     Easy: begin
       basicMaxStage:= 6;
       basicNextWinCount:= 2;
+      basicHint:= 10;
+      basicNextSubStage:= 7;
     end;
     Medium: begin
       basicMaxStage:= 5;
       basicNextWinCount:= 2;
+      basicHint:= 5;
+      basicNextSubStage:= 9;
     end;
     Hard: begin
       basicMaxStage:= 5;
       basicNextWinCount:= 3;
+      basicHint:= 1;
+      basicNextSubStage:= 7;
     end;
   end;
   gener.GetAllSArr();

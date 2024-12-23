@@ -1,4 +1,4 @@
 currentStage 2 
-subStage 5 
-CurrentHint 5 
-CurrentDifficult Medium 
+subStage 6 
+CurrentHint 12 
+CurrentDifficult Demo 

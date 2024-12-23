@@ -730,32 +730,32 @@ object MainFormGame: TMainFormGame
       Height = 585
     end
     inherited arrowLeftButton: TButton
-      Left = 330
-      Top = 165
+      Left = 331
+      Top = 166
       Width = 52
       Height = 49
-      ExplicitLeft = 329
-      ExplicitTop = 162
+      ExplicitLeft = 330
+      ExplicitTop = 163
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
     inherited arrowRightButton: TButton
       Left = 647
-      Top = 165
+      Top = 166
       Width = 51
       Height = 49
       ExplicitLeft = 646
-      ExplicitTop = 162
+      ExplicitTop = 163
       ExplicitWidth = 51
       ExplicitHeight = 49
     end
     inherited difficultPanel: TPanel
       Left = 395
-      Top = 155
+      Top = 156
       Height = 69
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 394
-      ExplicitTop = 152
+      ExplicitTop = 153
       ExplicitHeight = 69
       inherited difficultLevelNameLabel: TLabel
         Top = 2
@@ -958,10 +958,6 @@ object MainFormGame: TMainFormGame
     inherited BackGround: TImage
       Width = 1091
       Height = 585
-      ExplicitLeft = 3
-      ExplicitTop = 408
-      ExplicitWidth = 1091
-      ExplicitHeight = 585
     end
     inherited NewGame: TImage
       Height = 92
