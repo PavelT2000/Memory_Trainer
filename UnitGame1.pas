@@ -29,18 +29,18 @@ procedure StartSaveGame();
 implementation
 
 //uses Game
-uses FMainCode, saveGame;
+uses FMainCode, saveGame, Vcl.Dialogs;
 
 var
   WinCount, winStreak: integer;
-  inputS, slovoOut, StatistikOut: string;
+  inputS, slovoOut, StatistikOut, rulesOut: string;
 
 procedure DemoDifficultNextStage(var rulesOut: string);
 begin
   case CurrentStage of
     1:
     begin
-      rulesOut:= 'Правило: Введите тоже слово';
+      rulesOut:= 'Правило: Введите то же слово';
       exampleS:=gener.GetWord(subStage);
       pbTime := 4000;
     end;
@@ -202,7 +202,6 @@ begin
 end;
 
 procedure nextStage();
-var rulesOut: string;
 begin
   MainFormGame.GameFrame.SlovoEdit.Enabled:= False;
   case CurrentDifficult of
@@ -347,6 +346,15 @@ begin
     MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
+    case CurrentDifficult of    //change rules
+      Demo: DemoDifficultNextStage(rulesOut);
+      Easy: EasyDifficultNextStage(rulesOut);
+      Medium: MediumDifficultNextStage(rulesOut);
+      Hard: HardDifficultNextStage(rulesOut);
+    end;
+    StatistikOut:= 'Поздравляю! Новая стадия - ' + IntToStr(CurrentStage) +
+    '! Правило стадии поменалось! ' + rulesOut;
+    showMessage(StatistikOut);
   end;
   saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
 end;
@@ -397,6 +405,15 @@ begin
   MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
   StatistikOut:= 'Угадано подряд ' + IntToStr(WinStreak);
   MainFormGame.GameFrame.statistikWinStreak.Caption:= StatistikOut;
+  case CurrentDifficult of    //change rules
+      Demo: DemoDifficultNextStage(rulesOut);
+      Easy: EasyDifficultNextStage(rulesOut);
+      Medium: MediumDifficultNextStage(rulesOut);
+      Hard: HardDifficultNextStage(rulesOut);
+    end;
+  StatistikOut:= 'Приготовьтесь, игра начинается! ' +
+    'Правило 1 стадии - ' + rulesOut;
+  showMessage(StatistikOut);
 end;
 
 procedure StartGame();

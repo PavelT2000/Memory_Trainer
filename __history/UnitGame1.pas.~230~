@@ -29,11 +29,11 @@ procedure StartSaveGame();
 implementation
 
 //uses Game
-uses FMainCode, saveGame;
+uses FMainCode, saveGame, Vcl.Dialogs;
 
 var
   WinCount, winStreak: integer;
-  inputS, slovoOut, StatistikOut: string;
+  inputS, slovoOut, StatistikOut, rulesOut: string;
 
 procedure DemoDifficultNextStage(var rulesOut: string);
 begin
@@ -168,32 +168,34 @@ begin
   case CurrentStage of
     1:
     begin
-      rulesOut:= 'Правило: Введите слово перевёрнутым';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите слово перевёрнутым. Размер букв учитывается!';
+      exampleS:=gener.getWordRandLetter(subStage-2);
       pbTime := 4000;
     end;
     2:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел в любом порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел в любом порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     3:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел в том же порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел в том же порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     4:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это'+
+      'перевёртыш в любом порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
     5:
     begin
-      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
-      exampleS:=gener.getWordRandLetter(subStage);
+      rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово' +
+      'это перевёртыш в том же порядке. Размер букв учитывается!';
+      exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
     end;
   end;
@@ -345,11 +347,13 @@ begin
     MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
+    StatistikOut:= 'Поздравляю! Новая стадия! ' + IntToStr(CurrentStage) + '. Правило стадии поменалось!' + ;
+    showMessage(StatistikOut);
   end;
   saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
 end;
 
-procedure basicStartGame();
+procedure basicVarStartGame();
 begin
   case CurrentDifficult of
     Demo: begin
@@ -374,9 +378,13 @@ begin
       basicMaxStage:= 5;
       basicNextWinCount:= 3;
       basicHint:= 1;
-      basicNextSubStage:= 9;
+      basicNextSubStage:= 7;
     end;
   end;
+end;
+
+procedure basicStartGame();
+begin
   gener.GetAllSArr();
   WinCount:= basicWinCount;
   WinStreak:= 0;
@@ -395,6 +403,7 @@ end;
 
 procedure StartGame();
 begin
+  basicVarStartGame;
   CurrentStage:= basicCurrentStage;  //1
   subStage:= basicSubStage;
   CurrentHint:= basicHint;
@@ -403,6 +412,7 @@ end;
 
 procedure StartSaveGame();
 begin
+  basicVarStartGame;
   basicStartGame;
 end;
 
