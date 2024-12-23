@@ -595,6 +595,9 @@ object MainFormGame: TMainFormGame
     D89043639073170617516386C39180063126C6C498FEC7FE1F4AA8EC78EF5D68
     120000000049454E44AE426082}
   OnCreate = FormCreate
+  DesignSize = (
+    1091
+    585)
   TextHeight = 23
   object MediaPlayer1: TMediaPlayer
     Left = -8
@@ -730,22 +733,22 @@ object MainFormGame: TMainFormGame
       Height = 585
     end
     inherited arrowLeftButton: TButton
-      Left = 332
-      Top = 167
+      Left = 333
+      Top = 168
       Width = 52
       Height = 49
-      ExplicitLeft = 331
-      ExplicitTop = 164
+      ExplicitLeft = 332
+      ExplicitTop = 165
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
     inherited arrowRightButton: TButton
       Left = 647
-      Top = 167
+      Top = 168
       Width = 51
       Height = 49
       ExplicitLeft = 646
-      ExplicitTop = 164
+      ExplicitTop = 165
       ExplicitWidth = 51
       ExplicitHeight = 49
     end
@@ -753,8 +756,7 @@ object MainFormGame: TMainFormGame
       Left = 395
       Height = 69
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 394
-      ExplicitTop = 154
+      ExplicitLeft = 395
       ExplicitHeight = 69
       inherited difficultLevelNameLabel: TLabel
         Top = 2
@@ -826,6 +828,7 @@ object MainFormGame: TMainFormGame
     Top = 21
     Width = 54
     Height = 52
+    Anchors = []
     Color = clWhite
     ParentBackground = False
     TabOrder = 6
@@ -1082,7 +1085,7 @@ object MainFormGame: TMainFormGame
       Height = 284
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 24
-      ExplicitTop = 12
+      ExplicitTop = 10
       ExplicitWidth = 170
       ExplicitHeight = 284
       inherited StatistikStageLable: TLabel

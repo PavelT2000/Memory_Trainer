@@ -4570,6 +4570,7 @@ object MenuFrame: TMenuFrame
     Top = 376
     Width = 337
     Height = 65
+    Anchors = []
     Caption = 'Button2'
     TabOrder = 0
     OnClick = Button2Click

@@ -420,7 +420,7 @@ begin
       Hard: HardDifficultNextStage(rulesOut);
     end;
   StatistikOut:= 'Приготовьтесь, игра начинается! ' +
-    'Правило 1 стадии - ' + rulesOut;
+    'Правило ' + IntToStr(CurrentStage) + ' стадии - ' + rulesOut;
   showMessage(StatistikOut);
 end;
 
