@@ -13,13 +13,13 @@ type
     BackGround: TImage;
     LoadGame: TImage;
     NewGame: TImage;
-    Button2: TButton;
-    RulesButton: TImage;
+    Rules: TImage;
     procedure RulesButtonClick(Sender: TObject);
     
     procedure LoadGameClick(Sender: TObject);
     procedure NewGameClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure RulesClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -67,6 +67,11 @@ end;
 procedure TMenuFrame.RulesButtonClick(Sender: TObject);
 begin
   FMainCode.LoadRulesFrame;
+end;
+
+procedure TMenuFrame.RulesClick(Sender: TObject);
+begin
+ FMainCode.LoadRulesFrame;
 end;
 
 end.
