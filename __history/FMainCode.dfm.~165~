@@ -730,32 +730,57 @@ object MainFormGame: TMainFormGame
       Height = 585
     end
     inherited arrowLeftButton: TButton
+<<<<<<<< HEAD:__history/FMainCode.dfm.~165~
       Left = 330
       Top = 165
       Width = 52
       Height = 49
       ExplicitLeft = 329
       ExplicitTop = 162
+========
+      Left = 331
+      Top = 166
+      Width = 52
+      Height = 49
+      ExplicitLeft = 330
+      ExplicitTop = 163
+>>>>>>>> e3420a170b67f36de4533a0c3a5865e5161370fa:__history/FMainCode.dfm.~166~
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
     inherited arrowRightButton: TButton
       Left = 647
+<<<<<<<< HEAD:__history/FMainCode.dfm.~165~
       Top = 165
       Width = 51
       Height = 49
       ExplicitLeft = 646
       ExplicitTop = 162
+========
+      Top = 166
+      Width = 51
+      Height = 49
+      ExplicitLeft = 646
+      ExplicitTop = 163
+>>>>>>>> e3420a170b67f36de4533a0c3a5865e5161370fa:__history/FMainCode.dfm.~166~
       ExplicitWidth = 51
       ExplicitHeight = 49
     end
     inherited difficultPanel: TPanel
       Left = 395
+<<<<<<<< HEAD:__history/FMainCode.dfm.~165~
       Top = 155
       Height = 69
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 394
       ExplicitTop = 152
+========
+      Top = 156
+      Height = 69
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 394
+      ExplicitTop = 153
+>>>>>>>> e3420a170b67f36de4533a0c3a5865e5161370fa:__history/FMainCode.dfm.~166~
       ExplicitHeight = 69
       inherited difficultLevelNameLabel: TLabel
         Top = 2

@@ -13,8 +13,7 @@ uses
   Game in 'Game.pas' {GameFrame: TFrame},
   Rules in 'Rules.pas' {RulesFrame: TFrame},
   SaveMenu in 'SaveMenu.pas' {SaveMenuFrame: TFrame},
-  Setting in 'Setting.pas' {SettingFrame: TFrame},
-  DemoGame in 'DemoGame.pas';
+  Setting in 'Setting.pas' {SettingFrame: TFrame};
 
 {$R *.res}
 

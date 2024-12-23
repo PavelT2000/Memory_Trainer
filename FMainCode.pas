@@ -65,7 +65,12 @@ begin
   MainFormGame.RulesFrame.Visible:= False;
   MainFormGame.SaveMenuFrame.Visible:= False;
   MainFormGame.SettingFrame.Visible:= False;}
-  GameSound.TurnOnMusuc(GameSound.doomFear);
+  case CurrentDifficult of
+    Demo: GameSound.TurnOnMusuc(GameSound.relax);
+    Easy: GameSound.TurnOnMusuc(GameSound.vibes);
+    Medium: GameSound.TurnOnMusuc(GameSound.vibes);
+    Hard: GameSound.TurnOnMusuc(GameSound.doomFear);
+  end;
   Game.GameFrameMode:= true;
 end;
 
@@ -85,7 +90,7 @@ begin
   nowFrame:= Rulesframe;
   MainFormGame.CloseAllFrames;
   MainFormGame.RulesFrame.Visible:= True;
-  GameSound.TurnOnMusuc(GameSound.elevator);
+  GameSound.TurnOnMusuc(GameSound.lofi);
 end;
 
 procedure LoadSaveMenuFrame();

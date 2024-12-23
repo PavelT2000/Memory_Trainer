@@ -2,7 +2,7 @@ unit GameSound;
 
 interface
 
-type TMusic = (calmMind, doomFear, doomTear, elevator);
+type TMusic = (calmMind, doomFear, doomTear, elevator, lofi, relax, vibes);
 procedure TurnOnMusuc(music: TMusic);
 procedure TurnOffMusic;
 procedure OnOffMuteMusic;
@@ -24,6 +24,9 @@ begin
       doomFear: MainFormGame.MediaPlayer1.FileName:= 'music\doomFear.mp3';
       doomTear: MainFormGame.MediaPlayer1.FileName:= 'music\doomTear.mp3';
       elevator: MainFormGame.MediaPlayer1.FileName:= 'music\elevator.mp3';
+      lofi: MainFormGame.MediaPlayer1.FileName:= 'music\lofi.mp3';
+      relax: MainFormGame.MediaPlayer1.FileName:= 'music\relax.mp3';
+      vibes: MainFormGame.MediaPlayer1.FileName:= 'music\vibes.mp3';
     end;
     MainFormGame.MediaPlayer1.Open;
     MainFormGame.MediaPlayer1.Play;

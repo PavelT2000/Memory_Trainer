@@ -16039,7 +16039,7 @@ object GameFrame: TGameFrame
     Left = 35
     Top = 29
     Width = 150
-    Height = 228
+    Height = 268
     Anchors = []
     ParentBackground = False
     TabOrder = 2
@@ -16075,7 +16075,7 @@ object GameFrame: TGameFrame
     end
     object statistikRulesLabel: TLabel
       Left = 0
-      Top = 96
+      Top = 136
       Width = 145
       Height = 129
       Alignment = taCenter
@@ -16087,6 +16087,21 @@ object GameFrame: TGameFrame
       Top = 33
       Width = 145
       Height = 28
+      Alignment = taCenter
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      WordWrap = True
+    end
+    object StatisticDifficultLabel: TLabel
+      Left = 0
+      Top = 96
+      Width = 145
+      Height = 38
       Alignment = taCenter
       AutoSize = False
       Font.Charset = DEFAULT_CHARSET

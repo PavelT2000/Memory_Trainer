@@ -28,6 +28,7 @@ type
     statistikWinStreak: TLabel;
     CustomPB: TPanel;
     ProgressPB: TLabel;
+    StatisticDifficultLabel: TLabel;
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure nextWordTimerTimer(Sender: TObject);
