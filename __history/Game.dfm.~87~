@@ -1,17 +1,17 @@
 object GameFrame: TGameFrame
   Left = 0
   Top = 0
-  Width = 944
-  Height = 480
+  Width = 931
+  Height = 535
   TabOrder = 0
   DesignSize = (
-    944
-    480)
+    931
+    535)
   object bg: TImage
     Left = 0
     Top = 0
-    Width = 944
-    Height = 480
+    Width = 931
+    Height = 535
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765E9CA0700FFD8FFE000104A46494600010101000100
@@ -15976,10 +15976,12 @@ object GameFrame: TGameFrame
       8004FF002A894952091C7AE69EEDB7259BB63AD35B01FFD9}
     Stretch = True
     ExplicitLeft = 3
+    ExplicitWidth = 944
+    ExplicitHeight = 480
   end
   object SlovoEdit: TEdit
-    Left = 257
-    Top = 192
+    Left = 250
+    Top = 217
     Width = 441
     Height = 57
     Anchors = []
@@ -15991,12 +15993,12 @@ object GameFrame: TGameFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    Text = 'Enter your Answer'
+    TextHint = 'Enter your Answer'
     OnKeyDown = SlovoEditKeyDown
   end
   object SlovoPanel: TPanel
-    Left = 281
-    Top = 68
+    Left = 275
+    Top = 80
     Width = 401
     Height = 81
     Anchors = []
@@ -16034,17 +16036,17 @@ object GameFrame: TGameFrame
     end
   end
   object statistikPanel: TPanel
-    Left = 36
-    Top = 17
-    Width = 137
-    Height = 184
+    Left = 35
+    Top = 29
+    Width = 150
+    Height = 228
     Anchors = []
     ParentBackground = False
     TabOrder = 2
     object StatistikStageLable: TLabel
       Left = 8
       Top = 0
-      Width = 121
+      Width = 137
       Height = 25
       Alignment = taCenter
       AutoSize = False
@@ -16059,7 +16061,7 @@ object GameFrame: TGameFrame
     object statistikSubStageLabel: TLabel
       Left = 8
       Top = 62
-      Width = 121
+      Width = 137
       Height = 33
       Alignment = taCenter
       AutoSize = False
@@ -16072,18 +16074,18 @@ object GameFrame: TGameFrame
       WordWrap = True
     end
     object statistikRulesLabel: TLabel
-      Left = 8
+      Left = 0
       Top = 96
-      Width = 121
-      Height = 81
+      Width = 145
+      Height = 129
       Alignment = taCenter
       AutoSize = False
       WordWrap = True
     end
     object statistikWinStreak: TLabel
-      Left = 8
+      Left = 0
       Top = 33
-      Width = 121
+      Width = 145
       Height = 28
       Alignment = taCenter
       AutoSize = False
@@ -16097,8 +16099,8 @@ object GameFrame: TGameFrame
     end
   end
   object CheckButton: TButton
-    Left = 728
-    Top = 192
+    Left = 718
+    Top = 217
     Width = 57
     Height = 57
     Anchors = []
@@ -16112,17 +16114,9 @@ object GameFrame: TGameFrame
     TabOrder = 3
     OnClick = CheckButtonClick
   end
-  object ProgressBar1: TProgressBar
-    Left = 257
-    Top = 368
-    Width = 441
-    Height = 26
-    Anchors = []
-    TabOrder = 4
-  end
   object backFrameButton: TButton
-    Left = 36
-    Top = 407
+    Left = 35
+    Top = 456
     Width = 137
     Height = 49
     Anchors = []
@@ -16133,12 +16127,12 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
     OnClick = backFrameButtonClick
   end
   object HintButton: TButton
-    Left = 754
-    Top = 287
+    Left = 742
+    Top = 323
     Width = 169
     Height = 49
     Anchors = []
@@ -16148,12 +16142,12 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 5
     OnClick = HintButtonClick
   end
   object SaveGameNowButton: TButton
-    Left = 754
-    Top = 407
+    Left = 742
+    Top = 456
     Width = 169
     Height = 49
     Anchors = []
@@ -16164,8 +16158,40 @@ object GameFrame: TGameFrame
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     OnClick = SaveGameNowButtonClick
+  end
+  object CustomPB: TPanel
+    Left = 283
+    Top = 323
+    Width = 400
+    Height = 30
+    Anchors = []
+    Color = clCream
+    Ctl3D = True
+    ParentBackground = False
+    ParentCtl3D = False
+    TabOrder = 7
+    object ProgressPB: TLabel
+      Left = 0
+      Top = 0
+      Width = 400
+      Height = 30
+      Alignment = taCenter
+      AutoSize = False
+      BiDiMode = bdRightToLeft
+      Color = clAqua
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      WordWrap = True
+    end
   end
   object Timer1: TTimer
     Enabled = False

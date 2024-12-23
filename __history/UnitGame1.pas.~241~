@@ -40,7 +40,7 @@ begin
   case CurrentStage of
     1:
     begin
-      rulesOut:= 'Правило: Введите тоже слово';
+      rulesOut:= 'Правило: Введите то же слово';
       exampleS:=gener.GetWord(subStage);
       pbTime := 4000;
     end;
@@ -202,7 +202,6 @@ begin
 end;
 
 procedure nextStage();
-var rulesOut: string;
 begin
   MainFormGame.GameFrame.SlovoEdit.Enabled:= False;
   case CurrentDifficult of
@@ -347,7 +346,14 @@ begin
     MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
-    StatistikOut:= 'Поздравляю! Новая стадия! ' + IntToStr(CurrentStage) + '. Правило стадии поменалось!' + ;
+    case CurrentDifficult of    //change rules
+      Demo: DemoDifficultNextStage(rulesOut);
+      Easy: EasyDifficultNextStage(rulesOut);
+      Medium: MediumDifficultNextStage(rulesOut);
+      Hard: HardDifficultNextStage(rulesOut);
+    end;
+    StatistikOut:= 'Поздравляю! Новая стадия - ' + IntToStr(CurrentStage) +
+    '! Правило стадии поменалось! ' + rulesOut;
     showMessage(StatistikOut);
   end;
   saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
@@ -399,6 +405,23 @@ begin
   MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
   StatistikOut:= 'Угадано подряд ' + IntToStr(WinStreak);
   MainFormGame.GameFrame.statistikWinStreak.Caption:= StatistikOut;
+  StatistikOut:= 'Cложность: ' + IntToStr(WinStreak);
+  case CurrentDifficult of
+    Demo: StatistikOut:= StatistikOut + 'Demo ';
+    Easy: StatistikOut:= StatistikOut + 'Easy ';
+    Medium: StatistikOut:= StatistikOut + 'Medium ';
+    Hard: StatistikOut:= StatistikOut + 'Hard ';
+  end;
+  MainFormGame.GameFrame.StatisticDifficultLabel.Caption:= StatistikOut;
+  case CurrentDifficult of    //change rules
+      Demo: DemoDifficultNextStage(rulesOut);
+      Easy: EasyDifficultNextStage(rulesOut);
+      Medium: MediumDifficultNextStage(rulesOut);
+      Hard: HardDifficultNextStage(rulesOut);
+    end;
+  StatistikOut:= 'Приготовьтесь, игра начинается! ' +
+    'Правило 1 стадии - ' + rulesOut;
+  showMessage(StatistikOut);
 end;
 
 procedure StartGame();

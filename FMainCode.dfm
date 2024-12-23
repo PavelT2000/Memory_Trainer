@@ -730,32 +730,31 @@ object MainFormGame: TMainFormGame
       Height = 585
     end
     inherited arrowLeftButton: TButton
-      Left = 331
-      Top = 166
+      Left = 332
+      Top = 167
       Width = 52
       Height = 49
-      ExplicitLeft = 330
-      ExplicitTop = 163
+      ExplicitLeft = 331
+      ExplicitTop = 164
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
     inherited arrowRightButton: TButton
       Left = 647
-      Top = 166
+      Top = 167
       Width = 51
       Height = 49
       ExplicitLeft = 646
-      ExplicitTop = 163
+      ExplicitTop = 164
       ExplicitWidth = 51
       ExplicitHeight = 49
     end
     inherited difficultPanel: TPanel
       Left = 395
-      Top = 156
       Height = 69
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 394
-      ExplicitTop = 153
+      ExplicitTop = 154
       ExplicitHeight = 69
       inherited difficultLevelNameLabel: TLabel
         Top = 2
@@ -793,153 +792,6 @@ object MainFormGame: TMainFormGame
       Top = 255
       ExplicitLeft = 654
       ExplicitTop = 251
-    end
-  end
-  inline GameFrame: TGameFrame
-    Left = 0
-    Top = 0
-    Width = 1091
-    Height = 585
-    Align = alClient
-    TabOrder = 1
-    Visible = False
-    ExplicitWidth = 1091
-    ExplicitHeight = 585
-    inherited bg: TImage
-      Width = 1091
-      Height = 585
-      ExplicitLeft = 0
-      ExplicitTop = 3
-      ExplicitWidth = 1091
-      ExplicitHeight = 585
-    end
-    inherited SlovoEdit: TEdit
-      Left = 243
-      Top = 280
-      Width = 488
-      StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 242
-      ExplicitTop = 276
-      ExplicitWidth = 488
-    end
-    inherited SlovoPanel: TPanel
-      Left = 267
-      Top = 75
-      Width = 436
-      Height = 123
-      StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 266
-      ExplicitTop = 73
-      ExplicitWidth = 436
-      ExplicitHeight = 123
-      inherited SlovoRememberLabel: TLabel
-        Left = 56
-        Top = 6
-        Width = 329
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitLeft = 56
-        ExplicitTop = 6
-        ExplicitWidth = 329
-      end
-      inherited OnlySlovoLable: TLabel
-        Left = 16
-        Top = 36
-        Width = 409
-        Height = 85
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitLeft = 16
-        ExplicitTop = 36
-        ExplicitWidth = 409
-        ExplicitHeight = 85
-      end
-    end
-    inherited statistikPanel: TPanel
-      Left = 24
-      Top = 12
-      Width = 170
-      Height = 237
-      StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 24
-      ExplicitTop = 10
-      ExplicitWidth = 170
-      ExplicitHeight = 237
-      inherited StatistikStageLable: TLabel
-        Width = 153
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 153
-      end
-      inherited statistikSubStageLabel: TLabel
-        Width = 153
-        Font.Height = -17
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 153
-      end
-      inherited statistikRulesLabel: TLabel
-        Width = 169
-        Height = 137
-        Font.Height = -16
-        ParentFont = False
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 169
-        ExplicitHeight = 137
-      end
-      inherited statistikWinStreak: TLabel
-        Width = 169
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 169
-      end
-    end
-    inherited CheckButton: TButton
-      Left = 753
-      Top = 278
-      Width = 61
-      ExplicitLeft = 752
-      ExplicitTop = 274
-      ExplicitWidth = 61
-    end
-    inherited backFrameButton: TButton
-      Left = 22
-      Top = 504
-      Font.Height = -19
-      ExplicitLeft = 22
-      ExplicitTop = 497
-    end
-    inherited HintButton: TButton
-      Left = 879
-      Top = 278
-      Height = 57
-      Caption = #1087#1086#1076#1089#1084#1086#1090#1088#1077#1090#1100
-      Font.Height = -19
-      ExplicitLeft = 877
-      ExplicitTop = 274
-      ExplicitHeight = 57
-    end
-    inherited SaveGameNowButton: TButton
-      Left = 879
-      Top = 504
-      Font.Height = -19
-      ExplicitLeft = 877
-      ExplicitTop = 497
-    end
-    inherited CustomPB: TPanel
-      Top = 392
-      StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 282
-      ExplicitTop = 386
-      inherited ProgressPB: TLabel
-        Width = 401
-        Anchors = [akLeft, akTop, akBottom]
-        StyleElements = [seFont, seClient, seBorder]
-        ExplicitWidth = 401
-      end
-    end
-    inherited Timer1: TTimer
-      Left = 1008
-      Top = 24
-    end
-    inherited nextWordTimer: TTimer
-      Left = 936
-      Top = 24
     end
   end
   inline MenuFrame: TMenuFrame
@@ -1163,6 +1015,159 @@ object MainFormGame: TMainFormGame
         0000000049454E44AE426082}
       Stretch = True
       OnClick = settingImageClick
+    end
+  end
+  inline GameFrame: TGameFrame
+    Left = 0
+    Top = 0
+    Width = 1091
+    Height = 585
+    Align = alClient
+    TabOrder = 1
+    Visible = False
+    ExplicitWidth = 1091
+    ExplicitHeight = 585
+    inherited bg: TImage
+      Width = 1091
+      Height = 585
+      ExplicitLeft = 0
+      ExplicitTop = 3
+      ExplicitWidth = 1091
+      ExplicitHeight = 585
+    end
+    inherited SlovoEdit: TEdit
+      Left = 243
+      Top = 280
+      Width = 488
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 242
+      ExplicitTop = 276
+      ExplicitWidth = 488
+    end
+    inherited SlovoPanel: TPanel
+      Left = 267
+      Top = 75
+      Width = 436
+      Height = 123
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 266
+      ExplicitTop = 73
+      ExplicitWidth = 436
+      ExplicitHeight = 123
+      inherited SlovoRememberLabel: TLabel
+        Left = 56
+        Top = 6
+        Width = 329
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitLeft = 56
+        ExplicitTop = 6
+        ExplicitWidth = 329
+      end
+      inherited OnlySlovoLable: TLabel
+        Left = 16
+        Top = 36
+        Width = 409
+        Height = 85
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitLeft = 16
+        ExplicitTop = 36
+        ExplicitWidth = 409
+        ExplicitHeight = 85
+      end
+    end
+    inherited statistikPanel: TPanel
+      Left = 24
+      Top = 12
+      Width = 170
+      Height = 284
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 24
+      ExplicitTop = 12
+      ExplicitWidth = 170
+      ExplicitHeight = 284
+      inherited StatistikStageLable: TLabel
+        Width = 153
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 153
+      end
+      inherited statistikSubStageLabel: TLabel
+        Width = 153
+        Font.Height = -17
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 153
+      end
+      inherited statistikRulesLabel: TLabel
+        Width = 169
+        Height = 153
+        Font.Height = -16
+        ParentFont = False
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 169
+        ExplicitHeight = 153
+      end
+      inherited statistikWinStreak: TLabel
+        Width = 169
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 169
+      end
+      inherited StatisticDifficultLabel: TLabel
+        Width = 169
+        Font.Height = -16
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 169
+      end
+    end
+    inherited CheckButton: TButton
+      Left = 753
+      Top = 278
+      Width = 61
+      ExplicitLeft = 752
+      ExplicitTop = 274
+      ExplicitWidth = 61
+    end
+    inherited backFrameButton: TButton
+      Left = 22
+      Top = 504
+      Font.Height = -19
+      ExplicitLeft = 22
+      ExplicitTop = 497
+    end
+    inherited HintButton: TButton
+      Left = 879
+      Top = 278
+      Height = 57
+      Caption = #1087#1086#1076#1089#1084#1086#1090#1088#1077#1090#1100
+      Font.Height = -19
+      ExplicitLeft = 877
+      ExplicitTop = 274
+      ExplicitHeight = 57
+    end
+    inherited SaveGameNowButton: TButton
+      Left = 879
+      Top = 504
+      Font.Height = -19
+      ExplicitLeft = 877
+      ExplicitTop = 497
+    end
+    inherited CustomPB: TPanel
+      Top = 392
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitLeft = 282
+      ExplicitTop = 386
+      inherited ProgressPB: TLabel
+        Width = 401
+        Anchors = [akLeft, akTop, akBottom]
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 401
+      end
+    end
+    inherited Timer1: TTimer
+      Left = 1008
+      Top = 24
+    end
+    inherited nextWordTimer: TTimer
+      Left = 936
+      Top = 24
     end
   end
 end

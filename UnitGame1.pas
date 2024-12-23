@@ -405,6 +405,14 @@ begin
   MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
   StatistikOut:= 'Угадано подряд ' + IntToStr(WinStreak);
   MainFormGame.GameFrame.statistikWinStreak.Caption:= StatistikOut;
+  StatistikOut:= 'Cложность: ';
+  case CurrentDifficult of
+    Demo: StatistikOut:= StatistikOut + 'Demo ';
+    Easy: StatistikOut:= StatistikOut + 'Easy ';
+    Medium: StatistikOut:= StatistikOut + 'Medium ';
+    Hard: StatistikOut:= StatistikOut + 'Hard ';
+  end;
+  MainFormGame.GameFrame.StatisticDifficultLabel.Caption:= StatistikOut;
   case CurrentDifficult of    //change rules
       Demo: DemoDifficultNextStage(rulesOut);
       Easy: EasyDifficultNextStage(rulesOut);
