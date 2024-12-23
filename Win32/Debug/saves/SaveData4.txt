@@ -1,4 +1,4 @@
-currentStage 2 
-subStage 5 
-CurrentHint 5 
-CurrentDifficult Medium 
+currentStage 1 
+subStage 6 
+CurrentHint 4 
+CurrentDifficult Hard 

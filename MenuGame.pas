@@ -14,6 +14,7 @@ type
     LoadGame: TImage;
     NewGame: TImage;
     Button2: TButton;
+    RulesButton: TImage;
     procedure RulesButtonClick(Sender: TObject);
     
     procedure LoadGameClick(Sender: TObject);

@@ -17,9 +17,11 @@ type
     SettingFrame: TSettingFrame;
     settingPanel: TPanel;
     settingImage: TImage;
+    LoadGame: TImage;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure settingImageClick(Sender: TObject);
+    procedure MenuFrameImage1Click(Sender: TObject);
 
   private
 
@@ -130,6 +132,12 @@ end;
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
   LoadMenuFrame;
+end;
+
+procedure TMainFormGame.MenuFrameImage1Click(Sender: TObject);
+begin
+  MenuFrame.LoadGameClick(Sender);
+
 end;
 
 procedure TMainFormGame.settingImageClick(Sender: TObject);
