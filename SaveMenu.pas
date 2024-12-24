@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.pngimage;
 
 type
   TSaveMenuFrame = class(TFrame)
@@ -15,11 +15,13 @@ type
     AutoSaveButton: TButton;
     Save3Button: TButton;
     backFrameButton: TButton;
+    SettingImage: TImage;
     procedure Save2ButtonClick(Sender: TObject);
     procedure Save3ButtonClick(Sender: TObject);
     procedure AutoSaveButtonClick(Sender: TObject);
     procedure backFrameButtonClick(Sender: TObject);
     procedure Save1ButtonClick(Sender: TObject);
+    procedure SettingImageClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,6 +73,11 @@ end;
 procedure TSaveMenuFrame.Save3ButtonClick(Sender: TObject);
 begin
   SaveOrLoadOnButton(3);
+end;
+
+procedure TSaveMenuFrame.SettingImageClick(Sender: TObject);
+begin
+  FMainCode.LoadSettingFrame;
 end;
 
 procedure TSaveMenuFrame.AutoSaveButtonClick(Sender: TObject);

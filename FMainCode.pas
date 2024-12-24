@@ -15,13 +15,11 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
-    settingPanel: TPanel;
-    settingImage: TImage;
-    LoadGame: TImage;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure settingImageClick(Sender: TObject);
     procedure MenuFrameImage1Click(Sender: TObject);
+    procedure MenuFrameRulesClick(Sender: TObject);
 
   private
 
@@ -90,7 +88,7 @@ begin
   nowFrame:= Rulesframe;
   MainFormGame.CloseAllFrames;
   MainFormGame.RulesFrame.Visible:= True;
-  GameSound.TurnOnMusuc(GameSound.lofi);
+  GameSound.TurnOnMusuc(GameSound.vibes);
 end;
 
 procedure LoadSaveMenuFrame();
@@ -110,7 +108,7 @@ end;
 
 procedure LoadSettingFrame();
 begin
-  MainFormGame.settingPanel.Visible:= False;
+  //MainFormGame.settingPanel.Visible:= False;
   preFrame:= nowFrame;
   nowFrame:= SettingFrame;
   if (game.GameFrameMode = True) then begin
@@ -142,6 +140,12 @@ end;
 procedure TMainFormGame.MenuFrameImage1Click(Sender: TObject);
 begin
   MenuFrame.LoadGameClick(Sender);
+
+end;
+
+procedure TMainFormGame.MenuFrameRulesClick(Sender: TObject);
+begin
+  MenuFrame.RulesClick(Sender);
 
 end;
 

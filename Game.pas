@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  UnitGame1, Vcl.ExtCtrls, Vcl.Imaging.jpeg, Vcl.StdCtrls, Vcl.ComCtrls;
+  UnitGame1, Vcl.ExtCtrls, Vcl.Imaging.jpeg, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.Imaging.pngimage;
 
 type
   TGameFrame = class(TFrame)
@@ -29,6 +30,7 @@ type
     CustomPB: TPanel;
     ProgressPB: TLabel;
     StatisticDifficultLabel: TLabel;
+    SettingImage: TImage;
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure nextWordTimerTimer(Sender: TObject);
@@ -38,6 +40,7 @@ type
     procedure HintTimerTimer(Sender: TObject);
     procedure SlovoEditKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure SettingImageClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -113,6 +116,11 @@ begin
   else begin
     MainFormGame.GameFrame.HintButton.Enabled:= True;
   end;
+end;
+
+procedure TGameFrame.SettingImageClick(Sender: TObject);
+begin
+  FMainCode.LoadSettingFrame;
 end;
 
 procedure TGameFrame.nextWordTimerTimer(Sender: TObject);
