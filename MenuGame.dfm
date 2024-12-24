@@ -4276,14 +4276,13 @@ object MenuFrame: TMenuFrame
       02800A002800A002800A002800A002801B400500140050014005001400500140
       0500140050014005001400500140050014005007FFD9}
     Stretch = True
-    ExplicitWidth = 1920
-    ExplicitHeight = 1080
+    ExplicitTop = 3
   end
   object LoadGame: TImage
-    Left = 376
-    Top = 238
+    Left = 384
+    Top = 302
     Width = 353
-    Height = 97
+    Height = 91
     HelpType = htKeyword
     Anchors = []
     ParentShowHint = False
@@ -4435,10 +4434,10 @@ object MenuFrame: TMenuFrame
     OnClick = LoadGameClick
   end
   object NewGame: TImage
-    Left = 376
-    Top = 96
+    Left = 384
+    Top = 70
     Width = 353
-    Height = 97
+    Height = 91
     HelpType = htKeyword
     Anchors = []
     ParentShowHint = False
@@ -4566,10 +4565,10 @@ object MenuFrame: TMenuFrame
     OnClick = NewGameClick
   end
   object Rules: TImage
-    Left = 376
-    Top = 374
+    Left = 384
+    Top = 422
     Width = 353
-    Height = 97
+    Height = 91
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000002240000
       008908060000001CEE2369000000097048597300002E2300002E230178A53F76
@@ -4908,5 +4907,19 @@ object MenuFrame: TMenuFrame
     ShowHint = False
     Stretch = True
     OnClick = settingImageClick
+  end
+  object MiniGamesButton: TButton
+    Left = 384
+    Top = 182
+    Width = 353
+    Height = 91
+    Caption = #1052#1080#1085#1080' '#1048#1075#1088#1099
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -35
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
   end
 end
