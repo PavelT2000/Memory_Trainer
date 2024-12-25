@@ -14,8 +14,9 @@ uses
   Rules in 'Rules.pas' {RulesFrame: TFrame},
   SaveMenu in 'SaveMenu.pas' {SaveMenuFrame: TFrame},
   Setting in 'Setting.pas' {SettingFrame: TFrame},
-  MiniGames in 'MiniGames.pas' {Frame1: TFrame},
-  Bleenchiki in 'Bleenchiki.pas' {BleenFrame: TFrame};
+  MiniGames in 'MiniGames.pas' {MiniGamesFrame: TFrame},
+  Bleenchiki in 'Bleenchiki.pas' {BleenFrame: TFrame},
+  ColorGame in 'ColorGame.pas' {ColorGameFrame: TFrame};
 
 {$R *.res}
 

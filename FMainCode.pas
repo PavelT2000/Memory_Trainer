@@ -1,4 +1,4 @@
-unit FMainCode;
+﻿unit FMainCode;
 
 interface
 
@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, MenuGame,
   Game, Rules, SaveMenu, Setting, UnitGame1, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  MiniGames, Bleenchiki;
+  MiniGames, Bleenchiki, ColorGame;
 
 type
   TMainFormGame = class(TForm)
@@ -16,12 +16,11 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
-    MiniGamesFrame: TFrame1;
+    MiniGamesFrame: TMiniGamesFrame;
     BleenFrame: TBleenFrame;
+    ColorGameFrame: TColorGameFrame;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
-    procedure settingImageClick(Sender: TObject);
-    procedure MenuFrameRulesClick(Sender: TObject);
     procedure MediaPlayer1Notify(Sender: TObject);
 
   private
@@ -44,6 +43,8 @@ procedure LoadMenuFrame();
 procedure LoadRulesFrame();
 procedure LoadSaveMenuFrame();
 procedure LoadSettingFrame();
+procedure LoadMiniGamesFrame();
+procedure LoadColorGameFrame();
 procedure AddBleenClick();
 
 implementation
@@ -59,18 +60,16 @@ begin
   SettingFrame.Visible:= False;
   MiniGamesFrame.Visible:= False;
   BleenFrame.Visible := False;
+  ColorGameFrame.Visible:= False;
 end;
 
+//for load any Frame we have function
 procedure LoadGameFrame();
 begin
   preFrame:= nowFrame;
   nowFrame:= GameFrame;
   MainFormGame.CloseAllFrames;
   MainFormGame.GameFrame.Visible := True;
-  {MainFormGame.MenuFrame.Visible := False;
-  MainFormGame.RulesFrame.Visible:= False;
-  MainFormGame.SaveMenuFrame.Visible:= False;
-  MainFormGame.SettingFrame.Visible:= False;}
   case CurrentDifficult of
     Demo: GameSound.TurnOnMusuc(GameSound.relax);
     Easy: GameSound.TurnOnMusuc(GameSound.vibes);
@@ -88,6 +87,24 @@ begin
   MainFormGame.MenuFrame.Visible := True;
   GameSound.TurnOnMusuc(GameSound.calmMind);
   Game.GameFrameMode:= false;
+end;
+
+procedure LoadMiniGamesFrame();
+begin
+  preFrame:= nowFrame;
+  nowFrame:= Rulesframe;
+  MainFormGame.CloseAllFrames;
+  MainFormGame.MiniGamesFrame.Visible:= True;
+  GameSound.TurnOnMusuc(GameSound.vibes);
+end;
+
+procedure LoadColorGameFrame();
+begin
+  preFrame:= nowFrame;
+  nowFrame:= Rulesframe;
+  MainFormGame.CloseAllFrames;
+  MainFormGame.ColorGameFrame.Visible:= True;
+  GameSound.TurnOnMusuc(GameSound.doomTear);
 end;
 
 procedure LoadRulesFrame();
@@ -140,6 +157,7 @@ begin
   GameSound.TurnOnMusuc(GameSound.elevator);
 end;
 
+//logic when we find any secret bleen
 procedure AddBleenClick();
 begin
   //preFrame:= nowFrame;
@@ -154,12 +172,12 @@ begin
   end;
 end;
 
+//when our app start it begin there
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
   LoadMenuFrame;
   SpeedRunStart := GetTickCount64;
 end;
-
 
 // This procedure will repeat a song, when it completed
 procedure TMainFormGame.MediaPlayer1Notify(Sender: TObject);
@@ -169,34 +187,6 @@ begin
     MediaPlayer1.Play;
   end;
 end;
-
-procedure TMainFormGame.MenuFrameRulesClick(Sender: TObject);
-begin
-  MenuFrame.RulesClick(Sender);
-
-end;
-
-//procedure TMainFormGame.RulesFrameBleenClick(Sender: TObject);
-//begin
-//  RulesFrame.BleenClick(Sender)
-//end;
-
-procedure TMainFormGame.settingImageClick(Sender: TObject);
-begin
-  LoadSettingFrame;
-end;
-
-
-{procedure TMainFormGame.SettingButtonClick(Sender: TObject);
-begin
-  LoadSettingFrame;
-end;}
-
-{procedure TMainFormGame.settingClick(Sender: TObject);
-begin
-  MainFormGame.settingImage.Visible:= False;
-  LoadSettingFrame;
-end;}
 
 end.
 

@@ -17,14 +17,12 @@ type
     settingImage: TImage;
     MiniGamesButton: TButton;
     Bleen: TImage;
-    procedure RulesButtonClick(Sender: TObject);
-    
     procedure LoadGameClick(Sender: TObject);
     procedure NewGameClick(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
     procedure RulesClick(Sender: TObject);
     procedure settingImageClick(Sender: TObject);
     procedure BleenClick(Sender: TObject);
+    procedure MiniGamesButtonClick(Sender: TObject);
     //procedure NewGameButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -65,19 +63,14 @@ begin
   Bleen.Visible := False;
 end;
 
-procedure TMenuFrame.Button2Click(Sender: TObject);
-begin
-  FMainCode.LoadRulesFrame;
-end;
-
 procedure TMenuFrame.LoadGameClick(Sender: TObject);
 begin
   FMainCode.LoadSaveMenuFrame;
 end;
 
-procedure TMenuFrame.RulesButtonClick(Sender: TObject);
+procedure TMenuFrame.MiniGamesButtonClick(Sender: TObject);
 begin
-  FMainCode.LoadRulesFrame;
+  FMainCode.LoadMiniGamesFrame;
 end;
 
 procedure TMenuFrame.RulesClick(Sender: TObject);

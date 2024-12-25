@@ -1,0 +1,56 @@
+unit MiniGames;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
+  Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+
+type
+  TMiniGamesFrame = class(TFrame)
+    menuPanel: TPanel;
+    BGImage: TImage;
+    GameRememberColorButton: TButton;
+    RememberColorPanel: TPanel;
+    BGGameImage: TImage;
+    procedure GameRememberColorButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var MiniGamesFrame: TMiniGamesFrame;
+
+procedure CloseAllPanels();
+procedure loadMenuPanel();
+
+implementation
+
+{$R *.dfm}
+
+procedure CloseAllPanels();
+begin
+  MiniGamesFrame.menuPanel.Visible:= False;
+  MiniGamesFrame.RememberColorPanel.Visible:= False;
+end;
+
+procedure loadMenuPanel();
+begin
+  closeAllPanels;
+  MiniGamesFrame.menuPanel.Visible:= True;
+end;
+
+procedure loadGameRememberColorPanel();
+begin
+  CloseAllPanels;
+  MiniGamesFrame.RememberColorPanel.Visible:= True;
+end;
+
+procedure TMiniGamesFrame.GameRememberColorButtonClick(Sender: TObject);
+begin
+  loadGameRememberColorPanel();
+end;
+
+end.

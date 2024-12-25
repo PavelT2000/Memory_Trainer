@@ -7070,5 +7070,6 @@ object MenuFrame: TMenuFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnClick = MiniGamesButtonClick
   end
 end

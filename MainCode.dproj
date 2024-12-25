@@ -159,12 +159,17 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="MiniGames.pas">
-            <Form>Frame1</Form>
+            <Form>MiniGamesFrame</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Bleenchiki.pas">
             <Form>BleenFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="ColorGame.pas">
+            <Form>ColorGameFrame</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

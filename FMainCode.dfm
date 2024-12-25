@@ -609,11 +609,9 @@ object MainFormGame: TMainFormGame
     inherited BackGround: TImage
       Width = 1091
       Height = 585
-      ExplicitWidth = 1417
-      ExplicitHeight = 709
     end
     inherited BTCimage: TImage
-      Left = 675
+      Left = 674
       Top = 142
       ExplicitLeft = 676
       ExplicitTop = 142
@@ -634,7 +632,7 @@ object MainFormGame: TMainFormGame
     end
     inherited Bleen: TImage
       Left = 25
-      Top = 517
+      Top = 516
       ExplicitLeft = 26
       ExplicitTop = 518
     end
@@ -944,31 +942,31 @@ object MainFormGame: TMainFormGame
       ExplicitTop = 260
     end
     inherited arrowLeftButton: TButton
-      Left = 335
-      Top = 172
+      Left = 336
+      Top = 173
       Width = 52
       Height = 49
-      ExplicitLeft = 334
-      ExplicitTop = 169
+      ExplicitLeft = 335
+      ExplicitTop = 170
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
     inherited arrowRightButton: TButton
       Left = 644
-      Top = 172
+      Top = 173
       Width = 51
       Height = 49
       ExplicitLeft = 643
-      ExplicitTop = 169
+      ExplicitTop = 170
       ExplicitWidth = 51
       ExplicitHeight = 49
     end
     inherited difficultPanel: TPanel
-      Top = 161
+      Top = 162
       Height = 69
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 391
-      ExplicitTop = 158
+      ExplicitTop = 159
       ExplicitHeight = 69
       inherited difficultLevelNameLabel: TLabel
         Top = 2
@@ -1019,7 +1017,7 @@ object MainFormGame: TMainFormGame
     TabOrder = 0
     OnNotify = MediaPlayer1Notify
   end
-  inline MiniGamesFrame: TFrame1
+  inline MiniGamesFrame: TMiniGamesFrame
     Left = 0
     Top = 0
     Width = 1091
@@ -1028,6 +1026,27 @@ object MainFormGame: TMainFormGame
     TabOrder = 6
     ExplicitWidth = 1089
     ExplicitHeight = 577
+    DesignSize = (
+      1091
+      585)
+    inherited BGImage: TImage
+      Width = 1091
+      Height = 585
+    end
+  end
+  inline ColorGameFrame: TColorGameFrame
+    Left = 0
+    Top = 0
+    Width = 1091
+    Height = 585
+    Align = alClient
+    TabOrder = 8
+    ExplicitLeft = 180
+    ExplicitTop = 1
+    inherited BGImage: TImage
+      Width = 1091
+      Height = 585
+    end
   end
   inline MenuFrame: TMenuFrame
     Left = 0
@@ -1068,11 +1087,10 @@ object MainFormGame: TMainFormGame
     end
     inherited Rules: TImage
       Left = 378
-      Top = 357
+      Top = 356
       Width = 330
       Height = 79
       Anchors = []
-      OnClick = MenuFrameRulesClick
       ExplicitLeft = 381
       ExplicitTop = 358
       ExplicitWidth = 330
@@ -1090,13 +1108,13 @@ object MainFormGame: TMainFormGame
     end
     inherited MiniGamesButton: TButton
       Left = 378
-      Top = 157
+      Top = 158
       Width = 330
       Height = 79
       Anchors = []
       Font.Height = -17
-      ExplicitLeft = 378
-      ExplicitTop = 157
+      ExplicitLeft = 377
+      ExplicitTop = 155
       ExplicitWidth = 330
       ExplicitHeight = 79
     end
