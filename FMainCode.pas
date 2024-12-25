@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.MPlayer, Vcl.StdCtrls, Vcl.Menus, GameSound, MenuGame,
   Game, Rules, SaveMenu, Setting, UnitGame1, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  MiniGames;
+  MiniGames, Bleenchiki;
 
 type
   TMainFormGame = class(TForm)
@@ -17,11 +17,12 @@ type
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
     MiniGamesFrame: TFrame1;
+    BleenFrame: TBleenFrame;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure settingImageClick(Sender: TObject);
-    procedure MenuFrameImage1Click(Sender: TObject);
     procedure MenuFrameRulesClick(Sender: TObject);
+    procedure MediaPlayer1Notify(Sender: TObject);
 
   private
 
@@ -29,18 +30,21 @@ type
 
   end;
 
-type AllFrames = (GameFrame, MenuFrame, RulesFrame, SaveMenuFrame, SettingFrame);
+type AllFrames = (GameFrame, MenuFrame, RulesFrame, SaveMenuFrame, SettingFrame, MiniGamesFrame, BleenFrame);
 
 var
   MainFormGame: TMainFormGame;
   preFrame: AllFrames;
   nowFrame: AllFrames = MenuFrame;
+  bleenCounter: Integer = 0;
+  SpeedRunStart: UInt64;
 
 procedure LoadGameFrame();
 procedure LoadMenuFrame();
 procedure LoadRulesFrame();
 procedure LoadSaveMenuFrame();
 procedure LoadSettingFrame();
+procedure AddBleenClick();
 
 implementation
 
@@ -54,6 +58,7 @@ begin
   SaveMenuFrame.Visible:= False;
   SettingFrame.Visible:= False;
   MiniGamesFrame.Visible:= False;
+  BleenFrame.Visible := False;
 end;
 
 procedure LoadGameFrame();
@@ -135,15 +140,34 @@ begin
   GameSound.TurnOnMusuc(GameSound.elevator);
 end;
 
+procedure AddBleenClick();
+begin
+  //preFrame:= nowFrame;
+  //nowFrame:= BleenFrame;
+  Inc(bleenCounter);
+  ShowMessage('Вы нашли ' + IntToStr(bleenCounter) + ' / 5 блинчиков!');
+  if bleenCounter >= 5 then
+  begin
+    MainFormGame.CloseAllFrames;
+    MainFormGame.BleenFrame.Visible:= True;
+    GameSound.TurnOnMusuc(GameSound.bleenSong);
+  end;
+end;
+
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
   LoadMenuFrame;
+  SpeedRunStart := GetTickCount64;
 end;
 
-procedure TMainFormGame.MenuFrameImage1Click(Sender: TObject);
-begin
-  MenuFrame.LoadGameClick(Sender);
 
+// This procedure will repeat a song, when it completed
+procedure TMainFormGame.MediaPlayer1Notify(Sender: TObject);
+begin
+  if MediaPlayer1.NotifyValue = nvSuccessful then begin
+    //restart the song
+    MediaPlayer1.Play;
+  end;
 end;
 
 procedure TMainFormGame.MenuFrameRulesClick(Sender: TObject);
@@ -152,10 +176,16 @@ begin
 
 end;
 
+//procedure TMainFormGame.RulesFrameBleenClick(Sender: TObject);
+//begin
+//  RulesFrame.BleenClick(Sender)
+//end;
+
 procedure TMainFormGame.settingImageClick(Sender: TObject);
 begin
   LoadSettingFrame;
 end;
+
 
 {procedure TMainFormGame.SettingButtonClick(Sender: TObject);
 begin

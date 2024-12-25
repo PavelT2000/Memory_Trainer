@@ -16,12 +16,14 @@ type
     Save3Button: TButton;
     backFrameButton: TButton;
     SettingImage: TImage;
+    Bleen: TImage;
     procedure Save2ButtonClick(Sender: TObject);
     procedure Save3ButtonClick(Sender: TObject);
     procedure AutoSaveButtonClick(Sender: TObject);
     procedure backFrameButtonClick(Sender: TObject);
     procedure Save1ButtonClick(Sender: TObject);
     procedure SettingImageClick(Sender: TObject);
+    procedure BleenClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +46,12 @@ begin
   else begin
     FMainCode.LoadMenuFrame;
   end;
+end;
+
+procedure TSaveMenuFrame.BleenClick(Sender: TObject);
+begin
+  FMainCode.AddBleenClick;
+  Bleen.Visible := False;
 end;
 
 procedure SaveOrLoadOnButton(numSave: integer);

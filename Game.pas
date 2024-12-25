@@ -31,6 +31,7 @@ type
     ProgressPB: TLabel;
     StatisticDifficultLabel: TLabel;
     SettingImage: TImage;
+    Bleen: TImage;
     procedure CheckButtonClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure nextWordTimerTimer(Sender: TObject);
@@ -41,6 +42,7 @@ type
     procedure SlovoEditKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure SettingImageClick(Sender: TObject);
+    procedure BleenClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -87,6 +89,12 @@ begin
     MainFormGame.GameFrame.NextWordTimer.Enabled:= True;
     MainFormGame.GameFrame.SlovoEdit.Text:= '';
   end;
+end;
+
+procedure TGameFrame.BleenClick(Sender: TObject);
+begin
+  FMainCode.AddBleenClick;
+  Bleen.Visible := False;
 end;
 
 procedure TGameFrame.CheckButtonClick(Sender: TObject);

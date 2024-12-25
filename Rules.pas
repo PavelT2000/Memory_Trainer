@@ -14,8 +14,10 @@ type
     Label1: TLabel;
     FromRuleToMenuButton: TButton;
     SettingImage: TImage;
+    Bleen: TImage;
     procedure FromRuleToMenuButtonClick(Sender: TObject);
     procedure SettingImageClick(Sender: TObject);
+    procedure BleenClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,6 +29,12 @@ implementation
 uses FMainCode;
 
 {$R *.dfm}
+
+procedure TRulesFrame.BleenClick(Sender: TObject);
+begin
+  FMainCode.AddBleenClick;
+  Bleen.Visible := False;
+end;
 
 procedure TRulesFrame.FromRuleToMenuButtonClick(Sender: TObject);
 begin

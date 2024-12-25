@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.pngimage;
 
 type DifficultLevel = (TestMod, Easy, Medium, Hard);
 {hard, no word only random letters
@@ -24,10 +24,12 @@ type
     BackInMenuButton: TButton;
     Panel1: TPanel;
     MuteMusicButton: TButton;
+    Bleen: TImage;
     procedure BackInMenuButtonClick(Sender: TObject);
     procedure MuteMusicButtonClick(Sender: TObject);
     procedure arrowRightButtonClick(Sender: TObject);
     procedure arrowLeftButtonClick(Sender: TObject);
+    procedure BleenClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,6 +82,12 @@ begin
     SettingFrame: FMainCode.LoadSettingFrame;
   end;
   //MainFormGame.settingPanel.Visible:= True;
+end;
+
+procedure TSettingFrame.BleenClick(Sender: TObject);
+begin
+  FMainCode.AddBleenClick;
+  Bleen.Visible := False;
 end;
 
 procedure TSettingFrame.MuteMusicButtonClick(Sender: TObject);
