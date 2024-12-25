@@ -34,10 +34,10 @@ type AllFrames = (GameFrame, MenuFrame, RulesFrame, SaveMenuFrame, SettingFrame,
 
 var
   MainFormGame: TMainFormGame;
-  prepreFrame: AllFrames;
   preFrame: AllFrames;
   nowFrame: AllFrames = MenuFrame;
   bleenCounter: Integer = 0;
+  SpeedRunStart: UInt64;
 
 procedure LoadGameFrame();
 procedure LoadMenuFrame();
@@ -157,6 +157,7 @@ end;
 procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
   LoadMenuFrame;
+  SpeedRunStart := GetTickCount64;
 end;
 
 
@@ -174,6 +175,7 @@ begin
   MenuFrame.RulesClick(Sender);
 
 end;
+
 //procedure TMainFormGame.RulesFrameBleenClick(Sender: TObject);
 //begin
 //  RulesFrame.BleenClick(Sender)

@@ -17,7 +17,6 @@ type
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
     MiniGamesFrame: TFrame1;
-    BleenFrame: TBleenFrame;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure settingImageClick(Sender: TObject);

@@ -983,27 +983,6 @@ object MainFormGame: TMainFormGame
       ExplicitTop = 247
     end
   end
-  inline BleenFrame: TBleenFrame
-    Left = 0
-    Top = 0
-    Width = 1091
-    Height = 585
-    Align = alClient
-    TabOrder = 7
-    Visible = False
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    inherited BackGround: TImage
-      Width = 1091
-      Height = 585
-    end
-    inherited BTCimage: TImage
-      Left = 704
-      Top = 137
-      ExplicitLeft = 704
-      ExplicitTop = 137
-    end
-  end
   object MediaPlayer1: TMediaPlayer
     Left = -8
     Top = 0
@@ -1042,10 +1021,6 @@ object MainFormGame: TMainFormGame
     inherited BackGround: TImage
       Width = 1091
       Height = 585
-      ExplicitLeft = -32
-      ExplicitTop = 3
-      ExplicitWidth = 1091
-      ExplicitHeight = 585
     end
     inherited LoadGame: TImage
       Left = 381
