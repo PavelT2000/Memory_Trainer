@@ -2,7 +2,7 @@ program MainCode;
 
 uses
   Vcl.Forms,
-  FMainCode in 'FMainCode.pas' {MainForm},
+  FMainCode in 'FMainCode.pas' {MainFormGame},
   GameSound in 'GameSound.pas',
   SplitGo in 'SplitGo.pas',
   saveGame in 'saveGame.pas',
@@ -10,13 +10,17 @@ uses
   UnitGame1 in 'UnitGame1.pas',
   gener in 'gener.pas',
   MenuGame in 'MenuGame.pas' {MenuFrame: TFrame},
-  Game in 'Game.pas' {GameFrame: TFrame};
+  Game in 'Game.pas' {GameFrame: TFrame},
+  Rules in 'Rules.pas' {RulesFrame: TFrame},
+  SaveMenu in 'SaveMenu.pas' {SaveMenuFrame: TFrame},
+  Setting in 'Setting.pas' {SettingFrame: TFrame},
+  MiniGames in 'MiniGames.pas' {Frame1: TFrame};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TMainFormGame, MainFormGame);
   Application.Run;
 end.
