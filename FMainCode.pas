@@ -145,7 +145,7 @@ begin
   //preFrame:= nowFrame;
   //nowFrame:= BleenFrame;
   Inc(bleenCounter);
-  ShowMessage('Âû íàøëè ' + IntToStr(bleenCounter) + ' / 5 áëèí÷èêîâ!');
+  ShowMessage('Ð’Ñ‹ Ð½Ð°ÑˆÐ»Ð¸ ' + IntToStr(bleenCounter) + ' / 5 Ð±Ð»Ð¸Ð½Ñ‡Ð¸ÐºÐ¾Ð²!');
   if bleenCounter >= 5 then
   begin
     MainFormGame.CloseAllFrames;
