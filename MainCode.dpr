@@ -16,7 +16,8 @@ uses
   Setting in 'Setting.pas' {SettingFrame: TFrame},
   MiniGames in 'MiniGames.pas' {MiniGamesFrame: TFrame},
   Bleenchiki in 'Bleenchiki.pas' {BleenFrame: TFrame},
-  ColorGame in 'ColorGame.pas' {ColorGameFrame: TFrame};
+  ColorGame in 'ColorGame.pas' {ColorGameFrame: TFrame},
+  ColorCode in 'ColorCode.pas';
 
 {$R *.res}
 
