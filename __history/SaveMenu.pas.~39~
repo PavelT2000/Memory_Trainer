@@ -5,21 +5,25 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.pngimage;
 
 type
   TSaveMenuFrame = class(TFrame)
-    Image1: TImage;
+    BackGround: TImage;
     Save1Button: TButton;
     Save2Button: TButton;
     AutoSaveButton: TButton;
     Save3Button: TButton;
     backFrameButton: TButton;
+    SettingImage: TImage;
+    Bleen: TImage;
     procedure Save2ButtonClick(Sender: TObject);
     procedure Save3ButtonClick(Sender: TObject);
     procedure AutoSaveButtonClick(Sender: TObject);
     procedure backFrameButtonClick(Sender: TObject);
     procedure Save1ButtonClick(Sender: TObject);
+    procedure SettingImageClick(Sender: TObject);
+    procedure BleenClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,27 +40,30 @@ var saveNumButton: integer;
 
 procedure TSaveMenuFrame.backFrameButtonClick(Sender: TObject);
 begin
-  MainFormGame.CloseAllFrames;
   if (Game.GameFrameMode = True) then begin
-    MainFormGame.GameFrame.Visible:= True;
+    FMainCode.LoadGameFrame;
   end
   else begin
-    MainFormGame.MenuFrame.Visible:= True;
+    FMainCode.LoadMenuFrame;
   end;
+end;
+
+procedure TSaveMenuFrame.BleenClick(Sender: TObject);
+begin
+  FMainCode.AddBleenClick;
+  Bleen.Visible := False;
 end;
 
 procedure SaveOrLoadOnButton(numSave: integer);
 begin
   if (Game.GameFrameMode = True) then begin
-    saveGame.SaveG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage);
-    MainFormGame.CloseAllFrames;
-    MainFormGame.MenuFrame.Visible:= True;
+    saveGame.SaveG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage, UnitGame1.CurrentHint, CurrentDifficult);
+
+    FmainCode.LoadMenuFrame;
   end
   else begin
-    MainFormGame.CloseAllFrames;
-    MainFormGame.GameFrame.Visible:= True;
-    saveGame.loadG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage);
-    Game.GameFrameMode:= True;
+    FMainCode.LoadGameFrame;
+    saveGame.loadG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage, UnitGame1.CurrentHint, CurrentDifficult);
     UnitGame1.StartSaveGame;
     UnitGame1.nextStage;
   end;
@@ -75,6 +82,11 @@ end;
 procedure TSaveMenuFrame.Save3ButtonClick(Sender: TObject);
 begin
   SaveOrLoadOnButton(3);
+end;
+
+procedure TSaveMenuFrame.SettingImageClick(Sender: TObject);
+begin
+  FMainCode.LoadSettingFrame;
 end;
 
 procedure TSaveMenuFrame.AutoSaveButtonClick(Sender: TObject);

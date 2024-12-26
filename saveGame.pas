@@ -147,6 +147,7 @@ begin
   writeln(myFile, str);
 
   closeFile(myFile);
+  showMessage('Игра была сохранена!');
 end;
 
 end.
