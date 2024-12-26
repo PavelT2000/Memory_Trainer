@@ -4280,8 +4280,8 @@ object MenuFrame: TMenuFrame
     ExplicitHeight = 1080
   end
   object LoadGame: TImage
-    Left = 384
-    Top = 302
+    Left = 376
+    Top = 254
     Width = 353
     Height = 91
     HelpType = htKeyword
@@ -4435,8 +4435,8 @@ object MenuFrame: TMenuFrame
     OnClick = LoadGameClick
   end
   object NewGame: TImage
-    Left = 384
-    Top = 70
+    Left = 376
+    Top = 134
     Width = 353
     Height = 91
     HelpType = htKeyword
@@ -4566,8 +4566,8 @@ object MenuFrame: TMenuFrame
     OnClick = NewGameClick
   end
   object Rules: TImage
-    Left = 384
-    Top = 422
+    Left = 376
+    Top = 374
     Width = 353
     Height = 91
     Picture.Data = {
@@ -7058,8 +7058,8 @@ object MenuFrame: TMenuFrame
     OnClick = BleenClick
   end
   object MiniGamesButton: TButton
-    Left = 384
-    Top = 182
+    Left = 784
+    Top = 134
     Width = 353
     Height = 91
     Caption = #1052#1080#1085#1080' '#1048#1075#1088#1099
@@ -7070,6 +7070,7 @@ object MenuFrame: TMenuFrame
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    Visible = False
     OnClick = MiniGamesButtonClick
   end
 end
