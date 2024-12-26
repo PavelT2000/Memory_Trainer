@@ -14,7 +14,7 @@ function Get5WordRandLetter(num: integer):string;
 
 implementation
 
-uses System.SysUtils, Vcl.Dialogs, unitGame1;
+uses System.SysUtils, Vcl.Dialogs;
 
 function compareArr(arr1, arr2: SArr): SArr;
 var k: integer;
@@ -84,9 +84,9 @@ begin
     arr8:= copy(wordsArrAns, 0, length(wordsArrAns));
     closeFile(myFile);
   except
-    showMessage('К сожалению мы не смогли найти файлы словарей, вам доступен только сложный режим');
-    UnitGame1.CurrentDifficult:= UnitGame1.Hard;
-  end;                           
+    showMessage('');
+  end;
+  
 end;
 
 function GetWord(num: integer): string;

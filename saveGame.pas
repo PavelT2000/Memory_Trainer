@@ -1,4 +1,4 @@
-unit saveGame;
+﻿unit saveGame;
 
 interface
 
@@ -118,6 +118,8 @@ CurrentDifficult: UnitGame1.AllDifficult);
 var myFile: TextFile;
     str: string;
 begin
+  if not DirectoryExists('saves\') then
+    CreateDir('saves\');
   if (SaveNum = 1) then begin
     AssignFile(myFile, 'saves\SaveData1.txt');
   end
@@ -147,7 +149,9 @@ begin
   writeln(myFile, str);
 
   closeFile(myFile);
-  showMessage('Игра была сохранена!');
+  if (saveNum <> 4) then begin
+    showMessage('Игра была сохранена!');
+  end;
 end;
 
 end.

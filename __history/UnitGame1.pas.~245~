@@ -214,8 +214,6 @@ begin
   exampleS := Trim(exampleS);
   MainFormGame.GameFrame.SlovoRememberLabel.Caption:= 'Запомните слово: ';
   MainFormGame.GameFrame.OnlySlovoLable.Caption:= exampleS;
-  //MainFormGame.GameFrame.SlovoPanel.Visible:= True;
-  //MainFormGame.GameFrame.SlovoRememberLabel.Visible:= True;
 
   // game (time) bar
   // From higher to lower progress bar
@@ -352,8 +350,8 @@ begin
       Medium: MediumDifficultNextStage(rulesOut);
       Hard: HardDifficultNextStage(rulesOut);
     end;
-    StatistikOut:= 'Поздравляю! Новая стадия! ' + IntToStr(CurrentStage) +
-    '. Правило стадии поменалось! ' + rulesOut;
+    StatistikOut:= 'Поздравляю! Новая стадия - ' + IntToStr(CurrentStage) +
+    '! Правило стадии поменалось! ' + rulesOut;
     showMessage(StatistikOut);
   end;
   saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
@@ -405,6 +403,32 @@ begin
   MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
   StatistikOut:= 'Угадано подряд ' + IntToStr(WinStreak);
   MainFormGame.GameFrame.statistikWinStreak.Caption:= StatistikOut;
+  StatistikOut:= 'Cложность: ';
+  case CurrentDifficult of
+    Demo:
+    begin
+      StatistikOut:= StatistikOut + 'Demo ';
+    end;
+    Easy:
+    begin
+    StatistikOut:= StatistikOut + 'Easy ';
+    end;
+    Medium:
+    begin
+    StatistikOut:= StatistikOut + 'Medium ';
+    end;
+    Hard: StatistikOut:= StatistikOut + 'Hard ';
+  end;
+  MainFormGame.GameFrame.StatisticDifficultLabel.Caption:= StatistikOut;
+  case CurrentDifficult of    //change rules
+      Demo: DemoDifficultNextStage(rulesOut);
+      Easy: EasyDifficultNextStage(rulesOut);
+      Medium: MediumDifficultNextStage(rulesOut);
+      Hard: HardDifficultNextStage(rulesOut);
+    end;
+  StatistikOut:= 'Приготовьтесь, игра начинается! ' +
+    'Правило ' + IntToStr(CurrentStage) + ' стадии - ' + rulesOut;
+  showMessage(StatistikOut);
 end;
 
 procedure StartGame();

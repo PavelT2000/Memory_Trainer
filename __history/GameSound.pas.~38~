@@ -33,8 +33,9 @@ begin
       MainFormGame.MediaPlayer1.Play;
     end;
   except
-    showMessage('Файлы музыки были повреждены!');
-  end;                
+  
+  end;
+  
 end;
 
 procedure TurnOffMusic;

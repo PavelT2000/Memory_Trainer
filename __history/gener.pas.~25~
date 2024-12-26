@@ -85,7 +85,7 @@ begin
     closeFile(myFile);
   except
     showMessage('К сожалению мы не смогли найти файлы словарей, вам доступен только сложный режим');
-    UnitGame1.CurrentDifficult:= UnitGame1.Hard;
+    
   end;                           
 end;
 
