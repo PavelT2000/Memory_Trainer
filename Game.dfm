@@ -16170,6 +16170,7 @@ object GameFrame: TGameFrame
     Top = 25
     Width = 80
     Height = 80
+    Anchors = []
     ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000002000000
