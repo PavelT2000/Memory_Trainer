@@ -613,7 +613,7 @@ object MainFormGame: TMainFormGame
       ExplicitHeight = 585
     end
     inherited BTCimage: TImage
-      Left = 672
+      Left = 671
       Top = 141
       ExplicitLeft = 676
       ExplicitTop = 142
@@ -635,13 +635,13 @@ object MainFormGame: TMainFormGame
     end
     inherited Bleen: TImage
       Left = 25
-      Top = 514
+      Top = 513
       ExplicitLeft = 26
       ExplicitTop = 518
     end
     inherited SettingImage: TImage
       Left = 1016
-      Top = 14
+      Top = 15
       Height = 52
       ExplicitLeft = 1016
       ExplicitTop = 13
@@ -856,10 +856,11 @@ object MainFormGame: TMainFormGame
     end
     inherited SettingImage: TImage
       Left = 1016
-      Top = 17
+      Top = 18
       Width = 57
       Height = 57
       ExplicitLeft = 1016
+      ExplicitTop = 17
       ExplicitWidth = 57
       ExplicitHeight = 57
     end
@@ -946,31 +947,31 @@ object MainFormGame: TMainFormGame
       ExplicitTop = 260
     end
     inherited arrowLeftButton: TButton
-      Left = 338
-      Top = 175
+      Left = 339
+      Top = 176
       Width = 52
       Height = 49
-      ExplicitLeft = 337
-      ExplicitTop = 172
+      ExplicitLeft = 338
+      ExplicitTop = 173
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
     inherited arrowRightButton: TButton
       Left = 644
-      Top = 175
+      Top = 176
       Width = 51
       Height = 49
       ExplicitLeft = 643
-      ExplicitTop = 172
+      ExplicitTop = 173
       ExplicitWidth = 51
       ExplicitHeight = 49
     end
     inherited difficultPanel: TPanel
-      Top = 164
+      Top = 165
       Height = 69
       StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 391
-      ExplicitTop = 161
+      ExplicitTop = 162
       ExplicitHeight = 69
       inherited difficultLevelNameLabel: TLabel
         Top = 2
@@ -1040,9 +1041,9 @@ object MainFormGame: TMainFormGame
       ExplicitHeight = 585
     end
     inherited GameRememberColorButton: TButton
-      Top = 237
+      Top = 238
       ExplicitLeft = 400
-      ExplicitTop = 233
+      ExplicitTop = 234
     end
   end
   inline ColorGameFrame: TColorGameFrame
@@ -1052,8 +1053,8 @@ object MainFormGame: TMainFormGame
     Height = 585
     Align = alClient
     TabOrder = 8
-    ExplicitWidth = 1089
-    ExplicitHeight = 577
+    ExplicitWidth = 1091
+    ExplicitHeight = 585
     inherited BGImage: TImage
       Width = 1091
       Height = 585
@@ -1080,7 +1081,7 @@ object MainFormGame: TMainFormGame
     end
     inherited LoadGame: TImage
       Left = 387
-      Top = 232
+      Top = 233
       Width = 330
       Height = 79
       ExplicitLeft = 387
@@ -1111,7 +1112,7 @@ object MainFormGame: TMainFormGame
     end
     inherited settingImage: TImage
       Left = 1016
-      Top = 17
+      Top = 18
       Height = 57
       ExplicitLeft = 1016
       ExplicitTop = 16
@@ -1119,7 +1120,7 @@ object MainFormGame: TMainFormGame
     end
     inherited Bleen: TImage
       Left = 22
-      Top = 500
+      Top = 499
       ExplicitLeft = 22
       ExplicitTop = 501
     end
@@ -1130,9 +1131,8 @@ object MainFormGame: TMainFormGame
       Height = 41
       Anchors = []
       Font.Height = -17
-      Visible = True
       ExplicitLeft = 25
-      ExplicitTop = 43
+      ExplicitTop = 42
       ExplicitWidth = 138
       ExplicitHeight = 41
     end
