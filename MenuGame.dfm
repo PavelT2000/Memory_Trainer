@@ -4721,10 +4721,11 @@ object MenuFrame: TMenuFrame
     OnClick = RulesClick
   end
   object settingImage: TImage
-    Left = 1024
+    Left = 1032
     Top = 11
     Width = 57
     Height = 54
+    Anchors = []
     ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000870000

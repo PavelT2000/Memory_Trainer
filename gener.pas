@@ -125,20 +125,14 @@ begin
 end;
 
 function getWordRandLetter(numLetter: integer):string;
+const rusLetters: string = 'ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ';
 var randomNum: integer;
 begin
   result:= '';
   Randomize;
   for var i:= 1 to numLetter do begin
-    randomNum:= Random(2); //from 0 to 1
-    if (randomNum = 0) then begin  //small letter
-      randomNum:= Random(33) + ord('а'); //+1 (rand = max-1)
-      result:= result + chr(randomNum);
-    end
-    else begin //big letter
-      randomNum:= Random(33) + ord('А'); //+1 (rand = max-1)
-      result:= result + chr(randomNum);
-    end;
+    randomNum:= Random(66) + 1; //+1 (rand = max-1)
+    result:= result + rusLetters[randomNum];
   end;
 end;
 

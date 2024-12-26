@@ -43,36 +43,48 @@ begin
       rulesOut:= 'Правило: Введите то же слово';
       exampleS:=gener.GetWord(subStage);
       pbTime := 4000;
+      StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     2:
     begin
       rulesOut:= 'Правило: Введите слово перевёрнутым';
       exampleS:=gener.GetWord(subStage+2);
       pbTime := 4000;
+      StatistikOut:= 'Количество букв ' + IntToStr(SubStage+2);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     3:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в любом порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     4:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш, в любом порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     5:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в том же порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     6:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     7:
     begin
@@ -80,6 +92,8 @@ begin
       'перевёртыш в перевёрнутом порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
   end;
 end;
@@ -92,30 +106,40 @@ begin
       rulesOut:= 'Правило: Введите слово перевёрнутым';
       exampleS:=gener.GetWord(subStage+2);
       pbTime := 4000;
+      StatistikOut:= 'Количество букв ' + IntToStr(SubStage+2);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     2:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в любом порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     3:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш, в любом порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     4:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в том же порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     5:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     6:
     begin
@@ -123,6 +147,8 @@ begin
       'перевёртыш в перевёрнутом порядке';
       exampleS:=gener.Get5word(subStage-3);
       pbTime := 5500 + (subStage-5)*1000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
   end;
 end;
@@ -135,30 +161,40 @@ begin
       rulesOut:= 'Правило: Введите слово перевёрнутым';
       exampleS:=gener.GetWord(subStage);
       pbTime := 4000;
+      StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     2:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в любом порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     3:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в том же порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     4:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     5:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке';
       exampleS:=gener.Get5word(subStage);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
   end;
 end;
@@ -171,18 +207,24 @@ begin
       rulesOut:= 'Правило: Введите слово перевёрнутым. Размер букв учитывается!';
       exampleS:=gener.getWordRandLetter(subStage-2);
       pbTime := 4000;
+      StatistikOut:= 'Количество букв ' + IntToStr(SubStage-2);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     2:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в любом порядке. Размер букв учитывается!';
       exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     3:
     begin
       rulesOut:= 'Правило: Введите все слова через пробел в том же порядке. Размер букв учитывается!';
       exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     4:
     begin
@@ -190,6 +232,8 @@ begin
       'перевёртыш в любом порядке. Размер букв учитывается!';
       exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
     5:
     begin
@@ -197,6 +241,8 @@ begin
       'это перевёртыш в том же порядке. Размер букв учитывается!';
       exampleS:=gener.Get5WordRandLetter(subStage-3);
       pbTime := 8000 + (subStage-5)*2000;
+      StatistikOut:= 'Количество слов ' + IntToStr(SubStage-3);
+      MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     end;
   end;
 end;
@@ -333,15 +379,12 @@ begin
   begin
     WinCount := basicWinCount;
     Inc(SubStage);
-    StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
-    MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
+
   end;        //9
   if SubStage >= basicNextSubStage then
   begin
     SubStage := basicSubStage;
     Inc(CurrentStage);
-    StatistikOut:= 'Количество букв ' + IntToStr(SubStage);
-    MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
     StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
     MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
     case CurrentDifficult of    //change rules
@@ -388,6 +431,7 @@ begin
 end;
 
 procedure basicStartGame();
+var myStatistikOut: string;
 begin
   gener.GetAllSArr();
   WinCount:= basicWinCount;
@@ -403,30 +447,30 @@ begin
   MainFormGame.GameFrame.statistikSubStageLabel.Caption:= StatistikOut;
   StatistikOut:= 'Угадано подряд ' + IntToStr(WinStreak);
   MainFormGame.GameFrame.statistikWinStreak.Caption:= StatistikOut;
-  StatistikOut:= 'Cложность: ';
+  myStatistikOut:= 'Cложность: ';
   case CurrentDifficult of
     Demo:
     begin
-      StatistikOut:= StatistikOut + 'Demo ';
+      myStatistikOut:= myStatistikOut + 'Demo ';
       DemoDifficultNextStage(rulesOut);  //change rules
     end;
     Easy:
     begin
-      StatistikOut:= StatistikOut + 'Easy ';
+      myStatistikOut:= myStatistikOut + 'Easy ';
       EasyDifficultNextStage(rulesOut);  //change rules
     end;
     Medium:
     begin
-      StatistikOut:= StatistikOut + 'Medium ';
+      myStatistikOut:= myStatistikOut + 'Medium ';
       MediumDifficultNextStage(rulesOut);  //change rules
     end;
     Hard:
     begin
-      StatistikOut:= StatistikOut + 'Hard ';
+      myStatistikOut:= myStatistikOut + 'Hard ';
       HardDifficultNextStage(rulesOut);   //change rules
     end;
   end;
-  MainFormGame.GameFrame.StatisticDifficultLabel.Caption:= StatistikOut;
+  MainFormGame.GameFrame.StatisticDifficultLabel.Caption:= myStatistikOut;
   {case CurrentDifficult of
       Demo:
       Easy:

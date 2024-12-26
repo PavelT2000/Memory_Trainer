@@ -3,6 +3,7 @@ object RulesFrame: TRulesFrame
   Top = 0
   Width = 996
   Height = 575
+  Anchors = []
   TabOrder = 0
   DesignSize = (
     996
@@ -6433,6 +6434,7 @@ object RulesFrame: TRulesFrame
     Top = 16
     Width = 57
     Height = 49
+    Anchors = []
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000870000
       0089080600000006ED2B7A000000097048597300002E2300002E230178A53F76

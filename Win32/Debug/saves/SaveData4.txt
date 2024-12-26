@@ -1,0 +1,4 @@
+currentStage 1 
+subStage 6 
+CurrentHint 0 
+CurrentDifficult Hard 
