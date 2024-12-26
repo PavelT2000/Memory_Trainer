@@ -14,6 +14,7 @@ function Get5WordRandLetter(num: integer):string;
 
 implementation
 
+uses System.SysUtils, Vcl.Dialogs, unitGame1;
 
 function compareArr(arr1, arr2: SArr): SArr;
 var k: integer;
@@ -35,52 +36,57 @@ var myFile: Textfile;
     SIn: string;
     wordsArrNow, wordsArrAns: SArr;
 begin
-  AssignFile(myFile, 'words\dictionary5.txt');
-  Reset(myFile);
-  while (not EOF(myFile)) do begin
-    Readln(myFile, SIn);
-    SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
-    wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
-  end;
-  arr5:= copy(wordsArrAns, 0, length(wordsArrAns));
-  closeFile(myFile);
+  try
+    AssignFile(myFile, 'words\dictionary5.txt');
+    Reset(myFile);
+    while (not EOF(myFile)) do begin
+      Readln(myFile, SIn);
+      SIn := UTF8ToString(SIn);
+      wordsArrNow:= SplitGo.ListOfWords(SIn);
+      wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
+    end;
+    arr5:= copy(wordsArrAns, 0, length(wordsArrAns));
+    closeFile(myFile);
 
-  AssignFile(myFile, 'words\dictionary6.txt');
-  Reset(myFile);
-  setLength(wordsArrAns, 0);
-  while (not EOF(myFile)) do begin
-    Readln(myFile, SIn);
-    SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
-    wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
-  end;
-  arr6:= copy(wordsArrAns, 0, length(wordsArrAns));
-  closeFile(myFile);
+    AssignFile(myFile, 'words\dictionary6.txt');
+    Reset(myFile);
+    setLength(wordsArrAns, 0);
+    while (not EOF(myFile)) do begin
+      Readln(myFile, SIn);
+      SIn := UTF8ToString(SIn);
+      wordsArrNow:= SplitGo.ListOfWords(SIn);
+      wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
+    end;
+    arr6:= copy(wordsArrAns, 0, length(wordsArrAns));
+    closeFile(myFile);
 
-  AssignFile(myFile, 'words\dictionary7.txt');
-  Reset(myFile);
-  setLength(wordsArrAns, 0);
-  while (not EOF(myFile)) do begin
-    Readln(myFile, SIn);
-    SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
-    wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
-  end;
-  arr7:= copy(wordsArrAns, 0, length(wordsArrAns));
-  closeFile(myFile);
+    AssignFile(myFile, 'words\dictionary7.txt');
+    Reset(myFile);
+    setLength(wordsArrAns, 0);
+    while (not EOF(myFile)) do begin
+      Readln(myFile, SIn);
+      SIn := UTF8ToString(SIn);
+      wordsArrNow:= SplitGo.ListOfWords(SIn);
+      wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
+    end;
+    arr7:= copy(wordsArrAns, 0, length(wordsArrAns));
+    closeFile(myFile);
 
-  AssignFile(myFile, 'words\dictionary8.txt');
-  Reset(myFile);
-  setLength(wordsArrAns, 0);
-  while (not EOF(myFile)) do begin
-    Readln(myFile, SIn);
-    SIn := UTF8ToString(SIn);
-    wordsArrNow:= SplitGo.ListOfWords(SIn);
-    wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
-  end;
-  arr8:= copy(wordsArrAns, 0, length(wordsArrAns));
-  closeFile(myFile);
+    AssignFile(myFile, 'words\dictionary8.txt');
+    Reset(myFile);
+    setLength(wordsArrAns, 0);
+    while (not EOF(myFile)) do begin
+      Readln(myFile, SIn);
+      SIn := UTF8ToString(SIn);
+      wordsArrNow:= SplitGo.ListOfWords(SIn);
+      wordsArrAns:= compareArr(wordsArrNow, wordsArrAns);
+    end;
+    arr8:= copy(wordsArrAns, 0, length(wordsArrAns));
+    closeFile(myFile);
+  except
+    showMessage('К сожалению мы не смогли найти файлы словарей, вам доступен только сложный режим');
+    UnitGame1.CurrentDifficult:= UnitGame1.Hard;
+  end;                           
 end;
 
 function GetWord(num: integer): string;
