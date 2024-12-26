@@ -118,6 +118,8 @@ CurrentDifficult: UnitGame1.AllDifficult);
 var myFile: TextFile;
     str: string;
 begin
+  if not DirectoryExists('saves\') then
+    CreateDir('saves\');
   if (SaveNum = 1) then begin
     AssignFile(myFile, 'saves\SaveData1.txt');
   end
