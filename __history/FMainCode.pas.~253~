@@ -16,19 +16,11 @@ type
     RulesFrame: TRulesFrame;
     SaveMenuFrame: TSaveMenuFrame;
     SettingFrame: TSettingFrame;
-<<<<<<<< HEAD:__history/FMainCode.pas.~253~
     MiniGamesFrame: TMiniGamesFrame;
     BleenFrame: TBleenFrame;
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure MediaPlayer1Notify(Sender: TObject);
-========
-    procedure FormCreate(Sender: TObject);
-    procedure CloseAllFrames;
-    procedure settingImageClick(Sender: TObject);
-    procedure MenuFrameImage1Click(Sender: TObject);
-    procedure MenuFrameRulesClick(Sender: TObject);
->>>>>>>> finalBaseProgram:__history/FMainCode.pas.~150~
 
   private
 
@@ -176,7 +168,6 @@ begin
   SpeedRunStart := GetTickCount64;
 end;
 
-<<<<<<<< HEAD:__history/FMainCode.pas.~253~
 // This procedure will repeat a song, when it completed
 procedure TMainFormGame.MediaPlayer1Notify(Sender: TObject);
 begin
@@ -184,23 +175,6 @@ begin
     //restart the song
     MediaPlayer1.Play;
   end;
-========
-procedure TMainFormGame.MenuFrameImage1Click(Sender: TObject);
-begin
-  MenuFrame.LoadGameClick(Sender);
-
-end;
-
-procedure TMainFormGame.MenuFrameRulesClick(Sender: TObject);
-begin
-  MenuFrame.RulesClick(Sender);
-
-end;
-
-procedure TMainFormGame.settingImageClick(Sender: TObject);
-begin
-  LoadSettingFrame;
->>>>>>>> finalBaseProgram:__history/FMainCode.pas.~150~
 end;
 
 end.

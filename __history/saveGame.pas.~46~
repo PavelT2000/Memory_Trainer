@@ -19,7 +19,6 @@ var myFile: TextFile;
     strIn, resultStr: string;
     wordArr: SArr;
     i: integer;
-    isAllCorrect: boolean;
 begin
   try begin
     if (SaveNum = 1) then begin
@@ -41,7 +40,6 @@ begin
     CurrentStage:= -1;
     subStage:= -1;
     CurrentHint:= -1;
-    isAllCorrect:= False;
     if (strIn <> '') then begin
       resultStr:= strIn;
       while (not Eof(myFile)) do begin
@@ -65,27 +63,15 @@ begin
         end
         else if (wordArr[i] = 'CurrentDifficult') then begin
           inc(i);
-          if (wordArr[i] = 'Demo') then begin
-          CurrentDifficult:= Demo;
-          isAllCorrect:= True;
-          end
-          else if (wordArr[i] = 'Easy') then begin
-          CurrentDifficult:= Easy;
-          isAllCorrect:= True;
-          end
-          else if (wordArr[i] = 'Medium') then begin
-          CurrentDifficult:= Medium;
-          isAllCorrect:= True;
-          end
-          else if (wordArr[i] = 'Hard') then begin
-          CurrentDifficult:= Hard;
-          isAllCorrect:= True;
-          end;
+          if (wordArr[i] = 'Demo') then CurrentDifficult:= Demo
+          else if (wordArr[i] = 'Easy') then CurrentDifficult:= Easy
+          else if (wordArr[i] = 'Medium') then CurrentDifficult:= Medium
+          else if (wordArr[i] = 'Hard') then CurrentDifficult:= Hard;
         end;
         inc(i);
       end;
     end;
-    if (CurrentStage = -1) or (subStage = -1) or (CurrentHint = -1) or (not isAllCorrect) then begin
+    if (CurrentStage = -1) or (subStage = -1) or (CurrentHint = -1) then begin
       ShowMessage('We cant find your save, loading basic game...');
       CurrentStage:= UnitGame1.basicCurrentStage; //game mode
       subStage:= UnitGame1.basicSubStage; //num of letters or words
@@ -118,8 +104,6 @@ CurrentDifficult: UnitGame1.AllDifficult);
 var myFile: TextFile;
     str: string;
 begin
-  if not DirectoryExists(ExtractFilePath('saves\SaveData1.txt')) then
-    ForceDirectories('saves\SaveData1.txt');
   if (SaveNum = 1) then begin
     AssignFile(myFile, 'saves\SaveData1.txt');
   end
