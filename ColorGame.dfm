@@ -15978,8 +15978,8 @@ object ColorGameFrame: TColorGameFrame
     ExplicitHeight = 105
   end
   object green1: TImage
-    Left = 345
-    Top = 216
+    Left = 321
+    Top = 200
     Width = 128
     Height = 121
     Picture.Data = {
@@ -16100,12 +16100,14 @@ object ColorGameFrame: TColorGameFrame
       91590000007264160000801C99050000204766010000C8F9CED56A9AF744D94C
       0000000049454E44AE426082}
     Stretch = True
+    OnClick = green1Click
   end
   object green2: TImage
-    Left = 385
-    Top = 216
+    Left = 345
+    Top = 200
     Width = 128
     Height = 121
+    Enabled = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000003CF0000
       02550806000000E001C752000000017352474200AECE1CE90000000467414D41

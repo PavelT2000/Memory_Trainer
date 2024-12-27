@@ -1,0 +1,12 @@
+unit ColorCode;
+
+interface
+
+type colors = (green, red, blue, yellow);
+
+var colorNow: colors;
+    CollorsFromUser, SecretColors: array of colors;
+
+implementation
+
+end.

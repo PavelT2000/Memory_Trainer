@@ -10,17 +10,34 @@ uses
 type
   TColorGameFrame = class(TFrame)
     BGImage: TImage;
-    green1: TImage;
-    green2: TImage;
     VisibleForColorTimer: TTimer;
+    green2: TImage;
+    green1: TImage;
+    procedure green1Click(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
   end;
 
+var ColorGameFrame: TColorGameFrame;
+
 implementation
 
 {$R *.dfm}
 
+procedure UnEnableColors();
+begin
+  ColorGameFrame.green1.Enabled:= False;
+end;
+
+procedure CheckColorClick();
+begin
+
+end;
+
+procedure TColorGameFrame.green1Click(Sender: TObject);
+begin
+  CheckColorClick
+end;
 end.

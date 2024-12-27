@@ -1,0 +1,39 @@
+unit ColorCode;
+
+interface
+
+type Tcolors = (green, red, blue, yellow);
+     TArrOfColors = array of Tcolors;
+
+var colorNow: Tcolors;
+    CollorsFromUser, SecretColors: TArrOfColors;
+
+implementation
+
+procedure GenerColors(numOfColors: integer; var ColorsArr: TArrOfColors);
+var colorNow: Tcolors;
+    ColorNum: integer;
+begin
+  //I want gener colors with little part of same color in row
+
+  if (numOfColors > 0) then begin
+    setLength(ColorsArr, numOfColors);
+    randomize;
+    //first color
+    ColorNum:= random(4); //количество цветов
+    Case ColorNum of
+      0: colorNow:= Green;
+      1: colorNow:= red;
+      2: colorNow:= blue;
+      3: colorNow:= yellow;
+    End;
+    for numOfColors := Low(ColorsArr) to High(ColorsArr) do begin
+
+    end;
+  end
+  else begin
+    setLength(ColorsArr, 0);
+  end;
+end;
+
+end.
