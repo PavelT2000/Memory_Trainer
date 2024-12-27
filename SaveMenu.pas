@@ -61,8 +61,8 @@ begin
     FmainCode.LoadMenuFrame;
   end
   else begin
-    FMainCode.LoadGameFrame;
     saveGame.loadG(numSave, UnitGame1.CurrentStage, UnitGame1.subStage, UnitGame1.CurrentHint, CurrentDifficult);
+    FMainCode.LoadGameFrame;
     UnitGame1.StartSaveGame;
     UnitGame1.nextStage;
   end;

@@ -1,4 +1,4 @@
 currentStage 1 
-subStage 5 
-CurrentHint 5 
+subStage 6 
+CurrentHint 4 
 CurrentDifficult Medium 
