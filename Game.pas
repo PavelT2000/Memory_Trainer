@@ -107,6 +107,7 @@ begin
   MainFormGame.GameFrame.HintButton.Enabled:= False;
   if (UnitGame1.CurrentHint > 0) then begin
     dec(UnitGame1.CurrentHint);
+    MainFormGame.GameFrame.CheckButton.Enabled:= False;
     MainFormGame.GameFrame.HintButton.Caption:= 'Подсказок: ' + intToStr(UnitGame1.CurrentHint);
     MainFormGame.GameFrame.OnlySlovoLable.Caption:= UnitGame1.exampleS;
     MainFormGame.GameFrame.HintTimer.Interval:= UnitGame1.pbTime div 3;
@@ -124,6 +125,7 @@ begin
   else begin
     MainFormGame.GameFrame.HintButton.Enabled:= True;
   end;
+  MainFormGame.GameFrame.CheckButton.Enabled:= True;
 end;
 
 procedure TGameFrame.SettingImageClick(Sender: TObject);

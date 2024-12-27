@@ -22,6 +22,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure CloseAllFrames;
     procedure MediaPlayer1Notify(Sender: TObject);
+    procedure GameFrameClick(Sender: TObject);
 
   private
 
@@ -177,6 +178,11 @@ procedure TMainFormGame.FormCreate(Sender: TObject);
 begin
   LoadMenuFrame;
   SpeedRunStart := GetTickCount64;
+end;
+
+procedure TMainFormGame.GameFrameClick(Sender: TObject);
+begin
+
 end;
 
 // This procedure will repeat a song, when it completed
