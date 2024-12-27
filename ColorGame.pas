@@ -20,24 +20,42 @@ type
     { Public declarations }
   end;
 
-var ColorGameFrame: TColorGameFrame;
+//var ColorGameFrame: TColorGameFrame;
+var NumOfColorChecked: integer;
 
 implementation
 
 {$R *.dfm}
 
+uses FmainCode, ColorCode;
+
 procedure UnEnableColors();
 begin
-  ColorGameFrame.green1.Enabled:= False;
+  MainFormGame.ColorGameFrame.green1.Enabled:= False;
 end;
 
-procedure CheckColorClick();
+procedure CheckColorClick(clickColor: ColorCode.Tcolors);
 begin
+  if (NumOfColorChecked >= length(ColorCode.SecretColors)) then begin
+    //ColorCode.NewRound;
+  end
+  else begin
+    //if () then
 
+    {Case clickColor of
+      ColorCode.green: colorNow:= Green;
+      ColorCode.red: colorNow:= red;
+      ColorCode.blue: colorNow:= blue;
+      ColorCode.yellow: colorNow:= yellow;
+    End;}
+  end;
 end;
 
 procedure TColorGameFrame.green1Click(Sender: TObject);
+Var clickColor: ColorCode.Tcolors;
 begin
-  CheckColorClick
+  clickColor:= ColorCode.green;
+  CheckColorClick(clickColor);
 end;
+
 end.

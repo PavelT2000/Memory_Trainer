@@ -1,14 +1,22 @@
-unit ColorCode;
+﻿unit ColorCode;
 
 interface
 
 type Tcolors = (green, red, blue, yellow);
      TArrOfColors = array of Tcolors;
 
+const basicStartColorsInArr = 3;
+
 var colorNow: Tcolors;
     CollorsFromUser, SecretColors: TArrOfColors;
+    NumOfColorsInRound: integer;
+
+procedure NewRound(NumOfColorsInRound: integer);
+procedure StartGame();
 
 implementation
+
+uses ColorGame;
 
 //gener array of colors
 procedure GenerColors(numOfColors: integer; var ColorsArr: TArrOfColors);
@@ -32,7 +40,7 @@ begin
       ColorNumPre:= ColorNumNow;
       ColorNumNow:= random(SizeOfTColors);
       if (ColorNumNow = ColorNumPre) then begin   //same color
-        //random number, if number 0 then add 2 same colors in row
+        //random number, chace 1/6 * 1/4, if number 0 then add 2 same colors in row
         if (Random(6) = 0) then begin
           Case ColorNumNow of
             0: colorNow:= Green;
@@ -59,6 +67,18 @@ begin
   else begin
     setLength(ColorsArr, 0);
   end;
+end;
+
+procedure NewRound(NumOfColorsInRound: integer);
+begin
+  GenerColors(NumOfColorsInRound, SecretColors);
+  ColorGame.NumOfColorChecked:= 0;
+end;
+
+procedure StartGame();
+begin
+  NumOfColorsInRound:= basicStartColorsInArr;
+  NewRound(NumOfColorsInRound);
 end;
 
 end.

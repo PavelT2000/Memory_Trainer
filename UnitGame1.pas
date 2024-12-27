@@ -381,21 +381,23 @@ begin
     Inc(SubStage);
 
   end;        //9
-  if SubStage >= basicNextSubStage then
+  if (SubStage >= basicNextSubStage) then
   begin
     SubStage := basicSubStage;
     Inc(CurrentStage);
-    StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
-    MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
-    case CurrentDifficult of    //change rules
-      Demo: DemoDifficultNextStage(rulesOut);
-      Easy: EasyDifficultNextStage(rulesOut);
-      Medium: MediumDifficultNextStage(rulesOut);
-      Hard: HardDifficultNextStage(rulesOut);
+    if (CurrentStage <= basicMaxStage) then begin
+      StatistikOut:= 'Стадия игры ' + IntToStr(CurrentStage);
+      MainFormGame.GameFrame.StatistikStageLable.Caption:= StatistikOut;
+      case CurrentDifficult of    //change rules
+        Demo: DemoDifficultNextStage(rulesOut);
+        Easy: EasyDifficultNextStage(rulesOut);
+        Medium: MediumDifficultNextStage(rulesOut);
+        Hard: HardDifficultNextStage(rulesOut);
+      end;
+      StatistikOut:= 'Поздравляю! Новая стадия - ' + IntToStr(CurrentStage) +
+      '! Правило стадии поменалось! ' + rulesOut;
+      showMessage(StatistikOut);
     end;
-    StatistikOut:= 'Поздравляю! Новая стадия - ' + IntToStr(CurrentStage) +
-    '! Правило стадии поменалось! ' + rulesOut;
-    showMessage(StatistikOut);
   end;
   saveGame.SaveG(4, CurrentStage, subStage, CurrentHint, CurrentDifficult);
 end;
