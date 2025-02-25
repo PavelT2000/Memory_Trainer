@@ -613,7 +613,7 @@ object MainFormGame: TMainFormGame
       ExplicitHeight = 585
     end
     inherited BTCimage: TImage
-      Left = 667
+      Left = 666
       Top = 141
       ExplicitLeft = 676
       ExplicitTop = 142
@@ -635,13 +635,13 @@ object MainFormGame: TMainFormGame
     end
     inherited Bleen: TImage
       Left = 25
-      Top = 509
+      Top = 508
       ExplicitLeft = 26
       ExplicitTop = 518
     end
     inherited SettingImage: TImage
       Left = 1016
-      Top = 19
+      Top = 20
       Height = 52
       ExplicitLeft = 1016
       ExplicitTop = 13
@@ -688,7 +688,7 @@ object MainFormGame: TMainFormGame
     end
     inherited SettingImage: TImage
       Left = 1016
-      Top = 22
+      Top = 23
       Width = 57
       Height = 57
       ExplicitLeft = 1016
@@ -789,9 +789,9 @@ object MainFormGame: TMainFormGame
       ExplicitHeight = 585
     end
     inherited GameRememberColorButton: TButton
-      Top = 242
+      Top = 243
       ExplicitLeft = 400
-      ExplicitTop = 238
+      ExplicitTop = 239
     end
   end
   inline ColorGameFrame: TColorGameFrame
@@ -1002,12 +1002,11 @@ object MainFormGame: TMainFormGame
       ExplicitTop = 260
     end
     inherited arrowLeftButton: TButton
-      Left = 322
+      Left = 323
       Top = 177
       Width = 52
       Height = 49
       ExplicitLeft = 322
-      ExplicitTop = 177
       ExplicitWidth = 52
       ExplicitHeight = 49
     end
@@ -1083,7 +1082,7 @@ object MainFormGame: TMainFormGame
     end
     inherited LoadGame: TImage
       Left = 387
-      Top = 229
+      Top = 230
       Width = 330
       Height = 79
       ExplicitLeft = 387
@@ -1114,7 +1113,7 @@ object MainFormGame: TMainFormGame
     end
     inherited settingImage: TImage
       Left = 1016
-      Top = 22
+      Top = 23
       Height = 57
       ExplicitLeft = 1016
       ExplicitTop = 16
@@ -1122,19 +1121,20 @@ object MainFormGame: TMainFormGame
     end
     inherited Bleen: TImage
       Left = 22
-      Top = 495
+      Top = 494
       ExplicitLeft = 22
       ExplicitTop = 501
     end
     inherited MiniGamesButton: TButton
-      Left = 25
+      Left = 23
       Top = 43
       Width = 138
       Height = 41
       Anchors = []
       Font.Height = -17
-      ExplicitLeft = 25
-      ExplicitTop = 42
+      Visible = True
+      ExplicitLeft = 23
+      ExplicitTop = 43
       ExplicitWidth = 138
       ExplicitHeight = 41
     end
