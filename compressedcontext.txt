@@ -1,0 +1,661 @@
+=== PROJECT HIERARCHY ===
+├── .aiignore
+├── .gitattributes
+├── Game.pas
+├── Project1.dpr
+├── Project1.dproj
+├── Project1.dproj.local
+├── Project1.identcache
+├── Project1.res
+├── Unit1.pas
+├── UnitBasic.pas
+├── UnitGame1.dcu
+├── UnitGame1.pas
+├── __history
+│   ├── Game.pas.~1~
+│   ├── Game.pas.~2~
+│   ├── Project1.dpr.~32~
+│   ├── Project1.dpr.~33~
+│   ├── Project1.dpr.~34~
+│   ├── Project1.dpr.~35~
+│   ├── Project1.dpr.~36~
+│   ├── Project1.dpr.~37~
+│   ├── Project1.dpr.~38~
+│   ├── Project1.dpr.~39~
+│   ├── Project1.dpr.~40~
+│   ├── Project1.dpr.~41~
+│   ├── Project1.dproj.local.~1~
+│   ├── Unit1.pas.~1~
+│   ├── Unit1.pas.~2~
+│   ├── Unit1.pas.~3~
+│   ├── Unit1.pas.~4~
+│   ├── Unit1.pas.~5~
+│   ├── Unit1.pas.~6~
+│   ├── Unit1.pas.~7~
+│   ├── Unit1.pas.~8~
+│   ├── UnitBasic.pas.~10~
+│   ├── UnitBasic.pas.~11~
+│   ├── UnitBasic.pas.~2~
+│   ├── UnitBasic.pas.~3~
+│   ├── UnitBasic.pas.~4~
+│   ├── UnitBasic.pas.~5~
+│   ├── UnitBasic.pas.~6~
+│   ├── UnitBasic.pas.~7~
+│   ├── UnitBasic.pas.~8~
+│   ├── UnitBasic.pas.~9~
+│   ├── UnitGame1.pas.~46~
+│   ├── UnitGame1.pas.~47~
+│   ├── UnitGame1.pas.~48~
+│   ├── UnitGame1.pas.~49~
+│   ├── UnitGame1.pas.~50~
+│   ├── UnitGame1.pas.~51~
+│   ├── UnitGame1.pas.~52~
+│   ├── UnitGame1.pas.~53~
+│   ├── UnitGame1.pas.~54~
+│   ├── UnitGame1.pas.~55~
+│   ├── gener.pas.~1~
+│   ├── gener.pas.~2~
+│   └── gener.pas.~3~
+├── __recovery
+│   ├── Unit1.pas
+│   └── __recovery.ini
+└── gener.pas
+
+=== SOURCE CODE ===
+
+--- FILE: Project1.dpr ---
+﻿program Project1;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils, Windows,
+  gener in 'gener.pas',
+  UnitGame1 in 'UnitGame1.pas',
+  UnitBasic in 'UnitBasic.pas';
+
+var
+  endGame: boolean;
+
+begin
+
+  UnitGame1.StartGame;
+  endGame := True;
+  while endGame do
+  begin
+    UnitGame1.nextStage;
+    if (UnitGame1.CurrentStage > 5) then
+    begin
+      writeln('Вы прошли тренажер-памяти! Поздравляем! Вы зря потратили ',
+        'свое время! Нажмите Enter для выхода из программы.');
+      readln;
+      endGame := False;
+    end;
+  end;
+
+end.
+
+
+--- FILE: Unit1.pas ---
+unit Unit1;
+
+
+interface
+var num:integer;
+procedure NextMove();
+
+
+
+
+implementation
+uses Unit2;
+Function check():boolean;
+begin
+  Result:=true;
+end;
+
+procedure NextMove();
+begin
+  if check then
+  begin
+
+  end;
+end;
+
+
+
+end.
+
+
+--- FILE: UnitBasic.pas ---
+﻿unit UnitBasic;
+
+interface
+uses
+  System.SysUtils;
+
+procedure LowerRus(var s1: String);
+function G1check(s1, s2: String):Boolean;
+function G2check(s1, s2_c: String):Boolean;
+function G3check(s1, s2_c: String):Boolean;
+function G4check(s1, s2_c: String):Boolean;
+function G5check(s1, s2_c: String):Boolean;
+
+
+implementation
+
+type SArr = array of string;
+
+function NumOfWords(str: string): integer;
+begin
+  insert(' ', str, 1);
+  str := str + ' ';
+  result := 0;
+  for var i := 1 to length(str) - 1 do
+  begin
+    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
+      result := result + 1;
+  end;
+end;
+
+function ListOfWords(str: string): SArr;
+var
+  startPos, endPos, wordNow, CountWords: integer;
+  startFlag, endFlag: boolean;
+  word: string;
+begin
+  insert(' ', str, 1);
+  str := str + ' ';
+  CountWords:= NumOfWords(str);
+  setLength(result, CountWords);
+  startFlag := False;
+  endFlag := False;
+  wordNow := 0;
+  for var i := 1 to length(str) - 1 do
+  begin
+    if ((str[i] = ' ') and (str[i + 1] <> ' ')) then
+    begin
+      startPos := i + 1;
+      startFlag := True;
+    end;
+    if ((str[i] <> ' ') and (str[i + 1] = ' ')) then
+    begin
+      endPos := i;
+      endFlag := True;
+    end;
+    if (startFlag and endFlag) then
+    begin
+      word:= copy(str, startPos, endPos - startPos + 1);
+      result[wordNow] := word;
+      wordNow := wordNow + 1;
+      startFlag := False;
+      endFlag := False;
+    end;
+  end;
+end;
+
+
+procedure LowerRus(var s1: String);
+var
+  len, i: Integer;
+begin
+  len := Length(s1);
+  for i := 1 to len do
+    begin
+      if (s1[i] >= '�') and (s1[i] <= '�') then
+        s1[i] := Chr(Ord(s1[i])+32)
+    end;
+end;
+
+function G1check(s1, s2: String):Boolean;
+var
+  len, i: Integer;
+begin
+  Result := True;
+
+  len := Length(s1);
+  if len = Length(s2) then
+
+    for i := 1 to len do
+    begin
+      if s1[i] <> s2[len - i + 1] then
+        Result := False
+    end
+
+  else
+    Result := False;
+end;
+
+function G2check(s1, s2_c: String):Boolean;
+var
+  len, len_as, i, j, tempResult: Integer;
+  sameString: Boolean;
+  as1, as2: SArr;
+  s2: String;
+begin
+  Result := True;
+
+  // �������� ������ �������� ����� ����
+  s2 := '';
+  len := Length(s2_c);
+  j := 0;
+  for i := 1 to len do
+    if s2_c[i] = ' ' then
+    begin
+      if j = 0 then
+        s2 := s2 + s2_c[i];
+      Inc(j);
+    end
+    else
+    begin
+      s2 := s2 + s2_c[i];
+      j := 0;
+    end;
+
+
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
+  len_as := Length(as1);
+
+
+  tempResult := 0;
+
+  if len_as = Length(as2) then
+  begin
+
+    for i := 0 to len_as - 1 do
+    begin
+      sameString := False;
+
+      for j := 0 to len_as - 1 do
+        // sameString ��� ����, ���� ���� ���� 2 ��� > ����������� ����,
+        // �� ��� ������ �� ��� ��������
+        if (as1[i] = as2[j]) and (not sameString) then
+        begin
+          as2[j] := '';
+          Inc(tempResult);
+          sameString := True;
+        end;
+
+    end;
+
+    if tempResult < len_as then
+      Result := False
+
+  end
+
+  else
+    Result := False;
+end;
+
+function G3check(s1, s2_c: String):Boolean;
+var
+  len, len_as, i, j, tempResult: Integer;
+  sameString: Boolean;
+  as1, as2: SArr;
+  s2: String;
+begin
+  Result := True;
+
+  // �������� ������ �������� ����� ����
+  s2 := '';
+  len := Length(s2_c);
+  j := 0;
+  for i := 1 to len do
+    if s2_c[i] = ' ' then
+    begin
+      if j = 0 then
+        s2 := s2 + s2_c[i];
+      Inc(j);
+    end
+    else
+    begin
+      s2 := s2 + s2_c[i];
+      j := 0;
+    end;
+
+  if s1 <> s2 then
+    Result := False;
+
+end;
+
+function G4check(s1, s2_c: String):Boolean;
+var
+  len, len_as, i, j, tempResult: Integer;
+  sameString: Boolean;
+  as1, as2: SArr;
+  s2: String;
+begin
+  Result := True;
+
+  // �������� ������ �������� ����� ����
+  s2 := '';
+  len := Length(s2_c);
+  j := 0;
+  for i := 1 to len do
+    if s2_c[i] = ' ' then
+    begin
+      if j = 0 then
+        s2 := s2 + s2_c[i];
+      Inc(j);
+    end
+    else
+    begin
+      s2 := s2 + s2_c[i];
+      j := 0;
+    end;
+
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
+  len_as := Length(as1);
+
+
+  tempResult := 0;
+
+  if len_as = Length(as2) then
+  begin
+
+    for i := 0 to len_as - 1 do
+    begin
+      sameString := False;
+
+      for j := 0 to len_as - 1 do
+        // sameString ��� ����, ���� ���� ���� 2 ��� > ����������� ����,
+        // �� ��� ������ �� ��� ��������
+        if (G1check(as1[i], as2[j])) and (not sameString) then
+        begin
+          as2[j] := '';
+          Inc(tempResult);
+          sameString := True;
+        end;
+
+    end;
+
+    if tempResult < len_as then
+      Result := False
+
+  end
+
+  else
+    Result := False;
+end;
+
+function G5check(s1, s2_c: String):Boolean;
+var
+  len, len_as, i, j, tempResult: Integer;
+  as1, as2: SArr;
+  s2: String;
+begin
+  Result := True;
+
+  // �������� ������ �������� ����� ����
+  s2 := '';
+  len := Length(s2_c);
+  j := 0;
+  for i := 1 to len do
+    if s2_c[i] = ' ' then
+    begin
+      if j = 0 then
+        s2 := s2 + s2_c[i];
+      Inc(j);
+    end
+    else
+    begin
+      s2 := s2 + s2_c[i];
+      j := 0;
+    end;
+
+  as1 := ListOfWords(s1);
+  as2 := ListOfWords(s2);
+  len_as := Length(as1);
+
+
+  tempResult := 0;
+
+  if len_as = Length(as2) then
+  begin
+
+    for i := 0 to len_as - 1 do
+    begin
+      if G1check(as1[i], as2[i]) then
+      begin
+        as2[j] := '';
+        Inc(tempResult);
+      end;
+
+    end;
+
+    if tempResult < len_as then
+      Result := False
+
+  end
+
+  else
+    Result := False;
+end;
+
+
+end.
+
+
+--- FILE: UnitGame1.pas ---
+﻿unit UnitGame1;
+
+interface
+
+uses
+  System.SysUtils, Windows, Gener,UnitBasic;
+
+var CurrentStage: integer;
+
+procedure nextStage();
+
+procedure StartGame();
+
+implementation
+
+var
+  WinCount,subStage: integer;
+  inputS, exampleS: string;
+
+procedure LowerRus(var s1: String);
+var
+  len, i: Integer;
+begin
+  len := Length(s1);
+  for i := 1 to len do
+    begin
+      if (s1[i] >= 'А') and (s1[i] <= 'Я') then
+        s1[i] := Chr(Ord(s1[i])+32)
+    end;
+end;
+
+procedure ClearScreen;
+var
+  hStdOut: THandle;
+  csbi: _CONSOLE_SCREEN_BUFFER_INFO;
+  conSize: DWORD;
+  coord: TCoord;
+  charsWritten: DWORD;
+begin
+  hStdOut := GetStdHandle(STD_OUTPUT_HANDLE);
+  if hStdOut = INVALID_HANDLE_VALUE then
+    Exit;
+  if not GetConsoleScreenBufferInfo(hStdOut, csbi) then
+    Exit;
+  conSize := csbi.dwSize.X * csbi.dwSize.Y;
+  coord.X := 0;
+  coord.Y := 0;
+  if not FillConsoleOutputCharacter(hStdOut, ' ', conSize, coord, charsWritten)
+  then
+    Exit;
+  if not FillConsoleOutputAttribute(hStdOut, csbi.wAttributes, conSize, coord,
+    charsWritten) then
+    Exit;
+  SetConsoleCursorPosition(hStdOut, coord);
+end;
+
+procedure Stage1();
+begin
+  exampleS:=gener.GetWord(subStage);
+  Writeln('Запомните слово:');
+  Writeln(exampleS);
+  exampleS := Trim(exampleS);
+  Sleep(3000);
+  ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество букв ', SubStage);
+  writeln('Введите слово перевёрнутым');
+  Readln(inputS);
+  LowerRus(inputS);
+  inputS := Trim(inputS);
+  if G1Check(exampleS,InputS) then
+  begin
+    Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
+end;
+
+procedure Stage2();
+begin
+  exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
+  Writeln(exampleS);
+  exampleS := Trim(exampleS);
+  Sleep(5000);
+  ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел в любом порядке');
+  Readln(inputS);
+  LowerRus(inputS);
+  inputS := Trim(inputS);
+  if G2Check(exampleS,InputS) then
+  begin
+    Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
+end;
+
+procedure Stage3();
+begin
+  exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
+  Writeln(exampleS);
+  exampleS := Trim(exampleS);
+  Sleep(5000);
+  ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел в том же порядке');
+  Readln(inputS);
+  LowerRus(inputS);
+  inputS := Trim(inputS);
+  if G3Check(exampleS,InputS) then
+  begin
+    Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
+end;
+
+procedure Stage4();
+begin
+  exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
+  Writeln(exampleS);
+  exampleS := Trim(exampleS);
+  Sleep(5000);
+  ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в любом порядке');
+  Readln(inputS);
+  LowerRus(inputS);
+  inputS := Trim(inputS);
+  if G4Check(exampleS,InputS) then
+  begin
+    Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
+end;
+
+procedure Stage5();
+begin
+  exampleS:=gener.Get5word(subStage);
+  Writeln('Запомните слова:');
+  Writeln(exampleS);
+  exampleS := Trim(exampleS);
+  Sleep(5000);
+  ClearScreen;
+  writeln('Стадия игры ', CurrentStage, '. Количество слов ', SubStage);
+  writeln('Введите все слова через пробел причём каждое слово это перевёртыш в том же порядке');
+  Readln(inputS);
+  LowerRus(inputS);
+  inputS := Trim(inputS);
+  if G5Check(exampleS,InputS) then
+  begin
+    Inc(WinCount);
+    Writeln('Верно');
+  end
+  else
+  begin
+    WinCount:=0;
+    Writeln('Не верно');
+  end;
+end;
+
+procedure nextStage();
+begin
+
+  case CurrentStage of
+    1:
+      Stage1;
+    2:
+      Stage2;
+    3:
+      Stage3;
+    4:
+      Stage4;
+    5:
+      Stage5;
+  end;         //3
+  if WinCount = 3 then
+  begin
+    WinCount := 0;
+    Inc(SubStage);
+  end;        //9
+  if SubStage = 9 then
+  begin
+    SubStage := 5;
+    Inc(CurrentStage);
+  end;
+  Sleep(1500);
+  ClearScreen;
+end;
+
+procedure StartGame();
+begin
+  gener.GetAllSArr(gener.arr5,gener.arr6,gener.arr7,gener.arr8);
+  CurrentStage := 1;  //1
+  subStage:=5;
+  WinCount := 0;
+end;
+
+end.
